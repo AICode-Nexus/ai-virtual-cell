@@ -1,0 +1,391 @@
+<\!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Virtual Cell - 讨论平台</title>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+
+        // 主应用组件
+        function App() {
+            const [activeTab, setActiveTab] = useState('overview');
+            const [discussions, setDiscussions] = useState([]);
+
+            return (
+                <div className="min-h-screen">
+                    {/* 导航栏 */}
+                    <nav className="bg-white shadow-sm border-b">
+                        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                            <div className="flex justify-between h-16">
+                                <div className="flex items-center">
+                                    <span className="text-2xl">🧬</span>
+                                    <h1 className="ml-3 text-xl font-bold text-gray-900">
+                                        AI Virtual Cell
+                                    </h1>
+                                </div>
+                                <div className="flex items-center space-x-4">
+                                    <a href="https://github.com/AICode-Nexus/ai-virtual-cell" 
+                                       className="text-gray-600 hover:text-gray-900"
+                                       target="_blank">
+                                        GitHub
+                                    </a>
+                                    <a href="https://github.com/AICode-Nexus/ai-virtual-cell/discussions" 
+                                       className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
+                                       target="_blank">
+                                        参与讨论
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+
+                    {/* Hero 区域 */}
+                    <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+                        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                            <h2 className="text-4xl font-bold mb-4">
+                                构建下一代 AI 架构
+                            </h2>
+                            <p className="text-xl text-blue-100 mb-8">
+                                通过模拟生物细胞机制，实现自组织、自适应、自进化的智能系统
+                            </p>
+                            <div className="flex space-x-4">
+                                <a href="#overview" 
+                                   className="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50">
+                                    了解项目
+                                </a>
+                                <a href="https://github.com/AICode-Nexus/ai-virtual-cell/discussions" 
+                                   className="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600"
+                                   target="_blank">
+                                    加入讨论
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* 标签页导航 */}
+                    <div className="bg-white border-b">
+                        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                            <div className="flex space-x-8">
+                                {[
+                                    { id: 'overview', label: '项目概述' },
+                                    { id: 'design', label: '设计方案' },
+                                    { id: 'discussions', label: '讨论区' },
+                                    { id: 'contribute', label: '如何贡献' }
+                                ].map(tab => (
+                                    <button
+                                        key={tab.id}
+                                        onClick={() => setActiveTab(tab.id)}
+                                        className={`py-4 px-1 border-b-2 font-medium text-sm ${
+                                            activeTab === tab.id
+                                                ? 'border-blue-600 text-blue-600'
+                                                : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                                        }`}
+                                    >
+                                        {tab.label}
+                                    </button>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* 内容区域 */}
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                        {activeTab === 'overview' && <OverviewTab />}
+                        {activeTab === 'design' && <DesignTab />}
+                        {activeTab === 'discussions' && <DiscussionsTab />}
+                        {activeTab === 'contribute' && <ContributeTab />}
+                    </div>
+
+                    {/* 页脚 */}
+                    <footer className="bg-gray-800 text-white mt-20">
+                        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                                <div>
+                                    <h3 className="text-lg font-semibold mb-4">AI Virtual Cell</h3>
+                                    <p className="text-gray-400">
+                                        基于细胞生物学机制的全新 AI 架构范式
+                                    </p>
+                                </div>
+                                <div>
+                                    <h3 className="text-lg font-semibold mb-4">链接</h3>
+                                    <ul className="space-y-2 text-gray-400">
+                                        <li><a href="https://github.com/AICode-Nexus/ai-virtual-cell" className="hover:text-white">GitHub</a></li>
+                                        <li><a href="https://github.com/AICode-Nexus/ai-virtual-cell/discussions" className="hover:text-white">讨论区</a></li>
+                                        <li><a href="https://github.com/AICode-Nexus/ai-virtual-cell/issues" className="hover:text-white">问题追踪</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3 className="text-lg font-semibold mb-4">许可证</h3>
+                                    <p className="text-gray-400">MIT License</p>
+                                </div>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+            );
+        }
+
+        // 项目概述标签页
+        function OverviewTab() {
+            return (
+                <div className="space-y-8">
+                    <section>
+                        <h2 className="text-3xl font-bold mb-4">核心突破</h2>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            {[
+                                {
+                                    icon: '🧬',
+                                    title: '记忆即结构',
+                                    desc: '记忆不是外部存储，而是神经网络的物理重构'
+                                },
+                                {
+                                    icon: '🔄',
+                                    title: '能力即组织',
+                                    desc: '从单细胞到组织器官系统的层次化智能涌现'
+                                },
+                                {
+                                    icon: '🌱',
+                                    title: '学习即进化',
+                                    desc: '通过突触可塑性和神经发生实现持续学习'
+                                },
+                                {
+                                    icon: '🤝',
+                                    title: '协作即生态',
+                                    desc: '去中心化的细胞间信号转导替代中心化调度'
+                                }
+                            ].map((item, i) => (
+                                <div key={i} className="bg-white p-6 rounded-lg shadow-sm border">
+                                    <div className="text-4xl mb-3">{item.icon}</div>
+                                    <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+                                    <p className="text-gray-600">{item.desc}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </section>
+
+                    <section>
+                        <h2 className="text-3xl font-bold mb-4">生物学映射</h2>
+                        <div className="bg-white p-6 rounded-lg shadow-sm border">
+                            <table className="w-full">
+                                <thead>
+                                    <tr className="border-b">
+                                        <th className="text-left py-3">生物概念</th>
+                                        <th className="text-left py-3">计算对应</th>
+                                        <th className="text-left py-3">说明</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {[
+                                        ['DNA（基因）', 'Skill（技能）', '可执行的功能模块'],
+                                        ['RNA', 'Agent 实例', '临时的执行体'],
+                                        ['蛋白质', 'Function', '具体功能实现'],
+                                        ['线粒体', '算力调度器', '管理计算资源'],
+                                        ['突触', 'Cell 间连接', '动态权重的连接'],
+                                        ['突触可塑性', '权重调整', 'Hebbian 学习'],
+                                        ['神经发生', 'Cell 创建', '动态生成新细胞']
+                                    ].map((row, i) => (
+                                        <tr key={i} className="border-b">
+                                            <td className="py-3 font-medium">{row[0]}</td>
+                                            <td className="py-3 text-blue-600">{row[1]}</td>
+                                            <td className="py-3 text-gray-600">{row[2]}</td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                </div>
+            );
+        }
+
+        // 设计方案标签页
+        function DesignTab() {
+            return (
+                <div className="space-y-8">
+                    <section>
+                        <h2 className="text-3xl font-bold mb-4">设计理念</h2>
+                        <div className="bg-white p-6 rounded-lg shadow-sm border space-y-4">
+                            <div>
+                                <h3 className="text-xl font-semibold mb-2">原理 1：结构即能力</h3>
+                                <p className="text-gray-600">
+                                    传统观念：能力 = 算法 + 数据<br/>
+                                    新原理：能力 = 网络结构 + 连接强度
+                                </p>
+                            </div>
+                            <div>
+                                <h3 className="text-xl font-semibold mb-2">原理 2：记忆即结构</h3>
+                                <p className="text-gray-600">
+                                    传统观念：记忆 = 数据库中的记录<br/>
+                                    新原理：记忆 = 神经连接的物理改变
+                                </p>
+                            </div>
+                            <div>
+                                <h3 className="text-xl font-semibold mb-2">原理 3：涌现即智能</h3>
+                                <p className="text-gray-600">
+                                    智能 = 简单规则 × 大规模交互
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h2 className="text-3xl font-bold mb-4">系统架构</h2>
+                        <div className="bg-white p-6 rounded-lg shadow-sm border">
+                            <pre className="text-sm text-gray-700 overflow-x-auto">
+{`Layer 7: Ecosystem (生态系统)
+    ↓
+Layer 6: Organism (生命体)
+    ↓
+Layer 5: Organ (器官)
+    ↓
+Layer 4: Tissue (组织)
+    ↓
+Layer 3: Cell Network (细胞网络)
+    ↓
+Layer 2: Cell (细胞)
+    ↓
+Layer 1: Molecular (分子)`}
+                            </pre>
+                        </div>
+                    </section>
+
+                    <section>
+                        <a href="https://github.com/AICode-Nexus/ai-virtual-cell/blob/main/docs/DESIGN.md" 
+                           className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700"
+                           target="_blank">
+                            查看完整设计文档 →
+                        </a>
+                    </section>
+                </div>
+            );
+        }
+
+        // 讨论区标签页
+        function DiscussionsTab() {
+            return (
+                <div className="space-y-8">
+                    <section>
+                        <h2 className="text-3xl font-bold mb-4">参与讨论</h2>
+                        <p className="text-gray-600 mb-6">
+                            我们欢迎来自不同领域的专家和爱好者参与讨论，共同完善这个革命性的 AI 架构。
+                        </p>
+                    </section>
+
+                    <section>
+                        <h3 className="text-2xl font-semibold mb-4">讨论主题</h3>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            {[
+                                {
+                                    title: '🧬 生物学验证',
+                                    desc: '帮助验证生物学机制的准确性和合理性',
+                                    link: 'https://github.com/AICode-Nexus/ai-virtual-cell/discussions/categories/biology'
+                                },
+                                {
+                                    title: '💻 技术实现',
+                                    desc: '探讨技术可行性、架构设计和实现细节',
+                                    link: 'https://github.com/AICode-Nexus/ai-virtual-cell/discussions/categories/technical'
+                                },
+                                {
+                                    title: '🎯 应用场景',
+                                    desc: '探索实际应用场景和商业价值',
+                                    link: 'https://github.com/AICode-Nexus/ai-virtual-cell/discussions/categories/applications'
+                                },
+                                {
+                                    title: '💡 创新想法',
+                                    desc: '分享你的创新想法和改进建议',
+                                    link: 'https://github.com/AICode-Nexus/ai-virtual-cell/discussions/categories/ideas'
+                                }
+                            ].map((topic, i) => (
+                                <a key={i} href={topic.link} target="_blank"
+                                   className="block bg-white p-6 rounded-lg shadow-sm border hover:shadow-md transition">
+                                    <h4 className="text-lg font-semibold mb-2">{topic.title}</h4>
+                                    <p className="text-gray-600">{topic.desc}</p>
+                                </a>
+                            ))}
+                        </div>
+                    </section>
+
+                    <section>
+                        <a href="https://github.com/AICode-Nexus/ai-virtual-cell/discussions" 
+                           className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700"
+                           target="_blank">
+                            前往 GitHub Discussions →
+                        </a>
+                    </section>
+                </div>
+            );
+        }
+
+        // 如何贡献标签页
+        function ContributeTab() {
+            return (
+                <div className="space-y-8">
+                    <section>
+                        <h2 className="text-3xl font-bold mb-4">如何贡献</h2>
+                        <p className="text-gray-600 mb-6">
+                            我们欢迎各种形式的贡献，无论你是生物学家、AI 研究者、工程师还是对这个项目感兴趣的任何人。
+                        </p>
+                    </section>
+
+                    <section>
+                        <h3 className="text-2xl font-semibold mb-4">贡献方式</h3>
+                        <div className="space-y-4">
+                            {[
+                                {
+                                    title: '1. 参与讨论',
+                                    desc: '在 GitHub Discussions 中分享你的想法、提出问题或回答他人的疑问'
+                                },
+                                {
+                                    title: '2. 提出问题',
+                                    desc: '发现设计中的问题或不足？在 Issues 中提出'
+                                },
+                                {
+                                    title: '3. 改进文档',
+                                    desc: '帮助完善文档、修正错误或添加示例'
+                                },
+                                {
+                                    title: '4. 代码贡献',
+                                    desc: '未来实现阶段，欢迎提交 Pull Request'
+                                }
+                            ].map((item, i) => (
+                                <div key={i} className="bg-white p-6 rounded-lg shadow-sm border">
+                                    <h4 className="text-lg font-semibold mb-2">{item.title}</h4>
+                                    <p className="text-gray-600">{item.desc}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3 className="text-2xl font-semibold mb-4">我们特别需要</h3>
+                        <div className="bg-blue-50 border border-blue-200 p-6 rounded-lg">
+                            <ul className="space-y-2 text-gray-700">
+                                <li>🧬 <strong>生物学家</strong>：验证细胞机制的映射是否合理</li>
+                                <li>💻 <strong>AI 研究者</strong>：评估技术可行性和创新性</li>
+                                <li>🏗️ <strong>系统架构师</strong>：优化架构设计和扩展性</li>
+                                <li>🎨 <strong>产品经理</strong>：探索应用场景和商业价值</li>
+                                <li>📝 <strong>技术写作者</strong>：改进文档质量和可读性</li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+            );
+        }
+
+        // 渲染应用
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
+</html>
