@@ -27,7 +27,7 @@
 - 网站上线，展示 Layer 1-2 的交互式架构图
 - 用户可点击架构图进入详细文档页
 - 集成 GitHub Discussions，用户可在每个模块下讨论
-- 收到 10+ 条社区反馈
+- 收到 10+ 条社区反馈（通过 GitHub Discussions 计数衡量）
 
 **完整版（Sprint 3+）：**
 - 7 层架构全部可视化并可交互
@@ -66,7 +66,7 @@ ai-virtual-cell/
 │   │   │   ├── phases/                # 实施阶段页
 │   │   │   │   ├── phase-0.astro
 │   │   │   │   └── ...
-│   │   │   └── discussions/           # 讨论区页面
+│   │   │   └── discussions.astro      # 讨论区汇总页（所有分类的讨论入口）
 │   │   ├── components/
 │   │   │   ├── ArchitectureDiagram.tsx # 交互式架构图 (React Island)
 │   │   │   ├── LayerCard.astro        # 层级卡片
@@ -134,19 +134,51 @@ ai-virtual-cell/
 
 **实施状态可视化：**
 - 🟢 已完成 | 🟡 进行中 | ⚪ 未开始
+- 辅助文字标签确保色盲用户可识别
 
-### 3.2 详情页结构
+### 3.2 架构图数据模型
+
+Sprint 1（静态 SVG）和 Sprint 2（React Flow）共享同一数据模型：
+
+```typescript
+// lib/architecture-data.ts
+interface LayerNode {
+  id: string;                    // "layer-1"
+  label: string;                 // "Molecular"
+  labelCn: string;               // "分子"
+  phase: number;                 // 1
+  status: "completed" | "in_progress" | "not_started";
+  components: string[];          // ["Skill", "Agent", "Function", "MCP Tool"]
+  discussionCount: number;       // 从构建时预取
+  route: string;                 // "/layers/molecular"
+}
+
+interface LayerEdge {
+  source: string;                // "layer-1"
+  target: string;                // "layer-2"
+  label?: string;                // "组成"
+}
+
+interface ArchitectureGraph {
+  nodes: LayerNode[];
+  edges: LayerEdge[];
+}
+```
+
+Sprint 1 用此数据渲染静态 SVG，Sprint 2 直接传入 React Flow，无需重写。
+
+### 3.4 详情页结构
 
 每个层级详情页包含 4 个标签页：
 
 | Tab | 内容 | 数据来源 |
 |-----|------|---------|
 | 概念设计 | 生物学映射、设计理念、第一性原理 | docs/DESIGN.md, docs/BIOLOGY_MAPPING.md |
-| 技术规格 | 接口定义、数据结构、API 设计、状态机图 | 新增内容 |
+| 技术规格 | 接口定义（TypeScript interfaces）、数据结构（CellState, Synapse 等）、状态机图（生命周期）、组件关系图 | 从 docs/ARCHITECTURE.md 提取并补充 |
 | 实施路径 | Phase/Milestone、依赖关系、代码示例 | docs/ROADMAP.md |
-| 讨论区 | GitHub Discussions 集成 | GitHub API |
+| 讨论区 | Sprint 1：显示"前往 GitHub 讨论"链接；Sprint 2：嵌入 DiscussionWidget | GitHub API |
 
-### 3.3 导航设计
+### 3.5 导航设计
 
 **双视图导航：**
 
@@ -155,7 +187,7 @@ ai-virtual-cell/
 
 顶部导航栏提供视图切换。
 
-### 3.4 文档渐进细化策略
+### 3.6 文档渐进细化策略
 
 - **MVP**：Layer 1-2 从现有 docs/ 迁移，补充技术规格
 - **后续**：每个 Sprint 完成 1-2 层，根据社区反馈逐步细化
@@ -167,11 +199,23 @@ ai-virtual-cell/
 
 ### 4.1 讨论分类
 
-在 GitHub 仓库创建以下分类：
+在 GitHub 仓库创建以下分类（GitHub Discussions 分类为扁平结构，不支持嵌套）：
 
-1. **Architecture Layers**：每层一个子分类（Layer 1-7）
-2. **Implementation Phases**：每个阶段一个子分类（Phase 0-4）
-3. **General**：Ideas / Q&A / Show and Tell
+1. **Arch: Layer 1 - Molecular**
+2. **Arch: Layer 2 - Cell**
+3. **Arch: Layer 3 - Cell Network**
+4. **Arch: Layer 4 - Tissue**
+5. **Arch: Layer 5 - Organ**
+6. **Arch: Layer 6 - Organism**
+7. **Arch: Layer 7 - Ecosystem**
+8. **Phase 0 - Design Review**
+9. **Phase 1 - Prototype**
+10. **Phase 2 - Tissue Building**
+11. **Ideas**（创新想法）
+12. **Q&A**（问答）
+13. **Show and Tell**（展示与分享）
+
+MVP 阶段先创建 Layer 1-2、Ideas 和 Q&A 分类，后续按需添加。
 
 ### 4.2 API 集成
 
@@ -207,13 +251,41 @@ async function getDiscussion(id: string): Promise<Discussion>
 
 Content Collections frontmatter 记录关联：
 
-```markdown
----
-title: "Layer 1: Molecular"
-phase: 1
-discussionId: "D_kwDOAbcd1234"
-discussionUrl: "https://github.com/..."
----
+```typescript
+// content/config.ts
+import { defineCollection, z } from "astro:content";
+
+const layers = defineCollection({
+  type: "content",
+  schema: z.object({
+    title: z.string(),
+    titleCn: z.string(),
+    layer: z.number().min(1).max(7),
+    phase: z.number().min(0).max(4),
+    status: z.enum(["completed", "in_progress", "not_started"]),
+    components: z.array(z.string()),
+    summary: z.string().optional(),       // 用于架构图 Hover 预览
+    discussionCategory: z.string().optional(),
+    discussionUrl: z.string().url().optional(),
+    order: z.number(),
+  }),
+});
+
+const phases = defineCollection({
+  type: "content",
+  schema: z.object({
+    title: z.string(),
+    phase: z.number(),
+    status: z.enum(["completed", "in_progress", "not_started"]),
+    milestones: z.array(z.object({
+      id: z.string(),
+      title: z.string(),
+      status: z.enum(["completed", "in_progress", "not_started"]),
+    })),
+  }),
+});
+
+export const collections = { layers, phases };
 ```
 
 ---
@@ -235,7 +307,7 @@ discussionUrl: "https://github.com/..."
 - 迁移 Layer 1（Molecular）文档到 Content Collections
 - 迁移 Layer 2（Cell）文档到 Content Collections
 - 实现基础架构图交互（点击跳转）
-- 创建层级详情页（4 个 Tab 基础版本）
+- 创建层级详情页（概念设计、技术规格、实施路径 3 个 Tab 完整；讨论区 Tab 显示"前往 GitHub 讨论"链接占位）
 - 配置 GitHub Pages 部署（GitHub Actions）
 
 **交付：** 可访问的网站，Layer 1-2 文档展示，可点击架构图
@@ -255,7 +327,7 @@ discussionUrl: "https://github.com/..."
 - 实现 React Flow 架构图（替换静态版本）
 - 添加 Hover 效果和动画
 - 实现实施状态可视化
-- 添加搜索功能
+- 添加搜索功能（Astro Pagefind — 构建时生成全文索引，客户端搜索，零后端依赖）
 - 性能优化（Lighthouse 90+）
 
 **交付：** 完整讨论功能，交互式架构图，搜索功能
@@ -294,3 +366,24 @@ discussionUrl: "https://github.com/..."
 | 社区参与度不足 | 中 | 多渠道推广，降低参与门槛 |
 | 内容迁移工作量大 | 低 | 渐进迁移，MVP 只做 Layer 1-2 |
 | GitHub Pages 限制 | 低 | 纯静态方案，不依赖 SSR |
+
+---
+
+## 7. 模块独立性
+
+GitHub Discussions 集成（第 4 节）是一个可分离的模块。如果 Sprint 2 时间不足，可以延后讨论集成而不影响架构可视化功能。详情页的讨论 Tab 在集成完成前显示 GitHub 链接占位。
+
+---
+
+## 8. 无障碍访问
+
+- 架构图节点支持键盘导航（Tab/Enter）
+- 实施状态除颜色外附带文字标签（"已完成"/"进行中"/"未开始"）
+- 图片和 SVG 提供 alt 文本
+- 对比度符合 WCAG 2.1 AA 标准
+
+完整的无障碍验证需要手动测试和专业评审。
+
+---
+
+**文档结束**
