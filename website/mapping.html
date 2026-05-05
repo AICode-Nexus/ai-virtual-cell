@@ -100,10 +100,10 @@
         </section>
 
         <section class="section">
-            <div class="section-header reveal">
-                <div class="eyebrow">High-value cases</div>
-                <h2>五个高价值映射案例</h2>
-                <p>下面不是“生物概念→AI 名词”的静态表，而是从机制、缺口到设计方向的完整映射链条。</p>
+            <div class=”section-header reveal”>
+                <div class=”eyebrow”>High-value cases</div>
+                <h2>八个高价值映射案例</h2>
+                <p>下面不是”生物概念→AI 名词”的静态表，而是从机制、缺口到设计方向的完整映射链条。涵盖 P0 已实现原型、P1 高潜力方向和 P2 长期探索领域。</p>
             </div>
 
             <div class="case-shell reveal">
@@ -127,6 +127,18 @@
                     <button class="case-tab" data-case="metabolic" role="tab" aria-selected="false">
                         <strong>代谢式算力调度</strong>
                         <span>能量约束 → 预算分配</span>
+                    </button>
+                    <button class="case-tab" data-case="signal" role="tab" aria-selected="false">
+                        <strong>信号转导级联</strong>
+                        <span>多通路整合 → 注意力反馈</span>
+                    </button>
+                    <button class="case-tab" data-case="communication" role="tab" aria-selected="false">
+                        <strong>细胞通讯协议</strong>
+                        <span>旁分泌信号 → 去中心协作</span>
+                    </button>
+                    <button class="case-tab" data-case="morphogen" role="tab" aria-selected="false">
+                        <strong>形态发生素梯度</strong>
+                        <span>位置编码 → 架构搜索</span>
                     </button>
                 </div>
 
@@ -387,6 +399,162 @@
                     <div class="case-foot">
                         <h4>为什么这个映射重要</h4>
                         <p class="body-copy">许多 AI 系统在生产环境中的真正瓶颈不是能力上限，而是单位能力成本。代谢式映射能把成本意识从平台层推进到模型决策层。</p>
+                    </div>
+                </article>
+
+                <article class="case-panel" id="case-signal" role="tabpanel">
+                    <div class="case-header">
+                        <div>
+                            <span class="tag tag-amber">高潜力待实现</span>
+                            <h3 class="case-title">信号转导级联 → 多通路注意力整合</h3>
+                            <p class="case-subtitle">核心关系：不是单一注意力机制，而是多通路级联放大、交叉抑制与反馈稳定的整合系统。</p>
+                        </div>
+                        <div class="inline-stack">
+                            <span class="tag tag-blue">注意力机制</span>
+                            <span class="tag tag-purple">多模态融合</span>
+                        </div>
+                    </div>
+                    <div class="case-grid">
+                        <section class="case-block">
+                            <h4>生物机制</h4>
+                            <ul class="mapping-list" style="color: var(--green);">
+                                <li>信号级联放大：弱信号通过多级激酶级联指数放大。</li>
+                                <li>多通路整合：MAPK、PI3K、JAK-STAT 等通路交叉对话。</li>
+                                <li>负反馈稳定：磷酸酶抑制过度激活，防止信号失控。</li>
+                            </ul>
+                        </section>
+                        <section class="case-block">
+                            <h4>AI 中对应的控制原语</h4>
+                            <ul class="mapping-list" style="color: var(--blue);">
+                                <li>多头注意力不只是并行计算，而应有通路间的交叉调制。</li>
+                                <li>注意力权重不只是前向传播，还应有反馈抑制机制。</li>
+                                <li>跨模态注意力应模拟通路整合，而不是简单拼接。</li>
+                            </ul>
+                        </section>
+                        <section class="case-block">
+                            <h4>当前 AI 缺口</h4>
+                            <ul class="mapping-list" style="color: var(--amber);">
+                                <li>多头注意力通常是独立并行，缺少通路间交叉抑制。</li>
+                                <li>注意力层缺少反馈式稳定机制，容易过度关注局部。</li>
+                                <li>跨模态融合常用简单加权，缺少级联整合逻辑。</li>
+                            </ul>
+                        </section>
+                        <section class="case-block">
+                            <h4>可实现的新结构</h4>
+                            <ul class="mapping-list" style="color: var(--purple);">
+                                <li>引入通路间交叉抑制：一个注意力头的强激活抑制其他头。</li>
+                                <li>添加反馈稳定层：根据输出质量动态调节注意力强度。</li>
+                                <li>设计级联注意力：早期层提取粗粒度特征，后期层精细整合。</li>
+                            </ul>
+                        </section>
+                    </div>
+                    <div class="case-foot">
+                        <h4>为什么这个映射重要</h4>
+                        <p class="body-copy">当前注意力机制主要关注"关注什么"，但生物信号转导还解决"如何稳定、如何整合、如何防止失控"。这些控制逻辑能让注意力系统更鲁棒。</p>
+                    </div>
+                </article>
+
+                <article class="case-panel" id="case-communication" role="tabpanel">
+                    <div class="case-header">
+                        <div>
+                            <span class="tag tag-blue">中期探索方向</span>
+                            <h3 class="case-title">细胞通讯协议 → 去中心化多智能体协作</h3>
+                            <p class="case-subtitle">核心关系：不是中心化调度，而是通过局部信号传递、旁分泌协调和远距离广播实现涌现式协作。</p>
+                        </div>
+                        <div class="inline-stack">
+                            <span class="tag tag-purple">多智能体</span>
+                            <span class="tag tag-green">分布式系统</span>
+                        </div>
+                    </div>
+                    <div class="case-grid">
+                        <section class="case-block">
+                            <h4>生物机制</h4>
+                            <ul class="mapping-list" style="color: var(--green);">
+                                <li>缝隙连接：相邻细胞直接交换小分子，实现快速同步。</li>
+                                <li>旁分泌信号：局部扩散的信号分子协调邻近细胞。</li>
+                                <li>内分泌信号：远距离激素广播，协调全局状态。</li>
+                            </ul>
+                        </section>
+                        <section class="case-block">
+                            <h4>AI 中对应的控制原语</h4>
+                            <ul class="mapping-list" style="color: var(--blue);">
+                                <li>智能体间不只是消息传递，还应有局部同步、邻域协调、全局广播三层。</li>
+                                <li>协作协议应支持涌现式行为，而不是中心化编排。</li>
+                                <li>信号传递应有衰减和扩散范围，而不是全连接通信。</li>
+                            </ul>
+                        </section>
+                        <section class="case-block">
+                            <h4>当前 AI 缺口</h4>
+                            <ul class="mapping-list" style="color: var(--amber);">
+                                <li>多智能体系统常用中心化协调器或全连接通信。</li>
+                                <li>缺少局部-全局分层的通信协议。</li>
+                                <li>智能体间协作常依赖显式奖励，缺少自发同步机制。</li>
+                            </ul>
+                        </section>
+                        <section class="case-block">
+                            <h4>可实现的新结构</h4>
+                            <ul class="mapping-list" style="color: var(--purple);">
+                                <li>设计三层通信协议：邻域同步、局部协调、全局广播。</li>
+                                <li>引入信号衰减机制：远距离智能体接收到的信号强度降低。</li>
+                                <li>实现涌现式协作：通过局部规则产生全局行为模式。</li>
+                            </ul>
+                        </section>
+                    </div>
+                    <div class="case-foot">
+                        <h4>为什么这个映射重要</h4>
+                        <p class="body-copy">生物系统展示了如何在没有中心控制器的情况下实现大规模协调。这对构建可扩展、鲁棒的多智能体系统有直接启发。</p>
+                    </div>
+                </article>
+
+                <article class="case-panel" id="case-morphogen" role="tabpanel">
+                    <div class="case-header">
+                        <div>
+                            <span class="tag tag-amber">高潜力待实现</span>
+                            <h3 class="case-title">形态发生素梯度 → 位置感知架构搜索</h3>
+                            <p class="case-subtitle">核心关系：不是随机搜索架构，而是通过位置编码和梯度信号协调不同层级的架构决策。</p>
+                        </div>
+                        <div class="inline-stack">
+                            <span class="tag tag-blue">AutoML</span>
+                            <span class="tag tag-purple">架构搜索</span>
+                        </div>
+                    </div>
+                    <div class="case-grid">
+                        <section class="case-block">
+                            <h4>生物机制</h4>
+                            <ul class="mapping-list" style="color: var(--green);">
+                                <li>形态发生素梯度：浓度梯度编码位置信息。</li>
+                                <li>阈值响应：不同浓度激活不同基因程序。</li>
+                                <li>全局协调：单一信号源协调整个组织的分化模式。</li>
+                            </ul>
+                        </section>
+                        <section class="case-block">
+                            <h4>AI 中对应的控制原语</h4>
+                            <ul class="mapping-list" style="color: var(--blue);">
+                                <li>架构搜索不只是独立优化每层，而应有全局协调信号。</li>
+                                <li>网络深度方向应有"位置编码"，指导不同层的架构选择。</li>
+                                <li>早期层和后期层的架构决策应相互协调，而不是独立。</li>
+                            </ul>
+                        </section>
+                        <section class="case-block">
+                            <h4>当前 AI 缺口</h4>
+                            <ul class="mapping-list" style="color: var(--amber);">
+                                <li>NAS 通常独立搜索每层架构，缺少全局协调。</li>
+                                <li>网络深度方向缺少位置感知的架构约束。</li>
+                                <li>架构搜索空间通常是离散的，缺少连续梯度式引导。</li>
+                            </ul>
+                        </section>
+                        <section class="case-block">
+                            <h4>可实现的新结构</h4>
+                            <ul class="mapping-list" style="color: var(--purple);">
+                                <li>引入深度位置编码：根据层深度调整架构搜索偏好。</li>
+                                <li>设计梯度式搜索空间：从粗粒度到细粒度连续过渡。</li>
+                                <li>实现全局协调信号：一个超参数控制整体架构风格。</li>
+                            </ul>
+                        </section>
+                    </div>
+                    <div class="case-foot">
+                        <h4>为什么这个映射重要</h4>
+                        <p class="body-copy">形态发生素展示了如何用简单的梯度信号协调复杂的空间模式。这种全局-局部协调机制能让架构搜索更高效、更一致。</p>
                     </div>
                 </article>
             </div>
