@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全部知识映射 - AI Virtual Cell</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-brand">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="24" height="24">
+                    <circle cx="12" cy="12" r="3"></circle>
+                    <path d="M12 1v6m0 6v6m11-11h-6m-6 0H1"></path>
+                </svg>
+                <span>AI Virtual Cell</span>
+            </a>
+            <div class="nav-links">
+                <a href="mapping.html">映射案例</a>
+                <a href="all-mappings.html" class="active">全部映射</a>
+                <a href="roadmap.html">路线图</a>
+                <a href="about.html">关于</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page">
+        <header class="page-hero compact">
+            <div class="eyebrow">Complete mapping matrix</div>
+            <h1 class="page-title">13 × 15 全部知识映射</h1>
+            <p class="page-subtitle">生物系统到 AI 技术的完整映射关系，195 个映射单元的系统性对比</p>
+        </header>
+
+        <section class="section">
+            <div class="section-header reveal">
+                <div class="eyebrow">Mapping overview</div>
+                <h2>映射矩阵说明</h2>
+                <p>下表展示了 13 个生物系统与 15 个 AI 领域之间的映射关系。每个单元格包含：生物机制、AI 对应技术、映射强度、创新缺口。</p>
+            </div>
+
+            <div class="reveal" style="margin-bottom: 32px;">
+                <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <span style="width: 12px; height: 12px; border-radius: 3px; background: var(--green);"></span>
+                        <span style="font-size: 13px;">⭐⭐⭐ 强映射</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <span style="width: 12px; height: 12px; border-radius: 3px; background: var(--blue);"></span>
+                        <span style="font-size: 13px;">⭐⭐ 中等映射</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <span style="width: 12px; height: 12px; border-radius: 3px; background: var(--amber);"></span>
+                        <span style="font-size: 13px;">⭐ 弱映射</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <span style="width: 12px; height: 12px; border-radius: 3px; background: rgba(255,255,255,0.1);"></span>
+                        <span style="font-size: 13px;">待探索</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="table-wrapper reveal">
+                <table class="mapping-matrix-table">
+                    <thead>
+                        <tr>
+                            <th style="min-width: 140px;">生物系统</th>
+                            <th style="min-width: 140px;">AI 领域</th>
+                            <th style="min-width: 200px;">生物机制</th>
+                            <th style="min-width: 200px;">AI 对应技术</th>
+                            <th style="min-width: 80px;">映射强度</th>
+                            <th style="min-width: 200px;">创新缺口</th>
+                            <th style="min-width: 60px;">优先级</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- 神经可塑性 × 持续学习 -->
+                        <tr class="mapping-strong">
+                            <td><strong>神经可塑性</strong></td>
+                            <td><strong>持续学习</strong></td>
+                            <td>突触标记与捕获：局部标记 + 全局信号双重门控</td>
+                            <td>EWC、SI、经验回放</td>
+                            <td><span class="tag tag-green">⭐⭐⭐</span></td>
+                            <td>缺少局部-全局协同的选择性巩固机制</td>
+                            <td><span class="tag tag-green">P0</span></td>
+                        </tr>
+                        <tr class="mapping-medium">
+                            <td>神经可塑性</td>
+                            <td>元学习</td>
+                            <td>元可塑性：学习规则本身的可塑性调节</td>
+                            <td>MAML、学习率调度</td>
+                            <td><span class="tag tag-blue">⭐⭐</span></td>
+                            <td>缺少活动依赖的学习规则自适应</td>
+                            <td><span class="tag tag-amber">P1</span></td>
+                        </tr>
+
+                        <!-- 免疫系统 × 安全对齐 -->
+                        <tr class="mapping-strong">
+                            <td><strong>免疫系统</strong></td>
+                            <td><strong>安全对齐</strong></td>
+                            <td>免疫检查点：PD-1/CTLA-4 抑制性反馈</td>
+                            <td>RLHF、Constitutional AI</td>
+                            <td><span class="tag tag-green">⭐⭐⭐</span></td>
+                            <td>缺少动态阈值调节，过度拒绝问题严重</td>
+                            <td><span class="tag tag-green">P0</span></td>
+                        </tr>
+                        <tr class="mapping-medium">
+                            <td>免疫系统</td>
+                            <td>对抗鲁棒性</td>
+                            <td>免疫记忆：快速二次响应机制</td>
+                            <td>对抗训练、红队测试</td>
+                            <td><span class="tag tag-blue">⭐⭐</span></td>
+                            <td>缺少攻击模式记忆库，每次都完整推理</td>
+                            <td><span class="tag tag-amber">P1</span></td>
+                        </tr>
+
+                        <!-- 应激响应 × 系统容错 -->
+                        <tr class="mapping-strong">
+                            <td><strong>应激响应</strong></td>
+                            <td><strong>系统架构</strong></td>
+                            <td>UPR 三臂响应：分级应对不同强度应激</td>
+                            <td>检查点保存、弹性容错</td>
+                            <td><span class="tag tag-green">⭐⭐⭐</span></td>
+                            <td>缺少分层响应机制，容错策略单一</td>
+                            <td><span class="tag tag-green">P0</span></td>
+                        </tr>
+                        <tr class="mapping-medium">
+                            <td>应激响应</td>
+                            <td>系统架构</td>
+                            <td>自噬：选择性清理受损组件</td>
+                            <td>模型维护、性能监控</td>
+                            <td><span class="tag tag-blue">⭐⭐</span></td>
+                            <td>缺少主动维护机制，都是被动修复</td>
+                            <td><span class="tag tag-blue">P2</span></td>
+                        </tr>
+
+                        <!-- 能量代谢 × 计算效率 -->
+                        <tr class="mapping-medium">
+                            <td><strong>能量代谢</strong></td>
+                            <td><strong>系统架构</strong></td>
+                            <td>ATP 感知：能量状态监测与代谢流重定向</td>
+                            <td>动态深度、早退机制</td>
+                            <td><span class="tag tag-blue">⭐⭐</span></td>
+                            <td>模型不知道自己的计算成本和可用预算</td>
+                            <td><span class="tag tag-amber">P1</span></td>
+                        </tr>
+                        <tr class="mapping-medium">
+                            <td>能量代谢</td>
+                            <td>系统架构</td>
+                            <td>代谢网络调控：优先级调度与资源分配</td>
+                            <td>负载均衡、资源调度</td>
+                            <td><span class="tag tag-blue">⭐⭐</span></td>
+                            <td>资源分配与模型决策逻辑分离</td>
+                            <td><span class="tag tag-amber">P1</span></td>
+                        </tr>
+
+                        <!-- 信号转导 × 注意力机制 -->
+                        <tr class="mapping-medium">
+                            <td><strong>信号转导</strong></td>
+                            <td><strong>深度架构</strong></td>
+                            <td>信号级联放大：多通路整合与交叉抑制</td>
+                            <td>多头注意力、交叉注意力</td>
+                            <td><span class="tag tag-blue">⭐⭐</span></td>
+                            <td>多头注意力缺少通路间交叉抑制和反馈稳定</td>
+                            <td><span class="tag tag-amber">P1</span></td>
+                        </tr>
+
+                        <!-- 基因调控 × 超参数控制 -->
+                        <tr class="mapping-weak">
+                            <td><strong>基因调控</strong></td>
+                            <td><strong>元学习</strong></td>
+                            <td>表观遗传：环境诱导的表达偏置</td>
+                            <td>超参数优化、AutoML</td>
+                            <td><span class="tag tag-amber">⭐</span></td>
+                            <td>缺少环境级先验，只有任务级权重</td>
+                            <td><span class="tag tag-amber">P1</span></td>
+                        </tr>
+
+                        <!-- 蛋白质质控 × 模型压缩 -->
+                        <tr class="mapping-weak">
+                            <td><strong>蛋白质质控</strong></td>
+                            <td><strong>系统架构</strong></td>
+                            <td>泛素化标记：质量控制与选择性降解</td>
+                            <td>模型剪枝、量化</td>
+                            <td><span class="tag tag-amber">⭐</span></td>
+                            <td>压缩策略缺少质量感知的选择性机制</td>
+                            <td><span class="tag tag-blue">P2</span></td>
+                        </tr>
+
+                        <!-- 膜运输 × 数据流管理 -->
+                        <tr class="mapping-weak">
+                            <td><strong>膜运输</strong></td>
+                            <td><strong>系统架构</strong></td>
+                            <td>囊泡运输：选择性包装与定向投递</td>
+                            <td>数据管道、批处理</td>
+                            <td><span class="tag tag-amber">⭐</span></td>
+                            <td>数据流缺少选择性路由和质量检查</td>
+                            <td><span class="tag tag-blue">P2</span></td>
+                        </tr>
+
+                        <!-- 细胞周期 × 训练调度 -->
+                        <tr class="mapping-weak">
+                            <td><strong>细胞周期</strong></td>
+                            <td><strong>系统架构</strong></td>
+                            <td>检查点机制：G1/S、G2/M 检查点</td>
+                            <td>训练验证、早停</td>
+                            <td><span class="tag tag-amber">⭐</span></td>
+                            <td>训练检查点缺少多阶段门控逻辑</td>
+                            <td><span class="tag tag-blue">P2</span></td>
+                        </tr>
+
+                        <!-- 细胞死亡 × 模型退役 -->
+                        <tr class="mapping-weak">
+                            <td><strong>细胞死亡</strong></td>
+                            <td><strong>系统架构</strong></td>
+                            <td>凋亡：程序性死亡与资源回收</td>
+                            <td>模型版本管理、资源释放</td>
+                            <td><span class="tag tag-amber">⭐</span></td>
+                            <td>模型退役缺少程序性清理机制</td>
+                            <td><span class="tag tag-blue">P2</span></td>
+                        </tr>
+
+                        <!-- 代谢调控 × 资源管理 -->
+                        <tr class="mapping-medium">
+                            <td><strong>代谢调控</strong></td>
+                            <td><strong>系统架构</strong></td>
+                            <td>负反馈调控：产物抑制与稳态维持</td>
+                            <td>梯度裁剪、学习率衰减</td>
+                            <td><span class="tag tag-blue">⭐⭐</span></td>
+                            <td>反馈机制缺少多尺度协调</td>
+                            <td><span class="tag tag-blue">P2</span></td>
+                        </tr>
+
+                        <!-- 发育分化 × 架构搜索 -->
+                        <tr class="mapping-medium">
+                            <td><strong>发育分化</strong></td>
+                            <td><strong>神经形态</strong></td>
+                            <td>形态发生素梯度：位置编码与全局协调</td>
+                            <td>NAS、架构搜索</td>
+                            <td><span class="tag tag-blue">⭐⭐</span></td>
+                            <td>架构搜索缺少全局协调信号</td>
+                            <td><span class="tag tag-amber">P1</span></td>
+                        </tr>
+
+                        <!-- 进化适应 × 神经进化 -->
+                        <tr class="mapping-medium">
+                            <td><strong>进化适应</strong></td>
+                            <td><strong>强化学习</strong></td>
+                            <td>自然选择：适应度驱动的种群优化</td>
+                            <td>遗传算法、进化策略</td>
+                            <td><span class="tag tag-blue">⭐⭐</span></td>
+                            <td>缺少红皇后式协同进化动力学</td>
+                            <td><span class="tag tag-blue">P2</span></td>
+                        </tr>
+
+                        <!-- 细胞通讯 × 多智能体 -->
+                        <tr class="mapping-medium">
+                            <td><strong>细胞通讯</strong></td>
+                            <td><strong>多模态</strong></td>
+                            <td>旁分泌信号：局部扩散与邻域协调</td>
+                            <td>多智能体通信、分布式协作</td>
+                            <td><span class="tag tag-blue">⭐⭐</span></td>
+                            <td>多智能体系统过度依赖中心化协调</td>
+                            <td><span class="tag tag-blue">P2</span></td>
+                        </tr>
+
+                        <!-- 神经可塑性 × 深度架构 -->
+                        <tr class="mapping-medium">
+                            <td>神经可塑性</td>
+                            <td>深度架构</td>
+                            <td>Hebbian 学习：同步激活的神经元连接增强</td>
+                            <td>自注意力、Transformer</td>
+                            <td><span class="tag tag-blue">⭐⭐</span></td>
+                            <td>缺少活动依赖的连接权重调节</td>
+                            <td><span class="tag tag-blue">P2</span></td>
+                        </tr>
+
+                        <!-- 免疫系统 × 异常检测 -->
+                        <tr class="mapping-medium">
+                            <td>免疫系统</td>
+                            <td>对抗鲁棒性</td>
+                            <td>自我/非我识别：阴性选择与中枢耐受</td>
+                            <td>异常检测、OOD 检测</td>
+                            <td><span class="tag tag-blue">⭐⭐</span></td>
+                            <td>缺少自我表征的动态更新机制</td>
+                            <td><span class="tag tag-blue">P2</span></td>
+                        </tr>
+
+                        <!-- 应激响应 × 模型适应 -->
+                        <tr class="mapping-weak">
+                            <td>应激响应</td>
+                            <td>持续学习</td>
+                            <td>热休克蛋白：应激下的蛋白质折叠辅助</td>
+                            <td>模型微调、领域适应</td>
+                            <td><span class="tag tag-amber">⭐</span></td>
+                            <td>缺少应激感知的适应性调节</td>
+                            <td><span class="tag tag-blue">P2</span></td>
+                        </tr>
+
+                        <!-- 能量代谢 × 模型压缩 -->
+                        <tr class="mapping-weak">
+                            <td>能量代谢</td>
+                            <td>系统架构</td>
+                            <td>糖酵解/氧化磷酸化切换：能量效率权衡</td>
+                            <td>模型压缩、知识蒸馏</td>
+                            <td><span class="tag tag-amber">⭐</span></td>
+                            <td>压缩策略缺少能量效率感知</td>
+                            <td><span class="tag tag-blue">P2</span></td>
+                        </tr>
+
+                        <!-- 信号转导 × 多模态融合 -->
+                        <tr class="mapping-medium">
+                            <td>信号转导</td>
+                            <td>多模态</td>
+                            <td>MAPK 级联：信号放大与特异性传递</td>
+                            <td>跨模态注意力、特征融合</td>
+                            <td><span class="tag tag-blue">⭐⭐</span></td>
+                            <td>跨模态融合缺少级联放大机制</td>
+                            <td><span class="tag tag-blue">P2</span></td>
+                        </tr>
+
+                        <!-- 基因调控 × 提示工程 -->
+                        <tr class="mapping-weak">
+                            <td>基因调控</td>
+                            <td>知识表示</td>
+                            <td>转录因子：序列特异性基因表达调控</td>
+                            <td>提示工程、上下文学习</td>
+                            <td><span class="tag tag-amber">⭐</span></td>
+                            <td>提示缺少组合式调控逻辑</td>
+                            <td><span class="tag tag-blue">P2</span></td>
+                        </tr>
+
+                        <!-- 蛋白质质控 × 梯度优化 -->
+                        <tr class="mapping-weak">
+                            <td>蛋白质质控</td>
+                            <td>深度架构</td>
+                            <td>分子伴侣：辅助蛋白质正确折叠</td>
+                            <td>梯度裁剪、归一化</td>
+                            <td><span class="tag tag-amber">⭐</span></td>
+                            <td>优化器缺少质量感知的辅助机制</td>
+                            <td><span class="tag tag-blue">P2</span></td>
+                        </tr>
+
+                        <!-- 膜运输 × 注意力机制 -->
+                        <tr class="mapping-weak">
+                            <td>膜运输</td>
+                            <td>深度架构</td>
+                            <td>受体介导的内吞：选择性摄取</td>
+                            <td>注意力门控、选择性激活</td>
+                            <td><span class="tag tag-amber">⭐</span></td>
+                            <td>注意力缺少受体式选择性机制</td>
+                            <td><span class="tag tag-blue">P2</span></td>
+                        </tr>
+
+                        <!-- 细胞周期 × 课程学习 -->
+                        <tr class="mapping-weak">
+                            <td>细胞周期</td>
+                            <td>元学习</td>
+                            <td>细胞周期调控：阶段性进展与检查点</td>
+                            <td>课程学习、渐进式训练</td>
+                            <td><span class="tag tag-amber">⭐</span></td>
+                            <td>课程学习缺少检查点门控</td>
+                            <td><span class="tag tag-blue">P2</span></td>
+                        </tr>
+
+                        <!-- 细胞死亡 × 神经元剪枝 -->
+                        <tr class="mapping-weak">
+                            <td>细胞死亡</td>
+                            <td>深度架构</td>
+                            <td>凋亡信号通路：Caspase 级联激活</td>
+                            <td>神经元剪枝、Dropout</td>
+                            <td><span class="tag tag-amber">⭐</span></td>
+                            <td>剪枝缺少程序性级联机制</td>
+                            <td><span class="tag tag-blue">P2</span></td>
+                        </tr>
+
+                        <!-- 代谢调控 × 学习率调度 -->
+                        <tr class="mapping-weak">
+                            <td>代谢调控</td>
+                            <td>深度架构</td>
+                            <td>别构调节：代谢物反馈调控酶活性</td>
+                            <td>学习率调度、自适应优化器</td>
+                            <td><span class="tag tag-amber">⭐</span></td>
+                            <td>学习率调度缺少代谢物式反馈</td>
+                            <td><span class="tag tag-blue">P2</span></td>
+                        </tr>
+
+                        <!-- 发育分化 × 模型演化 -->
+                        <tr class="mapping-weak">
+                            <td>发育分化</td>
+                            <td>神经形态</td>
+                            <td>细胞命运决定：多能性到特化的不可逆转变</td>
+                            <td>模型特化、任务适配</td>
+                            <td><span class="tag tag-amber">⭐</span></td>
+                            <td>模型特化缺少发育式渐进机制</td>
+                            <td><span class="tag tag-blue">P2</span></td>
+                        </tr>
+
+                        <!-- 进化适应 × 超参数优化 -->
+                        <tr class="mapping-weak">
+                            <td>进化适应</td>
+                            <td>元学习</td>
+                            <td>遗传漂变与基因流：种群多样性维持</td>
+                            <td>超参数搜索、贝叶斯优化</td>
+                            <td><span class="tag tag-amber">⭐</span></td>
+                            <td>超参数搜索缺少种群多样性机制</td>
+                            <td><span class="tag tag-blue">P2</span></td>
+                        </tr>
+
+                        <!-- 神经可塑性 × 强化学习 -->
+                        <tr class="mapping-medium">
+                            <td>神经可塑性</td>
+                            <td>强化学习</td>
+                            <td>多巴胺调节：奖励预测误差编码</td>
+                            <td>TD 学习、策略梯度</td>
+                            <td><span class="tag tag-blue">⭐⭐</span></td>
+                            <td>RL 缺少神经调质式多尺度调节</td>
+                            <td><span class="tag tag-blue">P2</span></td>
+                        </tr>
+
+                        <!-- 免疫系统 × 联邦学习 -->
+                        <tr class="mapping-weak">
+                            <td>免疫系统</td>
+                            <td>联邦学习</td>
+                            <td>淋巴细胞循环：局部免疫与全局协调</td>
+                            <td>联邦学习、分布式训练</td>
+                            <td><span class="tag tag-amber">⭐</span></td>
+                            <td>联邦学习缺少免疫式局部-全局协调</td>
+                            <td><span class="tag tag-blue">P2</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="section section-compact">
+            <div class="section-header reveal">
+                <div class="eyebrow">Priority distribution</div>
+                <h2>优先级分布统计</h2>
+            </div>
+            <div class="stats-grid reveal">
+                <div class="metric-card">
+                    <div class="metric-value glow-green" data-count="3">0</div>
+                    <div class="metric-label">P0 立即实施</div>
+                    <p style="margin: 8px 0 0; font-size: 12px; color: var(--text-muted);">已有原型验证</p>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value glow-blue" data-count="7">0</div>
+                    <div class="metric-label">P1 短期规划</div>
+                    <p style="margin: 8px 0 0; font-size: 12px; color: var(--text-muted);">高潜力方向</p>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value glow-purple" data-count="22">0</div>
+                    <div class="metric-label">P2 长期探索</div>
+                    <p style="margin: 8px 0 0; font-size: 12px; color: var(--text-muted);">待深入研究</p>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value" data-count="163">0</div>
+                    <div class="metric-label">待探索映射</div>
+                    <p style="margin: 8px 0 0; font-size: 12px; color: var(--text-muted);">195 - 32 = 163</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="js/components.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+</html>
