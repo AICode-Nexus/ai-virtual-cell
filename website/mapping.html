@@ -99,46 +99,71 @@
             </div>
         </section>
 
-        <section class="section">
+        <section class=”section”>
             <div class=”section-header reveal”>
                 <div class=”eyebrow”>High-value cases</div>
-                <h2>八个高价值映射案例</h2>
-                <p>下面不是”生物概念→AI 名词”的静态表，而是从机制、缺口到设计方向的完整映射链条。涵盖 P0 已实现原型、P1 高潜力方向和 P2 长期探索领域。</p>
+                <h2>十二个高价值映射案例</h2>
+                <p>从 P0 已实现原型到 P2 长期探索，完整覆盖持续学习、安全对齐、系统容错、元学习、架构搜索、计算效率六大方向。每个案例都展开为：生物机制 → AI 原语 → 当前缺口 → 可实现结构 → 重要性分析。</p>
+            </div>
+
+            <div class=”reveal” style=”margin-bottom: 32px;”>
+                <div style=”display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;”>
+                    <button class=”btn btn-outline priority-filter active” data-priority=”all”>全部显示</button>
+                    <button class=”btn btn-outline priority-filter” data-priority=”p0”>P0 已实现 (3)</button>
+                    <button class=”btn btn-outline priority-filter” data-priority=”p1”>P1 高潜力 (7)</button>
+                    <button class=”btn btn-outline priority-filter” data-priority=”p2”>P2 长期探索 (2)</button>
+                </div>
             </div>
 
             <div class="case-shell reveal">
                 <div class="case-nav" role="tablist" aria-label="高价值映射案例">
-                    <button class="case-tab active" data-case="dual-gate" role="tab" aria-selected="true">
+                    <button class="case-tab active" data-case="dual-gate" data-priority="p0" role="tab" aria-selected="true">
                         <strong>双重门控学习</strong>
                         <span>突触标记 → 选择性巩固</span>
                     </button>
-                    <button class="case-tab" data-case="immune" role="tab" aria-selected="false">
+                    <button class="case-tab" data-case="immune" data-priority="p0" role="tab" aria-selected="false">
                         <strong>免疫检查点对齐</strong>
                         <span>抑制受体 → 动态阈值</span>
                     </button>
-                    <button class="case-tab" data-case="stress" role="tab" aria-selected="false">
+                    <button class="case-tab" data-case="stress" data-priority="p0" role="tab" aria-selected="false">
                         <strong>分层应激响应</strong>
                         <span>UPR 三臂 → 分级容错</span>
                     </button>
-                    <button class="case-tab" data-case="epigenetic" role="tab" aria-selected="false">
+                    <button class="case-tab" data-case="epigenetic" data-priority="p1" role="tab" aria-selected="false">
                         <strong>表观遗传元学习</strong>
                         <span>环境记忆 → 快速适配</span>
                     </button>
-                    <button class="case-tab" data-case="metabolic" role="tab" aria-selected="false">
+                    <button class="case-tab" data-case="metabolic" data-priority="p1" role="tab" aria-selected="false">
                         <strong>代谢式算力调度</strong>
                         <span>能量约束 → 预算分配</span>
                     </button>
-                    <button class="case-tab" data-case="signal" role="tab" aria-selected="false">
+                    <button class="case-tab" data-case="signal" data-priority="p1" role="tab" aria-selected="false">
                         <strong>信号转导级联</strong>
                         <span>多通路整合 → 注意力反馈</span>
                     </button>
-                    <button class="case-tab" data-case="communication" role="tab" aria-selected="false">
+                    <button class="case-tab" data-case="communication" data-priority="p2" role="tab" aria-selected="false">
                         <strong>细胞通讯协议</strong>
                         <span>旁分泌信号 → 去中心协作</span>
                     </button>
-                    <button class="case-tab" data-case="morphogen" role="tab" aria-selected="false">
+                    <button class="case-tab" data-case="morphogen" data-priority="p1" role="tab" aria-selected="false">
                         <strong>形态发生素梯度</strong>
                         <span>位置编码 → 架构搜索</span>
+                    </button>
+                    <button class="case-tab" data-case="metaplasticity" data-priority="p1" role="tab" aria-selected="false">
+                        <strong>活动依赖元学习</strong>
+                        <span>学习规则可塑性 → 自适应优化</span>
+                    </button>
+                    <button class="case-tab" data-case="attack-memory" data-priority="p1" role="tab" aria-selected="false">
+                        <strong>攻击模式记忆</strong>
+                        <span>免疫记忆 → 快速防御</span>
+                    </button>
+                    <button class="case-tab" data-case="autophagy" data-priority="p2" role="tab" aria-selected="false">
+                        <strong>自噬式模型修复</strong>
+                        <span>选择性降解 → 自动修复</span>
+                    </button>
+                    <button class="case-tab" data-case="energy-metabolism" data-priority="p1" role="tab" aria-selected="false">
+                        <strong>能量代谢调控</strong>
+                        <span>ATP 感知 → 效率优化</span>
                     </button>
                 </div>
 
@@ -557,6 +582,214 @@
                         <p class="body-copy">形态发生素展示了如何用简单的梯度信号协调复杂的空间模式。这种全局-局部协调机制能让架构搜索更高效、更一致。</p>
                     </div>
                 </article>
+
+                <article class="case-panel" id="case-metaplasticity" role="tabpanel">
+                    <div class="case-header">
+                        <div>
+                            <span class="tag tag-amber">高潜力待实现</span>
+                            <h3 class="case-title">活动依赖的元学习 → 自适应学习规则</h3>
+                            <p class="case-subtitle">核心关系：不只是学习任务本身，还要学习"如何学习"，根据任务特性动态调整学习规则。</p>
+                        </div>
+                        <div class="inline-stack">
+                            <span class="tag tag-purple">元学习</span>
+                            <span class="tag tag-blue">持续学习</span>
+                        </div>
+                    </div>
+                    <div class="case-grid">
+                        <section class="case-block">
+                            <h4>生物机制</h4>
+                            <ul class="mapping-list" style="color: var(--green);">
+                                <li>元可塑性：突触可塑性本身的可塑性，学习规则会根据历史活动调整。</li>
+                                <li>BCM 理论：突触修改阈值根据突触后活动历史滑动。</li>
+                                <li>活动依赖调节：高频刺激后 LTP 阈值降低，低频后升高。</li>
+                            </ul>
+                        </section>
+                        <section class="case-block">
+                            <h4>AI 中对应的控制原语</h4>
+                            <ul class="mapping-list" style="color: var(--blue);">
+                                <li>学习率不只是超参数，而应根据任务特性和历史表现动态调整。</li>
+                                <li>优化器参数应该是可学习的，而不是固定的。</li>
+                                <li>不同任务应该有不同的学习规则偏好。</li>
+                            </ul>
+                        </section>
+                        <section class="case-block">
+                            <h4>当前 AI 缺口</h4>
+                            <ul class="mapping-list" style="color: var(--amber);">
+                                <li>MAML 等元学习方法主要学习初始化，不学习学习规则本身。</li>
+                                <li>学习率调度通常是预定义的，缺少活动依赖的自适应。</li>
+                                <li>优化器选择是离线决策，不会根据任务动态切换。</li>
+                            </ul>
+                        </section>
+                        <section class="case-block">
+                            <h4>可实现的新结构</h4>
+                            <ul class="mapping-list" style="color: var(--purple);">
+                                <li>引入元可塑性层：根据任务历史调整学习率、动量等超参数。</li>
+                                <li>设计活动依赖的阈值：根据梯度历史动态调整更新强度。</li>
+                                <li>实现学习规则库：为不同任务类型匹配最优学习规则。</li>
+                            </ul>
+                        </section>
+                    </div>
+                    <div class="case-foot">
+                        <h4>为什么这个映射重要</h4>
+                        <p class="body-copy">元可塑性展示了"学习如何学习"的生物实现。这比当前元学习方法更深一层，能让模型根据任务特性自适应调整学习策略。</p>
+                    </div>
+                </article>
+
+                <article class="case-panel" id="case-attack-memory" role="tabpanel">
+                    <div class="case-header">
+                        <div>
+                            <span class="tag tag-amber">高潜力待实现</span>
+                            <h3 class="case-title">攻击模式记忆库 → 快速防御响应</h3>
+                            <p class="case-subtitle">核心关系：不是每次都从头识别攻击，而是记住已知攻击模式，实现快速二次响应。</p>
+                        </div>
+                        <div class="inline-stack">
+                            <span class="tag tag-red">安全对齐</span>
+                            <span class="tag tag-blue">对抗鲁棒性</span>
+                        </div>
+                    </div>
+                    <div class="case-grid">
+                        <section class="case-block">
+                            <h4>生物机制</h4>
+                            <ul class="mapping-list" style="color: var(--green);">
+                                <li>免疫记忆细胞：首次感染后产生记忆 B/T 细胞。</li>
+                                <li>快速二次响应：再次遇到同一抗原时，响应速度快 10-100 倍。</li>
+                                <li>交叉反应性：记忆细胞能识别相似但不完全相同的抗原变体。</li>
+                            </ul>
+                        </section>
+                        <section class="case-block">
+                            <h4>AI 中对应的控制原语</h4>
+                            <ul class="mapping-list" style="color: var(--blue);">
+                                <li>建立攻击模式向量库，存储已知攻击的特征表示。</li>
+                                <li>新输入先与记忆库快速匹配，命中则直接拦截。</li>
+                                <li>支持模糊匹配，识别攻击的变体和改写。</li>
+                            </ul>
+                        </section>
+                        <section class="case-block">
+                            <h4>当前 AI 缺口</h4>
+                            <ul class="mapping-list" style="color: var(--amber);">
+                                <li>安全系统通常每次都完整推理，缺少快速路径。</li>
+                                <li>已知攻击模式没有被系统性记忆和复用。</li>
+                                <li>攻击变体识别依赖重新训练，不是记忆匹配。</li>
+                            </ul>
+                        </section>
+                        <section class="case-block">
+                            <h4>可实现的新结构</h4>
+                            <ul class="mapping-list" style="color: var(--purple);">
+                                <li>构建攻击模式向量数据库，用 embedding 存储已知攻击。</li>
+                                <li>实现两阶段检测：先快速记忆匹配，未命中再完整推理。</li>
+                                <li>设计相似度阈值：平衡召回率和误报率。</li>
+                            </ul>
+                        </section>
+                    </div>
+                    <div class="case-foot">
+                        <h4>为什么这个映射重要</h4>
+                        <p class="body-copy">免疫记忆展示了如何用记忆加速防御。这对安全系统特别有价值，因为大部分攻击是已知模式的变体，不需要每次都完整推理。</p>
+                    </div>
+                </article>
+
+                <article class="case-panel" id="case-autophagy" role="tabpanel">
+                    <div class="case-header">
+                        <div>
+                            <span class="tag tag-blue">长期探索方向</span>
+                            <h3 class="case-title">自噬式模型修复 → 自动组件清理</h3>
+                            <p class="case-subtitle">核心关系：不是等模型完全损坏再重训，而是持续识别并清理损坏组件，保持系统健康。</p>
+                        </div>
+                        <div class="inline-stack">
+                            <span class="tag tag-amber">系统鲁棒性</span>
+                            <span class="tag tag-purple">模型维护</span>
+                        </div>
+                    </div>
+                    <div class="case-grid">
+                        <section class="case-block">
+                            <h4>生物机制</h4>
+                            <ul class="mapping-list" style="color: var(--green);">
+                                <li>选择性自噬：识别并降解受损的蛋白质、细胞器。</li>
+                                <li>质量控制标签：泛素化标记损坏组分。</li>
+                                <li>持续清理：自噬是持续进行的维护过程，不是应急响应。</li>
+                            </ul>
+                        </section>
+                        <section class="case-block">
+                            <h4>AI 中对应的控制原语</h4>
+                            <ul class="mapping-list" style="color: var(--blue);">
+                                <li>持续监控模型组件健康度：梯度异常、输出质量、激活分布。</li>
+                                <li>识别损坏组件：神经元死亡、权重退化、注意力头失效。</li>
+                                <li>自动修复或替换：重新初始化、从检查点恢复、剪枝后重训。</li>
+                            </ul>
+                        </section>
+                        <section class="case-block">
+                            <h4>当前 AI 缺口</h4>
+                            <ul class="mapping-list" style="color: var(--amber);">
+                                <li>模型维护通常是被动的，等到性能下降才干预。</li>
+                                <li>缺少组件级健康度评估机制。</li>
+                                <li>修复策略通常是全局的（重训整个模型），不是局部的。</li>
+                            </ul>
+                        </section>
+                        <section class="case-block">
+                            <h4>可实现的新结构</h4>
+                            <ul class="mapping-list" style="color: var(--purple);">
+                                <li>设计组件健康度指标：梯度范数、激活熵、输出方差。</li>
+                                <li>实现持续监控：在推理和训练过程中实时评估。</li>
+                                <li>建立修复策略库：重初始化、权重回滚、剪枝、知识蒸馏。</li>
+                            </ul>
+                        </section>
+                    </div>
+                    <div class="case-foot">
+                        <h4>为什么这个映射重要</h4>
+                        <p class="body-copy">自噬展示了持续维护而非被动修复的价值。对长期运行的生产模型，这种主动维护机制能延长模型寿命，减少突发故障。</p>
+                    </div>
+                </article>
+
+                <article class="case-panel" id="case-energy-metabolism" role="tabpanel">
+                    <div class="case-header">
+                        <div>
+                            <span class="tag tag-amber">高潜力待实现</span>
+                            <h3 class="case-title">能量代谢调控 → 计算效率优化</h3>
+                            <p class="case-subtitle">核心关系：不是所有计算都用同样资源，而是根据能量状态和任务优先级动态分配计算预算。</p>
+                        </div>
+                        <div class="inline-stack">
+                            <span class="tag tag-green">计算效率</span>
+                            <span class="tag tag-blue">系统架构</span>
+                        </div>
+                    </div>
+                    <div class="case-grid">
+                        <section class="case-block">
+                            <h4>生物机制</h4>
+                            <ul class="mapping-list" style="color: var(--green);">
+                                <li>ATP 感知：AMPK 等传感器监测能量状态。</li>
+                                <li>代谢流重定向：低能量时抑制合成代谢，激活分解代谢。</li>
+                                <li>优先级调度：关键过程优先获得 ATP，非必需过程暂停。</li>
+                            </ul>
+                        </section>
+                        <section class="case-block">
+                            <h4>AI 中对应的控制原语</h4>
+                            <ul class="mapping-list" style="color: var(--blue);">
+                                <li>计算预算感知：模型内部知道当前可用算力和延迟约束。</li>
+                                <li>动态深度：根据任务难度和预算决定推理深度。</li>
+                                <li>选择性计算：跳过不必要的层、头、专家模块。</li>
+                            </ul>
+                        </section>
+                        <section class="case-block">
+                            <h4>当前 AI 缺口</h4>
+                            <ul class="mapping-list" style="color: var(--amber);">
+                                <li>模型通常不知道自己的计算成本和可用预算。</li>
+                                <li>推理深度通常是固定的，不会根据任务动态调整。</li>
+                                <li>计算优化主要在外围（批处理、量化），不在模型决策内部。</li>
+                            </ul>
+                        </section>
+                        <section class="case-block">
+                            <h4>可实现的新结构</h4>
+                            <ul class="mapping-list" style="color: var(--purple);">
+                                <li>引入计算预算 token：作为额外输入传递给模型。</li>
+                                <li>实现早退机制：简单任务提前退出，复杂任务用完全部层。</li>
+                                <li>设计选择性激活：根据预算动态决定激活哪些专家/头。</li>
+                            </ul>
+                        </section>
+                    </div>
+                    <div class="case-foot">
+                        <h4>为什么这个映射重要</h4>
+                        <p class="body-copy">能量代谢调控展示了如何在资源约束下做智能决策。这对边缘设备、实时系统和大规模部署特别重要，能在保持能力的同时大幅降低成本。</p>
+                    </div>
+                </article>
             </div>
         </section>
 
@@ -637,6 +870,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             const tabs = Array.from(document.querySelectorAll('.case-tab'));
             const panels = Array.from(document.querySelectorAll('.case-panel'));
+            const filters = Array.from(document.querySelectorAll('.priority-filter'));
 
             function activateCase(id) {
                 tabs.forEach((tab) => {
@@ -649,8 +883,35 @@
                 });
             }
 
+            function filterByPriority(priority) {
+                filters.forEach((filter) => {
+                    filter.classList.toggle('active', filter.dataset.priority === priority);
+                });
+
+                if (priority === 'all') {
+                    tabs.forEach((tab) => {
+                        tab.style.display = '';
+                    });
+                } else {
+                    tabs.forEach((tab) => {
+                        const matches = tab.dataset.priority === priority;
+                        tab.style.display = matches ? '' : 'none';
+                    });
+                }
+
+                // Activate first visible tab
+                const firstVisible = tabs.find((tab) => tab.style.display !== 'none');
+                if (firstVisible) {
+                    activateCase(firstVisible.dataset.case);
+                }
+            }
+
             tabs.forEach((tab) => {
                 tab.addEventListener('click', () => activateCase(tab.dataset.case));
+            });
+
+            filters.forEach((filter) => {
+                filter.addEventListener('click', () => filterByPriority(filter.dataset.priority));
             });
         });
     </script>

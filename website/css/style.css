@@ -342,6 +342,13 @@ button { cursor: pointer; }
     box-shadow: 0 10px 28px rgba(84, 169, 255, 0.12);
 }
 
+.priority-filter.active {
+    color: var(--text-primary);
+    background: linear-gradient(135deg, rgba(84,169,255,0.18), rgba(84,169,255,0.08));
+    border-color: rgba(84,169,255,0.4);
+    box-shadow: 0 8px 20px rgba(84,169,255,0.16);
+}
+
 .tag {
     display: inline-flex;
     align-items: center;
