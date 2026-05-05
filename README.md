@@ -5,6 +5,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Discussions](https://img.shields.io/github/discussions/AICode-Nexus/ai-virtual-cell)](https://github.com/AICode-Nexus/ai-virtual-cell/discussions)
 [![Website](https://img.shields.io/badge/website-online-green)](https://aicode-nexus.github.io/ai-virtual-cell)
+[![GitHub Pages](https://img.shields.io/github/actions/workflow/status/AICode-Nexus/ai-virtual-cell/deploy-pages.yml?label=pages)](https://github.com/AICode-Nexus/ai-virtual-cell/actions/workflows/deploy-pages.yml)
 
 ## 🌟 项目愿景
 
@@ -22,6 +23,9 @@ AI Virtual Cell 是一个革命性的 AI 架构项目，通过模拟生物细胞
 - [生物学映射](docs/BIOLOGY_MAPPING.md) - 生物学概念到计算架构的映射
 - [架构设计](docs/ARCHITECTURE.md) - 系统架构详解
 - [实施路线图](docs/ROADMAP.md) - 开发计划和里程碑
+- [P0 创新原型](src/innovations/README.md) - 三个高优先级创新的参考实现
+- [项目完成报告](docs/PROJECT_COMPLETION_REPORT.md) - 知识映射与创新机会分析
+- [知识映射框架](docs/knowledge-mapping/README.md) - 13×15 映射矩阵
 
 ## 🌐 参与讨论
 
@@ -52,12 +56,13 @@ cd ai-virtual-cell
 cat docs/DESIGN.md
 ```
 
-### 本地运行讨论网站
+### 本地预览网站
 
 ```bash
 cd website
-npm install
-npm run dev
+# 使用任意静态文件服务器
+python3 -m http.server 8000
+# 访问 http://localhost:8000
 ```
 
 ## 📖 核心概念
@@ -98,14 +103,25 @@ AI Virtual Cell 的优势：
 
 ## 🛣️ 项目状态
 
-**当前阶段**：设计方案评审
+**当前阶段**：设计方案评审 + P0 创新原型完成
 
 - [x] 核心理念确定
-- [x] 生物学映射完成
+- [x] 生物学映射完成（13/13 生物系统）
+- [x] AI 知识库完成（15/15 AI 领域）
 - [x] 架构设计初稿
+- [x] P0 创新原型实现（3/3）
+- [x] 项目网站上线（GitHub Pages）
 - [ ] 社区讨论和反馈
-- [ ] 原型实现
-- [ ] 概念验证
+- [ ] PyTorch/JAX 集成
+- [ ] 标准基准测试验证
+
+### 🔬 P0 创新成果
+
+| 创新 | 生物学基础 | AI 缺口 | 目标发表 |
+|------|-----------|---------|---------|
+| 双重门控持续学习 | 突触标记与捕获 (STC) | 灾难性遗忘 | NeurIPS 2027 |
+| 免疫检查点式对齐 | PD-1/CTLA-4 检查点 | 过度拒绝 | ICLR 2028 |
+| 分层应激响应系统 | UPR 三臂机制 | 粗粒度容错 | MLSys 2027 |
 
 ## 🤝 如何贡献
 
