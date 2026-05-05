@@ -478,9 +478,30 @@
                             </ul>
                         </section>
                     </div>
-                    <div class="case-foot">
+                    <div class=”case-foot”>
                         <h4>为什么这个映射重要</h4>
-                        <p class="body-copy">这类映射的价值在于把“环境适应”从隐式现象变成显式结构。它有机会改变少样本与长期部署系统对环境变化的反应方式。</p>
+                        <p class=”body-copy”>这类映射的价值在于把”环境适应”从隐式现象变成显式结构。它有机会改变少样本与长期部署系统对环境变化的反应方式。</p>
+                    </div>
+                    <div class=”case-foot” style=”margin-top: 18px; border-color: rgba(240,179,74,0.14); background: linear-gradient(180deg, rgba(240,179,74,0.08), rgba(240,179,74,0.03));”>
+                        <h4>实验设计与基准测试</h4>
+                        <div style=”display: grid; gap: 14px; margin-top: 12px;”>
+                            <div>
+                                <strong style=”color: var(--text-primary); font-size: 14px;”>基准数据集</strong>
+                                <p class=”body-copy” style=”margin: 6px 0 0; font-size: 13px;”>Meta-World、Meta-Dataset、Few-shot learning benchmarks</p>
+                            </div>
+                            <div>
+                                <strong style=”color: var(--text-primary); font-size: 14px;”>评估指标</strong>
+                                <p class=”body-copy” style=”margin: 6px 0 0; font-size: 13px;”>Few-shot 准确率、适应速度、环境切换开销、记忆保持时长</p>
+                            </div>
+                            <div>
+                                <strong style=”color: var(--text-primary); font-size: 14px;”>对比基线</strong>
+                                <p class=”body-copy” style=”margin: 6px 0 0; font-size: 13px;”>MAML、Reptile、ProtoNet、Meta-SGD</p>
+                            </div>
+                            <div>
+                                <strong style=”color: var(--text-primary); font-size: 14px;”>预期结果</strong>
+                                <p class=”body-copy” style=”margin: 6px 0 0; font-size: 13px;”>适应速度提升 40%+，环境切换开销降低 50%，记忆保持 10+ 轮</p>
+                            </div>
+                        </div>
                     </div>
                 </article>
 
@@ -742,6 +763,27 @@
                         <h4>为什么这个映射重要</h4>
                         <p class="body-copy">元可塑性展示了"学习如何学习"的生物实现。这比当前元学习方法更深一层，能让模型根据任务特性自适应调整学习策略。</p>
                     </div>
+                    <div class="case-foot" style="margin-top: 18px; border-color: rgba(240,179,74,0.14); background: linear-gradient(180deg, rgba(240,179,74,0.08), rgba(240,179,74,0.03));">
+                        <h4>实验设计与基准测试</h4>
+                        <div style="display: grid; gap: 14px; margin-top: 12px;">
+                            <div>
+                                <strong style="color: var(--text-primary); font-size: 14px;">基准数据集</strong>
+                                <p class="body-copy" style="margin: 6px 0 0; font-size: 13px;">Omniglot、Mini-ImageNet、跨域迁移任务集</p>
+                            </div>
+                            <div>
+                                <strong style="color: var(--text-primary); font-size: 14px;">评估指标</strong>
+                                <p class="body-copy" style="margin: 6px 0 0; font-size: 13px;">学习率自适应质量、跨任务泛化、收敛速度、超参数敏感度</p>
+                            </div>
+                            <div>
+                                <strong style="color: var(--text-primary); font-size: 14px;">对比基线</strong>
+                                <p class="body-copy" style="margin: 6px 0 0; font-size: 13px;">固定学习率、学习率调度、AdaGrad、Adam、MAML</p>
+                            </div>
+                            <div>
+                                <strong style="color: var(--text-primary); font-size: 14px;">预期结果</strong>
+                                <p class="body-copy" style="margin: 6px 0 0; font-size: 13px;">收敛速度提升 30%+，跨任务泛化提升 20%，超参数敏感度降低 40%</p>
+                            </div>
+                        </div>
+                    </div>
                 </article>
 
                 <article class="case-panel" id="case-attack-memory" role="tabpanel">
@@ -793,6 +835,27 @@
                     <div class="case-foot">
                         <h4>为什么这个映射重要</h4>
                         <p class="body-copy">免疫记忆展示了如何用记忆加速防御。这对安全系统特别有价值，因为大部分攻击是已知模式的变体，不需要每次都完整推理。</p>
+                    </div>
+                    <div class="case-foot" style="margin-top: 18px; border-color: rgba(240,179,74,0.14); background: linear-gradient(180deg, rgba(240,179,74,0.08), rgba(240,179,74,0.03));">
+                        <h4>实验设计与基准测试</h4>
+                        <div style="display: grid; gap: 14px; margin-top: 12px;">
+                            <div>
+                                <strong style="color: var(--text-primary); font-size: 14px;">基准数据集</strong>
+                                <p class="body-copy" style="margin: 6px 0 0; font-size: 13px;">AdvBench、JailbreakBench、攻击变体数据集</p>
+                            </div>
+                            <div>
+                                <strong style="color: var(--text-primary); font-size: 14px;">评估指标</strong>
+                                <p class="body-copy" style="margin: 6px 0 0; font-size: 13px;">首次检测延迟、二次响应速度、变体识别率、误报率</p>
+                            </div>
+                            <div>
+                                <strong style="color: var(--text-primary); font-size: 14px;">对比基线</strong>
+                                <p class="body-copy" style="margin: 6px 0 0; font-size: 13px;">完整推理、规则匹配、embedding 相似度、微调检测器</p>
+                            </div>
+                            <div>
+                                <strong style="color: var(--text-primary); font-size: 14px;">预期结果</strong>
+                                <p class="body-copy" style="margin: 6px 0 0; font-size: 13px;">二次响应速度提升 50-100x，变体识别率 85%+，误报率 <5%</p>
+                            </div>
+                        </div>
                     </div>
                 </article>
 
