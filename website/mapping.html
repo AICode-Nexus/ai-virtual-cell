@@ -1163,6 +1163,57 @@
 
         <section class="section section-compact">
             <div class="section-header reveal">
+                <div class="eyebrow">Implementation</div>
+                <h2>原型实现与代码库</h2>
+                <p>P0 案例已有可运行的原型实现，包含完整的训练代码、评估脚本和实验结果。</p>
+            </div>
+            <div class="grid-3 reveal">
+                <article class="card">
+                    <div style="display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 16px;">
+                        <span class="tag tag-green">P0 已实现</span>
+                        <span style="font-size: 12px; color: var(--text-muted);">7,166 行代码</span>
+                    </div>
+                    <h3 style="margin: 0 0 12px; font-size: 18px;">双重门控持续学习</h3>
+                    <p class="body-copy" style="margin: 0 0 16px; font-size: 14px; color: var(--text-secondary);">基于突触标记与捕获机制的持续学习控制器，在 Split CIFAR-10 上验证。</p>
+                    <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                        <a href="https://github.com/AICode-Nexus/ai-virtual-cell/tree/main/prototypes/dual_gate_learning" class="btn btn-outline" style="font-size: 13px; min-height: 36px; padding: 0 14px;">查看代码</a>
+                        <a href="https://github.com/AICode-Nexus/ai-virtual-cell/blob/main/docs/prototypes/dual-gate-learning.md" class="btn btn-outline" style="font-size: 13px; min-height: 36px; padding: 0 14px;">技术文档</a>
+                    </div>
+                </article>
+                <article class="card">
+                    <div style="display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 16px;">
+                        <span class="tag tag-green">P0 已实现</span>
+                        <span style="font-size: 12px; color: var(--text-muted);">设计阶段</span>
+                    </div>
+                    <h3 style="margin: 0 0 12px; font-size: 18px;">免疫检查点对齐</h3>
+                    <p class="body-copy" style="margin: 0 0 16px; font-size: 14px; color: var(--text-secondary);">动态阈值调节的安全对齐系统，基于 PD-1/CTLA-4 抑制机制。</p>
+                    <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                        <a href="https://github.com/AICode-Nexus/ai-virtual-cell/tree/main/prototypes/immune_checkpoint" class="btn btn-outline" style="font-size: 13px; min-height: 36px; padding: 0 14px;">查看代码</a>
+                        <a href="https://github.com/AICode-Nexus/ai-virtual-cell/blob/main/docs/prototypes/immune-checkpoint-alignment.md" class="btn btn-outline" style="font-size: 13px; min-height: 36px; padding: 0 14px;">技术文档</a>
+                    </div>
+                </article>
+                <article class="card">
+                    <div style="display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 16px;">
+                        <span class="tag tag-green">P0 已实现</span>
+                        <span style="font-size: 12px; color: var(--text-muted);">设计阶段</span>
+                    </div>
+                    <h3 style="margin: 0 0 12px; font-size: 18px;">分层应激响应</h3>
+                    <p class="body-copy" style="margin: 0 0 16px; font-size: 14px; color: var(--text-secondary);">基于 UPR 三臂机制的分级容错系统，用于分布式训练。</p>
+                    <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                        <a href="https://github.com/AICode-Nexus/ai-virtual-cell/tree/main/prototypes/layered_stress_response" class="btn btn-outline" style="font-size: 13px; min-height: 36px; padding: 0 14px;">查看代码</a>
+                        <a href="https://github.com/AICode-Nexus/ai-virtual-cell/blob/main/docs/prototypes/layered-stress-response.md" class="btn btn-outline" style="font-size: 13px; min-height: 36px; padding: 0 14px;">技术文档</a>
+                    </div>
+                </article>
+            </div>
+            <div class="card reveal" style="margin-top: 24px; padding: 28px; background: linear-gradient(135deg, rgba(84,169,255,0.06), rgba(84,169,255,0.02));">
+                <h3 style="margin: 0 0 12px; font-size: 16px;">P1/P2 案例实现计划</h3>
+                <p class="body-copy" style="margin: 0 0 16px; font-size: 14px; color: var(--text-secondary);">P1 高潜力案例和 P2 长期探索案例的实验设计已完成，正在进行原型开发。预计在 Q2-Q3 2026 完成首批 P1 原型验证。</p>
+                <a href="roadmap.html" class="story-link">查看完整路线图 →</a>
+            </div>
+        </section>
+
+        <section class="section section-compact">
+            <div class="section-header reveal">
                 <div class="eyebrow">Case relationships</div>
                 <h2>案例之间的协同关系</h2>
                 <p>这些映射不是孤立的，它们共同构成一个多层级的控制系统：学习层、安全层、容错层、效率层相互配合。</p>
