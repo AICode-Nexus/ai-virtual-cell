@@ -4,214 +4,192 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>创新成果 - AI Virtual Cell</title>
-    <meta name="description" content="AI Virtual Cell 三个P0级创新原型：双重门控持续学习、免疫检查点式对齐、分层应激响应系统。">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧬</text></svg>">
+    <meta name="description" content="AI Virtual Cell 的三个 P0 创新原型：双重门控持续学习、免疫检查点式对齐、分层应激响应。">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='12' fill='%2335d67f'/><circle cx='50' cy='18' r='6' fill='%2335d67f'/><circle cx='78' cy='34' r='6' fill='%2354a9ff'/><circle cx='78' cy='66' r='6' fill='%23b07bff'/><circle cx='50' cy='82' r='6' fill='%2335d67f'/><circle cx='22' cy='66' r='6' fill='%2354a9ff'/><circle cx='22' cy='34' r='6' fill='%23b07bff'/></svg>">
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
     <div class="page">
-        <!-- Header -->
-        <section class="section" style="padding-bottom: 40px;">
-            <div class="reveal">
-                <p style="color: var(--green); font-size: 14px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px;">P0 Innovations</p>
-                <h1 style="font-size: 42px; font-weight: 800; margin-bottom: 16px;">创新成果</h1>
-                <p style="color: var(--text-secondary); font-size: 18px; max-width: 600px;">三个高优先级创新原型，源自生物系统与 AI 技术的深度映射分析，已完成参考实现。</p>
+        <section class="page-hero compact">
+            <div class="stack reveal visible">
+                <div class="eyebrow">P0 Innovations</div>
+                <h1 class="page-title">三个最先落地的结构创新</h1>
+                <p class="page-subtitle">这三项不是“灵感展示”，而是从知识映射中抽出的最高价值控制逻辑：选择性记忆巩固、动态抑制式对齐、分层应激恢复。它们共同定义了 AI Virtual Cell 的第一批工程入口。</p>
             </div>
         </section>
 
-        <!-- Innovation 1: Dual-Gate -->
-        <section class="section" style="padding-top: 20px;">
-            <div class="card reveal" style="border-color: rgba(34, 197, 94, 0.2); overflow: hidden;">
-                <div style="display: flex; justify-content: space-between; align-items: start; flex-wrap: wrap; gap: 16px; margin-bottom: 24px;">
-                    <div>
-                        <span class="tag tag-green">P0-1</span>
-                        <h2 style="font-size: 28px; font-weight: 700; margin-top: 12px;">双重门控持续学习</h2>
-                        <p style="color: var(--text-secondary); font-size: 14px; margin-top: 4px;">Dual-Gate Continual Learning</p>
-                    </div>
-                    <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-                        <span class="tag tag-green">NeurIPS 2027</span>
-                        <span class="tag tag-blue">预期引用 100+/年</span>
-                    </div>
+        <section class="section section-tight">
+            <div class="metric-grid reveal">
+                <div class="metric-card">
+                    <div class="metric-value glow-green" data-count="3">0</div>
+                    <div class="metric-label">P0 原型</div>
                 </div>
+                <div class="metric-card">
+                    <div class="metric-value glow-blue" data-count="330">0</div>
+                    <div class="metric-label">预期年引用总量</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value glow-purple">9 个月</div>
+                    <div class="metric-label">首轮验证周期</div>
+                </div>
+            </div>
+        </section>
 
-                <div class="grid-2" style="gap: 32px;">
-                    <div>
-                        <h3 style="color: var(--green); font-size: 14px; font-weight: 600; margin-bottom: 12px;">🧬 生物学基础：突触标记与捕获 (STC)</h3>
-                        <ul style="color: var(--text-secondary); font-size: 14px; list-style: none;">
-                            <li style="padding: 6px 0; display: flex; gap: 8px;"><span style="color: var(--green);">→</span> <strong style="color: var(--text-primary);">局部标记</strong>：单个突触在强活动下设置短暂的生化标记</li>
-                            <li style="padding: 6px 0; display: flex; gap: 8px;"><span style="color: var(--green);">→</span> <strong style="color: var(--text-primary);">全局信号</strong>：细胞核合成可塑性相关蛋白 (PRPs) 并广播</li>
-                            <li style="padding: 6px 0; display: flex; gap: 8px;"><span style="color: var(--green);">→</span> <strong style="color: var(--text-primary);">双重门控</strong>：只有"被标记 AND 捕获到 PRP"才巩固</li>
-                        </ul>
-
-                        <h3 style="color: var(--blue); font-size: 14px; font-weight: 600; margin: 20px 0 12px;">🤖 AI 映射</h3>
-                        <ul style="color: var(--text-secondary); font-size: 14px; list-style: none;">
-                            <li style="padding: 6px 0; display: flex; gap: 8px;"><span style="color: var(--blue);">→</span> 局部标记 = 梯度幅度 / 损失敏感度</li>
-                            <li style="padding: 6px 0; display: flex; gap: 8px;"><span style="color: var(--blue);">→</span> 全局信号 = 任务重要性 / 奖励信号</li>
-                            <li style="padding: 6px 0; display: flex; gap: 8px;"><span style="color: var(--blue);">→</span> 双重门控 = 选择性参数保护（仅 35%）</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 style="font-size: 14px; font-weight: 600; margin-bottom: 12px;">📊 实验结果（预期）</h3>
-                        <div class="table-wrapper">
-                            <table>
-                                <thead><tr><th>方法</th><th>遗忘率</th><th>新任务准确率</th><th>保护参数</th></tr></thead>
-                                <tbody>
-                                    <tr><td>Fine-tuning</td><td>45.2%</td><td>92.1%</td><td>0%</td></tr>
-                                    <tr><td>EWC</td><td>12.3%</td><td>78.5%</td><td>100%</td></tr>
-                                    <tr style="color: var(--green);"><td><strong>Dual-Gate</strong></td><td><strong>8.7%</strong></td><td><strong>88.3%</strong></td><td><strong>35%</strong></td></tr>
-                                </tbody>
-                            </table>
+        <section class="section section-compact">
+            <div class="stack reveal">
+                <article class="card">
+                    <div class="case-header">
+                        <div>
+                            <span class="tag tag-green">P0-1</span>
+                            <h2 class="case-title">双重门控持续学习</h2>
+                            <p class="case-subtitle">Synaptic Tagging and Capture → Dual-Gate Continual Learning</p>
                         </div>
-
-                        <h3 style="font-size: 14px; font-weight: 600; margin: 20px 0 12px;">💻 代码示例</h3>
-                        <div class="code-block">
-<span style="color: #94a3b8;"># 传统 EWC：全局保护所有重要参数</span>
-ewc_loss = Σ Fisher_i × (θ_i - θ*_i)²
-
-<span style="color: #94a3b8;"># 双重门控：只保护局部+全局都激活的参数</span>
-dual_gate_loss = Σ (<span style="color: #22c55e;">local_tag_i</span> × <span style="color: #3b82f6;">global_PRP</span>) × (θ_i - θ*_i)²</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Innovation 2: Immune Checkpoint -->
-        <section class="section" style="padding-top: 20px;">
-            <div class="card reveal" style="border-color: rgba(59, 130, 246, 0.2);">
-                <div style="display: flex; justify-content: space-between; align-items: start; flex-wrap: wrap; gap: 16px; margin-bottom: 24px;">
-                    <div>
-                        <span class="tag tag-blue">P0-2</span>
-                        <h2 style="font-size: 28px; font-weight: 700; margin-top: 12px;">免疫检查点式对齐</h2>
-                        <p style="color: var(--text-secondary); font-size: 14px; margin-top: 4px;">Immune Checkpoint Alignment</p>
-                    </div>
-                    <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-                        <span class="tag tag-blue">ICLR 2028</span>
-                        <span class="tag tag-purple">预期引用 150+/年</span>
-                    </div>
-                </div>
-
-                <div class="grid-2" style="gap: 32px;">
-                    <div>
-                        <h3 style="color: var(--green); font-size: 14px; font-weight: 600; margin-bottom: 12px;">🧬 生物学基础：PD-1/CTLA-4 免疫检查点</h3>
-                        <ul style="color: var(--text-secondary); font-size: 14px; list-style: none;">
-                            <li style="padding: 6px 0; display: flex; gap: 8px;"><span style="color: var(--green);">→</span> <strong style="color: var(--text-primary);">激活信号</strong>：TCR 识别抗原 → T 细胞激活</li>
-                            <li style="padding: 6px 0; display: flex; gap: 8px;"><span style="color: var(--green);">→</span> <strong style="color: var(--text-primary);">抑制信号</strong>：PD-1/CTLA-4 结合配体 → 抑制过度激活</li>
-                            <li style="padding: 6px 0; display: flex; gap: 8px;"><span style="color: var(--green);">→</span> <strong style="color: var(--text-primary);">动态平衡</strong>：根据上下文调节激活阈值</li>
-                        </ul>
-
-                        <h3 style="color: var(--blue); font-size: 14px; font-weight: 600; margin: 20px 0 12px;">🤖 AI 映射</h3>
-                        <ul style="color: var(--text-secondary); font-size: 14px; list-style: none;">
-                            <li style="padding: 6px 0; display: flex; gap: 8px;"><span style="color: var(--blue);">→</span> 激活信号 = 用户意图识别 / 任务分类</li>
-                            <li style="padding: 6px 0; display: flex; gap: 8px;"><span style="color: var(--blue);">→</span> 抑制信号 = 上下文安全评估 / 历史交互</li>
-                            <li style="padding: 6px 0; display: flex; gap: 8px;"><span style="color: var(--blue);">→</span> 动态阈值 = 强化学习优化安全边界</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 style="font-size: 14px; font-weight: 600; margin-bottom: 12px;">📊 实验结果（预期）</h3>
-                        <div class="table-wrapper">
-                            <table>
-                                <thead><tr><th>方法</th><th>过度拒绝率</th><th>拦截率</th><th>满意度</th></tr></thead>
-                                <tbody>
-                                    <tr><td>固定阈值</td><td>28.5%</td><td>94.2%</td><td>6.8/10</td></tr>
-                                    <tr style="color: var(--blue);"><td><strong>Checkpoint</strong></td><td><strong>9.3%</strong></td><td><strong>93.1%</strong></td><td><strong>8.7/10</strong></td></tr>
-                                </tbody>
-                            </table>
+                        <div class="inline-stack">
+                            <span class="tag tag-green">NeurIPS 2027</span>
+                            <span class="tag tag-blue">持续学习</span>
                         </div>
-
-                        <h3 style="font-size: 14px; font-weight: 600; margin: 20px 0 12px;">💻 代码示例</h3>
-                        <div class="code-block">
-<span style="color: #94a3b8;"># 传统：固定阈值</span>
-<span style="color: #c084fc;">if</span> harm_score > <span style="color: #fcd34d;">0.5</span>: refuse()
-
-<span style="color: #94a3b8;"># 免疫检查点式：动态阈值</span>
-inhibitory = <span style="color: #22c55e;">user_trust</span> × (1 - <span style="color: #f87171;">request_risk</span>)
-threshold = base + inhibitory × <span style="color: #fcd34d;">0.4</span>
-<span style="color: #c084fc;">if</span> harm_score > <span style="color: #3b82f6;">threshold</span>: refuse()</div>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Innovation 3: Layered Stress -->
-        <section class="section" style="padding-top: 20px;">
-            <div class="card reveal" style="border-color: rgba(168, 85, 247, 0.2);">
-                <div style="display: flex; justify-content: space-between; align-items: start; flex-wrap: wrap; gap: 16px; margin-bottom: 24px;">
-                    <div>
-                        <span class="tag tag-purple">P0-3</span>
-                        <h2 style="font-size: 28px; font-weight: 700; margin-top: 12px;">分层应激响应系统</h2>
-                        <p style="color: var(--text-secondary); font-size: 14px; margin-top: 4px;">Layered Stress Response System</p>
+                    <div class="case-grid">
+                        <section class="case-block">
+                            <h4>生物学机制</h4>
+                            <ul class="mapping-list" style="color: var(--green);">
+                                <li><strong>局部标记</strong>：强活动突触先生成短时标记。</li>
+                                <li><strong>全局广播</strong>：细胞核合成 PRPs 并广播。</li>
+                                <li><strong>双重准入</strong>：只有局部 + 全局都满足时才长期巩固。</li>
+                            </ul>
+                        </section>
+                        <section class="case-block">
+                            <h4>工程价值</h4>
+                            <ul class="mapping-list" style="color: var(--blue);">
+                                <li>比 EWC 更稀疏地保护参数。</li>
+                                <li>缓解灾难性遗忘，同时保留新任务可塑性。</li>
+                                <li>适合增量学习与长期部署模型。</li>
+                            </ul>
+                        </section>
                     </div>
-                    <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-                        <span class="tag tag-purple">MLSys 2027</span>
-                        <span class="tag tag-amber">预期引用 80+/年</span>
+                    <div class="table-wrapper" style="margin-top: 22px;">
+                        <table>
+                            <thead><tr><th>方法</th><th>遗忘率</th><th>新任务准确率</th><th>保护参数比例</th></tr></thead>
+                            <tbody>
+                                <tr><td class="table-strong">Fine-tuning</td><td>45.2%</td><td>92.1%</td><td>0%</td></tr>
+                                <tr><td class="table-strong">EWC</td><td>12.3%</td><td>78.5%</td><td>100%</td></tr>
+                                <tr><td class="table-strong" style="color: var(--green);">Dual-Gate</td><td style="color: var(--green);">8.7%</td><td style="color: var(--green);">88.3%</td><td style="color: var(--green);">35%</td></tr>
+                            </tbody>
+                        </table>
                     </div>
-                </div>
+                    <pre class="code-block" style="margin-top: 22px;"><span style="color:#8da2c0;"># local tag × global permit = consolidation weight</span>
+dual_gate_loss = Σ (local_tag_i × global_prp) × (θ_i - θ*_i)²</pre>
+                </article>
 
-                <div class="grid-2" style="gap: 32px;">
-                    <div>
-                        <h3 style="color: var(--green); font-size: 14px; font-weight: 600; margin-bottom: 12px;">🧬 生物学基础：未折叠蛋白响应 (UPR)</h3>
-                        <ul style="color: var(--text-secondary); font-size: 14px; list-style: none;">
-                            <li style="padding: 6px 0; display: flex; gap: 8px;"><span style="color: #fbbf24;">→</span> <strong style="color: var(--text-primary);">IRE1 臂</strong>：轻度应激 → 局部修复（降解错误蛋白）</li>
-                            <li style="padding: 6px 0; display: flex; gap: 8px;"><span style="color: #f97316;">→</span> <strong style="color: var(--text-primary);">PERK 臂</strong>：中度应激 → 暂停翻译（减少负荷）</li>
-                            <li style="padding: 6px 0; display: flex; gap: 8px;"><span style="color: #ef4444;">→</span> <strong style="color: var(--text-primary);">ATF6 臂</strong>：重度应激 → 全局重塑（转录因子激活）</li>
-                        </ul>
-
-                        <h3 style="color: var(--blue); font-size: 14px; font-weight: 600; margin: 20px 0 12px;">🤖 AI 映射</h3>
-                        <ul style="color: var(--text-secondary); font-size: 14px; list-style: none;">
-                            <li style="padding: 6px 0; display: flex; gap: 8px;"><span style="color: #fbbf24;">→</span> 轻度 = 降级服务（减少非核心功能）</li>
-                            <li style="padding: 6px 0; display: flex; gap: 8px;"><span style="color: #f97316;">→</span> 中度 = 检查点回滚（恢复稳定状态）</li>
-                            <li style="padding: 6px 0; display: flex; gap: 8px;"><span style="color: #ef4444;">→</span> 重度 = 模型重训（全局重塑）</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 style="font-size: 14px; font-weight: 600; margin-bottom: 12px;">📊 实验结果（预期）</h3>
-                        <div class="table-wrapper">
-                            <table>
-                                <thead><tr><th>方法</th><th>恢复时间</th><th>可用性</th><th>数据丢失</th></tr></thead>
-                                <tbody>
-                                    <tr><td>单一策略</td><td>45s</td><td>99.2%</td><td>0.8%</td></tr>
-                                    <tr style="color: var(--purple);"><td><strong>Layered</strong></td><td><strong>12s</strong></td><td><strong>99.8%</strong></td><td><strong>0.1%</strong></td></tr>
-                                </tbody>
-                            </table>
+                <article class="card">
+                    <div class="case-header">
+                        <div>
+                            <span class="tag tag-blue">P0-2</span>
+                            <h2 class="case-title">免疫检查点式对齐</h2>
+                            <p class="case-subtitle">PD-1 / CTLA-4 checkpoint → dynamic alignment controller</p>
                         </div>
-
-                        <h3 style="font-size: 14px; font-weight: 600; margin: 20px 0 12px;">💻 代码示例</h3>
-                        <div class="code-block">
-stress = f(error_rate, latency, memory)
-
-<span style="color: #c084fc;">if</span> stress < <span style="color: #fcd34d;">0.25</span>:      <span style="color: #94a3b8;"># MILD</span>
-    <span style="color: #fbbf24;">degrade_service()</span>     <span style="color: #94a3b8;"># IRE1</span>
-<span style="color: #c084fc;">elif</span> stress < <span style="color: #fcd34d;">0.80</span>:   <span style="color: #94a3b8;"># MODERATE</span>
-    <span style="color: #f97316;">checkpoint_rollback()</span> <span style="color: #94a3b8;"># PERK</span>
-<span style="color: #c084fc;">else</span>:                   <span style="color: #94a3b8;"># SEVERE</span>
-    <span style="color: #ef4444;">trigger_retrain()</span>     <span style="color: #94a3b8;"># ATF6</span></div>
+                        <div class="inline-stack">
+                            <span class="tag tag-blue">ICLR 2028</span>
+                            <span class="tag tag-red">安全与对齐</span>
+                        </div>
                     </div>
-                </div>
+                    <div class="case-grid">
+                        <section class="case-block">
+                            <h4>生物学机制</h4>
+                            <ul class="mapping-list" style="color: var(--green);">
+                                <li>免疫系统依靠抑制性受体防止过度激活。</li>
+                                <li>同一刺激在不同上下文下具有不同激活阈值。</li>
+                                <li>抑制不是禁止，而是根据上下文动态调节强度。</li>
+                            </ul>
+                        </section>
+                        <section class="case-block">
+                            <h4>工程价值</h4>
+                            <ul class="mapping-list" style="color: var(--blue);">
+                                <li>减少过度拒绝，同时维持高拦截率。</li>
+                                <li>将用户历史和风险判断纳入阈值调节。</li>
+                                <li>适合大模型安全层与代理系统控制器。</li>
+                            </ul>
+                        </section>
+                    </div>
+                    <div class="table-wrapper" style="margin-top: 22px;">
+                        <table>
+                            <thead><tr><th>方法</th><th>过度拒绝率</th><th>有害内容拦截率</th><th>用户满意度</th></tr></thead>
+                            <tbody>
+                                <tr><td class="table-strong">固定阈值</td><td>28.5%</td><td>94.2%</td><td>6.8 / 10</td></tr>
+                                <tr><td class="table-strong" style="color: var(--blue);">Checkpoint</td><td style="color: var(--blue);">9.3%</td><td style="color: var(--blue);">93.1%</td><td style="color: var(--blue);">8.7 / 10</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <pre class="code-block" style="margin-top: 22px;"><span style="color:#8da2c0;"># inhibition raises the threshold when context supports it</span>
+inhibitory = user_trust × (1 - request_risk)
+dynamic_threshold = base_threshold + inhibitory × 0.4</pre>
+                </article>
+
+                <article class="card">
+                    <div class="case-header">
+                        <div>
+                            <span class="tag tag-purple">P0-3</span>
+                            <h2 class="case-title">分层应激响应系统</h2>
+                            <p class="case-subtitle">UPR three-arm response → layered system resilience</p>
+                        </div>
+                        <div class="inline-stack">
+                            <span class="tag tag-purple">MLSys 2027</span>
+                            <span class="tag tag-amber">系统鲁棒性</span>
+                        </div>
+                    </div>
+                    <div class="case-grid">
+                        <section class="case-block">
+                            <h4>生物学机制</h4>
+                            <ul class="mapping-list" style="color: var(--green);">
+                                <li><strong>IRE1</strong>：轻度应激时优先局部修复。</li>
+                                <li><strong>PERK</strong>：中度应激时暂停高耗过程。</li>
+                                <li><strong>ATF6</strong>：重度应激时启动全局重塑。</li>
+                            </ul>
+                        </section>
+                        <section class="case-block">
+                            <h4>工程价值</h4>
+                            <ul class="mapping-list" style="color: var(--blue);">
+                                <li>把容错从二元回滚扩展成连续动作带。</li>
+                                <li>降低恢复时间和数据损失率。</li>
+                                <li>适合训练基础设施、推理集群和代理编排器。</li>
+                            </ul>
+                        </section>
+                    </div>
+                    <div class="table-wrapper" style="margin-top: 22px;">
+                        <table>
+                            <thead><tr><th>方法</th><th>平均恢复时间</th><th>服务可用性</th><th>数据丢失率</th></tr></thead>
+                            <tbody>
+                                <tr><td class="table-strong">单一策略</td><td>45s</td><td>99.2%</td><td>0.8%</td></tr>
+                                <tr><td class="table-strong" style="color: var(--purple);">Layered</td><td style="color: var(--purple);">12s</td><td style="color: var(--purple);">99.8%</td><td style="color: var(--purple);">0.1%</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <pre class="code-block" style="margin-top: 22px;"><span style="color:#8da2c0;"># choose recovery mode based on stress severity</span>
+if stress_score &lt; 0.25: degrade_service()
+elif stress_score &lt; 0.80: checkpoint_rollback()
+else: trigger_retrain()</pre>
+                </article>
             </div>
         </section>
 
-        <!-- Resources -->
-        <section class="section">
+        <section class="section section-compact">
             <div class="section-header reveal">
-                <h2>资源需求总览</h2>
+                <div class="eyebrow">Why these three first</div>
+                <h2>为什么优先做这三项</h2>
             </div>
-            <div class="grid-3 reveal">
-                <div class="glass-card" style="text-align: center;">
-                    <div style="font-size: 14px; color: var(--text-secondary); margin-bottom: 8px;">核心团队</div>
-                    <div style="font-size: 32px; font-weight: 700; color: var(--green);">5-7</div>
-                    <div style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">ML研究员 + 系统工程师 + 神经科学顾问</div>
-                </div>
-                <div class="glass-card" style="text-align: center;">
-                    <div style="font-size: 14px; color: var(--text-secondary); margin-bottom: 8px;">总预算</div>
-                    <div style="font-size: 32px; font-weight: 700; color: var(--blue);">$250K</div>
-                    <div style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">9 个月（人力 + 算力 + 其他）</div>
-                </div>
-                <div class="glass-card" style="text-align: center;">
-                    <div style="font-size: 14px; color: var(--text-secondary); margin-bottom: 8px;">预期年引用</div>
-                    <div style="font-size: 32px; font-weight: 700; color: var(--purple);">330+</div>
-                    <div style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">3 篇顶会论文合计</div>
-                </div>
+            <div class="matrix-grid reveal">
+                <article class="matrix-card">
+                    <h3>它们都抓住了控制逻辑</h3>
+                    <p class="body-copy">不是只换术语，而是把门控、抑制、恢复这种真正影响系统行为的机制搬过来。</p>
+                </article>
+                <article class="matrix-card">
+                    <h3>它们都能做原型</h3>
+                    <p class="body-copy">持续学习、安全层、容错层都有明确的实验入口，容易形成基准与消融实验。</p>
+                </article>
+                <article class="matrix-card">
+                    <h3>它们共同构成最小闭环</h3>
+                    <p class="body-copy">学习、对齐、鲁棒性分别解决系统在长期运行中的三个核心瓶颈。</p>
+                </article>
             </div>
         </section>
     </div>

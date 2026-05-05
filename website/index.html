@@ -3,130 +3,204 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Virtual Cell - 基于细胞生物学机制的AI架构</title>
-    <meta name="description" content="AI Virtual Cell 通过模拟生物细胞的运行机制，实现自组织、自适应、自进化的智能系统。">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧬</text></svg>">
+    <title>AI Virtual Cell - 基于细胞生物学机制的 AI 架构</title>
+    <meta name="description" content="AI Virtual Cell 通过模拟细胞级机制，把记忆、调度、安全与持续学习重写进 AI 系统结构。">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='12' fill='%2335d67f'/><circle cx='50' cy='18' r='6' fill='%2335d67f'/><circle cx='78' cy='34' r='6' fill='%2354a9ff'/><circle cx='78' cy='66' r='6' fill='%23b07bff'/><circle cx='50' cy='82' r='6' fill='%2335d67f'/><circle cx='22' cy='66' r='6' fill='%2354a9ff'/><circle cx='22' cy='34' r='6' fill='%23b07bff'/></svg>">
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>tailwind.config={theme:{extend:{}}}</script>
 </head>
 <body>
     <div class="page">
-        <!-- Hero -->
-        <section class="hero section">
-            <div class="hero-content">
-                <p style="color: var(--green); font-size: 14px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px;">Bio-Inspired AI Architecture</p>
-                <h1>用细胞的智慧<br><span class="glow-green">重新定义 AI</span></h1>
-                <p>通过模拟生物细胞 38 亿年进化的运行机制——基因表达、代谢调控、信号转导、突触可塑性——构建自组织、自适应、自进化的下一代智能系统。</p>
-                <div style="display: flex; gap: 16px; flex-wrap: wrap;">
-                    <a href="innovations.html" class="btn btn-primary">查看创新成果 →</a>
-                    <a href="https://github.com/AICode-Nexus/ai-virtual-cell/discussions" target="_blank" class="btn btn-outline">参与讨论</a>
+        <section class="page-hero">
+            <div class="hero-grid reveal visible">
+                <div class="stack">
+                    <div class="eyebrow">Bio-Inspired AI Architecture</div>
+                    <h1 class="hero-title">把细胞机制<br><span class="glow-green">写进 AI 结构</span></h1>
+                    <p class="hero-subtitle">AI Virtual Cell 不是把“生物学”当作隐喻，而是把真正高价值的控制逻辑拆出来：记忆巩固、免疫抑制、分层应激、资源代谢、组织分化，再映射成可实现的计算原语。</p>
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="mapping.html">先看知识映射</a>
+                        <a class="btn btn-outline" href="innovations.html">查看 P0 创新</a>
+                    </div>
+                </div>
+                <div class="hero-visual orbit-panel reveal reveal-delay-2">
+                    <div class="orbit-grid"></div>
+                    <div class="orbit-ring"></div>
+                    <div class="orbit-ring ring-2"></div>
+                    <div class="orbit-core"></div>
+                    <div class="orbit-node node-a" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 12h14"></path><path d="M12 5v14"></path><circle cx="12" cy="12" r="8.5"></circle></svg>
+                    </div>
+                    <div class="orbit-node node-b" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 12c2.5-4.7 13.5-4.7 16 0"></path><path d="M4 12c2.5 4.7 13.5 4.7 16 0"></path><circle cx="12" cy="12" r="2.5"></circle></svg>
+                    </div>
+                    <div class="orbit-node node-c" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M7 7h10v10H7z"></path><path d="M10 10h4v4h-4z"></path></svg>
+                    </div>
+                    <div class="orbit-node node-d" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3v18"></path><path d="M5 8h14"></path><path d="M5 16h14"></path></svg>
+                    </div>
+                    <div class="hero-notes">
+                        <div class="note-chip"><strong>记忆即结构</strong>不是外挂数据库，而是连接与门控本身。</div>
+                        <div class="note-chip"><strong>能力即组织</strong>通过层次协作，而不是单体模型堆功能。</div>
+                        <div class="note-chip"><strong>学习即进化</strong>用巩固与分化解决持续学习问题。</div>
+                        <div class="note-chip"><strong>安全即免疫</strong>用抑制信号代替静态拒绝阈值。</div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Stats -->
-        <section class="section" style="padding-top: 0;">
-            <div class="grid-4 reveal">
-                <div class="stat">
-                    <div class="stat-value" data-count="195">0</div>
-                    <div class="stat-label">映射单元</div>
+        <section class="section section-tight">
+            <div class="stats-grid reveal">
+                <div class="metric-card">
+                    <div class="metric-value glow-green" data-count="195">0</div>
+                    <div class="metric-label">映射单元</div>
                 </div>
-                <div class="stat">
-                    <div class="stat-value" data-count="3">0</div>
-                    <div class="stat-label">P0 创新原型</div>
+                <div class="metric-card">
+                    <div class="metric-value glow-blue" data-count="3">0</div>
+                    <div class="metric-label">P0 创新原型</div>
                 </div>
-                <div class="stat">
-                    <div class="stat-value" data-count="29">0</div>
-                    <div class="stat-label">技术文档</div>
+                <div class="metric-card">
+                    <div class="metric-value glow-purple" data-count="29">0</div>
+                    <div class="metric-label">技术文档</div>
                 </div>
-                <div class="stat">
-                    <div class="stat-value" data-count="7166">0</div>
-                    <div class="stat-label">代码行数</div>
+                <div class="metric-card">
+                    <div class="metric-value" data-count="7166">0</div>
+                    <div class="metric-label">参考代码行数</div>
                 </div>
             </div>
         </section>
 
-        <!-- Core Breakthroughs -->
         <section class="section">
             <div class="section-header reveal">
-                <h2>核心突破</h2>
-                <p>四个根本性的范式转变</p>
+                <div class="eyebrow">Core shifts</div>
+                <h2>四个结构性转向</h2>
+                <p>不是把已有模型换个名字，而是重新组织系统内部的记忆、控制和协作方式。</p>
             </div>
             <div class="grid-2">
-                <div class="card card-glow reveal reveal-delay-1">
-                    <div style="font-size: 32px; margin-bottom: 16px;">🧬</div>
-                    <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 8px;">记忆即结构</h3>
-                    <p style="color: var(--text-secondary); font-size: 14px;">记忆不是外部数据库中的记录，而是神经网络连接的物理重构。通过突触标记与捕获机制，实现选择性记忆巩固。</p>
+                <article class="story-block reveal reveal-delay-1">
+                    <div class="kicker">
+                        <span class="icon-badge icon-green">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3v18"></path><path d="M7 7h10"></path><path d="M7 12h10"></path><path d="M7 17h10"></path></svg>
+                        </span>
+                        <div>
+                            <h3 class="card-title">记忆即结构</h3>
+                            <p class="card-subtitle">Consolidation over storage</p>
+                        </div>
+                    </div>
+                    <p class="body-copy">把记忆理解为网络连接的物理改变，而不是外挂在外部数据库里的记录。这样，持续学习、选择性巩固和遗忘控制就能进入系统核心。</p>
+                </article>
+                <article class="story-block reveal reveal-delay-2">
+                    <div class="kicker">
+                        <span class="icon-badge icon-blue">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 12h16"></path><path d="M12 4v16"></path><circle cx="12" cy="12" r="8.5"></circle></svg>
+                        </span>
+                        <div>
+                            <h3 class="card-title">能力即组织</h3>
+                            <p class="card-subtitle">Hierarchy over feature pileup</p>
+                        </div>
+                    </div>
+                    <p class="body-copy">从分子、细胞、组织到器官的多层结构让能力以模块协作的方式出现，避免单模型无限叠加功能后失去边界。</p>
+                </article>
+                <article class="story-block reveal reveal-delay-3">
+                    <div class="kicker">
+                        <span class="icon-badge icon-purple">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 17h16"></path><path d="M6 17l3-10 3 6 3-8 3 12"></path></svg>
+                        </span>
+                        <div>
+                            <h3 class="card-title">学习即进化</h3>
+                            <p class="card-subtitle">Adaptation over retraining</p>
+                        </div>
+                    </div>
+                    <p class="body-copy">学习不是不断全量重训，而是通过门控、分化和新结构生成逐步吸收经验，让系统具备长期适应性。</p>
+                </article>
+                <article class="story-block reveal reveal-delay-4">
+                    <div class="kicker">
+                        <span class="icon-badge icon-amber">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3l7 4v5c0 4.7-3 7.9-7 9-4-1.1-7-4.3-7-9V7l7-4z"></path><path d="M9.5 12.5l1.8 1.8 3.7-4"></path></svg>
+                        </span>
+                        <div>
+                            <h3 class="card-title">安全即免疫</h3>
+                            <p class="card-subtitle">Inhibition over static refusal</p>
+                        </div>
+                    </div>
+                    <p class="body-copy">安全机制不是一个写死的总开关，而是像免疫系统那样根据上下文调节激活与抑制强度，减少过度拒绝与迟钝反应。</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header reveal">
+                <div class="eyebrow">Why this matters</div>
+                <h2>当前 AI 的问题，正好对应细胞系统的强项</h2>
+            </div>
+            <div class="comparison-grid reveal">
+                <div class="comparison-card card alert">
+                    <h3>传统 AI 的结构性短板</h3>
+                    <ul class="divider-list">
+                        <li>全局重训成本高，局部学习能力弱</li>
+                        <li>记忆、调度、安全、鲁棒性相互割裂</li>
+                        <li>静态规则容易带来过度拒绝或脆弱边界</li>
+                        <li>资源分配粗粒度，缺少按需代谢式调度</li>
+                        <li>系统出错常常只有“继续运行 / 全量回滚”两档</li>
+                    </ul>
                 </div>
-                <div class="card card-glow reveal reveal-delay-2">
-                    <div style="font-size: 32px; margin-bottom: 16px;">🔄</div>
-                    <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 8px;">能力即组织</h3>
-                    <p style="color: var(--text-secondary); font-size: 14px;">从单细胞到组织器官系统的层次化智能涌现。能力不是预设的，而是通过细胞分化和组织协作动态生成。</p>
-                </div>
-                <div class="card card-glow reveal reveal-delay-3">
-                    <div style="font-size: 32px; margin-bottom: 16px;">🌱</div>
-                    <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 8px;">学习即进化</h3>
-                    <p style="color: var(--text-secondary); font-size: 14px;">通过突触可塑性和神经发生实现持续学习，无需重新训练。双重门控机制解决灾难性遗忘问题。</p>
-                </div>
-                <div class="card card-glow reveal reveal-delay-4">
-                    <div style="font-size: 32px; margin-bottom: 16px;">🤝</div>
-                    <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 8px;">协作即生态</h3>
-                    <p style="color: var(--text-secondary); font-size: 14px;">去中心化的细胞间信号转导替代中心化调度。免疫检查点机制实现动态安全平衡。</p>
+                <div class="comparison-card card good">
+                    <h3>AI Virtual Cell 的对应回答</h3>
+                    <ul class="divider-list">
+                        <li>双重门控巩固：让学习既稳定又保留可塑性</li>
+                        <li>组织层次：让能力以结构协作的方式涌现</li>
+                        <li>免疫检查点：把安全阈值变成动态抑制机制</li>
+                        <li>代谢式调度：把算力与能量约束写进控制逻辑</li>
+                        <li>分层应激：从降级、回滚到重塑形成连续响应带</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
-        <!-- Why Section -->
         <section class="section">
             <div class="section-header reveal">
-                <h2>为什么需要 AI Virtual Cell？</h2>
-                <p>传统 AI 架构面临根本性局限</p>
+                <div class="eyebrow">Explore</div>
+                <h2>从映射关系进入项目，而不是从概念口号进入</h2>
+                <p>先看“机制如何映射”，再看“创新如何落地”。这样最容易判断这个方向是不是只有叙事，还是有工程价值。</p>
             </div>
-            <div class="grid-2 reveal">
-                <div class="card" style="border-color: rgba(239, 68, 68, 0.2);">
-                    <h3 style="color: #ef4444; font-size: 16px; font-weight: 600; margin-bottom: 16px;">传统 AI 的局限</h3>
-                    <ul style="list-style: none; color: var(--text-secondary); font-size: 14px;">
-                        <li style="padding: 8px 0; border-bottom: 1px solid var(--border); display: flex; align-items: start; gap: 8px;"><span style="color: #ef4444;">✗</span> 静态模型，灾难性遗忘</li>
-                        <li style="padding: 8px 0; border-bottom: 1px solid var(--border); display: flex; align-items: start; gap: 8px;"><span style="color: #ef4444;">✗</span> 记忆与能力分离，外部存储依赖</li>
-                        <li style="padding: 8px 0; border-bottom: 1px solid var(--border); display: flex; align-items: start; gap: 8px;"><span style="color: #ef4444;">✗</span> 中心化架构，单点故障</li>
-                        <li style="padding: 8px 0; border-bottom: 1px solid var(--border); display: flex; align-items: start; gap: 8px;"><span style="color: #ef4444;">✗</span> 安全对齐僵化，过度拒绝</li>
-                        <li style="padding: 8px 0; display: flex; align-items: start; gap: 8px;"><span style="color: #ef4444;">✗</span> 固定能力边界，无法自适应</li>
-                    </ul>
-                </div>
-                <div class="card" style="border-color: rgba(34, 197, 94, 0.2);">
-                    <h3 style="color: var(--green); font-size: 16px; font-weight: 600; margin-bottom: 16px;">AI Virtual Cell 的突破</h3>
-                    <ul style="list-style: none; color: var(--text-secondary); font-size: 14px;">
-                        <li style="padding: 8px 0; border-bottom: 1px solid var(--border); display: flex; align-items: start; gap: 8px;"><span style="color: var(--green);">✓</span> 双重门控选择性巩固记忆</li>
-                        <li style="padding: 8px 0; border-bottom: 1px solid var(--border); display: flex; align-items: start; gap: 8px;"><span style="color: var(--green);">✓</span> 记忆即结构，能力即组织</li>
-                        <li style="padding: 8px 0; border-bottom: 1px solid var(--border); display: flex; align-items: start; gap: 8px;"><span style="color: var(--green);">✓</span> 去中心化自组织，分层容错</li>
-                        <li style="padding: 8px 0; border-bottom: 1px solid var(--border); display: flex; align-items: start; gap: 8px;"><span style="color: var(--green);">✓</span> 免疫检查点式动态安全阈值</li>
-                        <li style="padding: 8px 0; display: flex; align-items: start; gap: 8px;"><span style="color: var(--green);">✓</span> 适应性分化，自我进化</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Quick Navigation -->
-        <section class="section">
-            <div class="section-header reveal">
-                <h2>探索项目</h2>
-            </div>
-            <div class="grid-3 reveal">
-                <a href="innovations.html" class="card card-glow" style="text-decoration: none;">
-                    <div style="color: var(--green); font-size: 14px; font-weight: 600; margin-bottom: 8px;">P0 创新</div>
-                    <h3 style="font-size: 18px; margin-bottom: 8px; color: var(--text-primary);">创新成果</h3>
-                    <p style="color: var(--text-secondary); font-size: 13px;">双重门控学习 · 免疫检查点对齐 · 分层应激响应</p>
+            <div class="nav-cards reveal">
+                <a class="story-block" href="mapping.html">
+                    <div class="kicker">
+                        <span class="icon-badge icon-blue">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 6h16"></path><path d="M4 12h16"></path><path d="M4 18h16"></path><path d="M8 4v16"></path><path d="M16 4v16"></path></svg>
+                        </span>
+                        <div>
+                            <h3 class="card-title">知识映射</h3>
+                            <p class="card-subtitle">Mechanism → primitive → gap</p>
+                        </div>
+                    </div>
+                    <p class="body-copy">看清楚每个生物机制是如何变成 AI 中的控制原语、当前缺什么、创新点在哪里。</p>
+                    <span class="story-link">打开映射页 →</span>
                 </a>
-                <a href="mapping.html" class="card card-glow" style="text-decoration: none;">
-                    <div style="color: var(--blue); font-size: 14px; font-weight: 600; margin-bottom: 8px;">13 × 15 矩阵</div>
-                    <h3 style="font-size: 18px; margin-bottom: 8px; color: var(--text-primary);">知识映射</h3>
-                    <p style="color: var(--text-secondary); font-size: 13px;">195 个映射单元，系统性发现创新机会</p>
+                <a class="story-block" href="innovations.html">
+                    <div class="kicker">
+                        <span class="icon-badge icon-green">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3l2.8 5.7L21 9.6l-4.5 4.3 1 6.1L12 17l-5.5 3 1-6.1L3 9.6l6.2-.9L12 3z"></path></svg>
+                        </span>
+                        <div>
+                            <h3 class="card-title">P0 创新</h3>
+                            <p class="card-subtitle">Three prototypes</p>
+                        </div>
+                    </div>
+                    <p class="body-copy">查看三个最先落地的创新原型：持续学习、动态对齐和分层容错。</p>
+                    <span class="story-link">查看原型 →</span>
                 </a>
-                <a href="roadmap.html" class="card card-glow" style="text-decoration: none;">
-                    <div style="color: var(--purple); font-size: 14px; font-weight: 600; margin-bottom: 8px;">12 个月计划</div>
-                    <h3 style="font-size: 18px; margin-bottom: 8px; color: var(--text-primary);">路线图</h3>
-                    <p style="color: var(--text-secondary); font-size: 13px;">从概念验证到顶会论文的完整路径</p>
+                <a class="story-block" href="roadmap.html">
+                    <div class="kicker">
+                        <span class="icon-badge icon-purple">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 19V5"></path><path d="M19 19H5"></path><path d="M8 15l3-4 3 2 4-6"></path></svg>
+                        </span>
+                        <div>
+                            <h3 class="card-title">实施路线图</h3>
+                            <p class="card-subtitle">Validation → papers → ecosystem</p>
+                        </div>
+                    </div>
+                    <p class="body-copy">看这个方向如何从机制分析进入原型验证，再转化为可发表、可开源、可扩展的系统工作。</p>
+                    <span class="story-link">查看路线图 →</span>
                 </a>
             </div>
         </section>

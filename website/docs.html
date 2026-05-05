@@ -4,199 +4,178 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>文档与贡献 - AI Virtual Cell</title>
-    <meta name="description" content="AI Virtual Cell 项目文档索引和贡献指南。">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧬</text></svg>">
+    <meta name="description" content="AI Virtual Cell 的文档索引、参与方式和讨论入口。">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='12' fill='%2335d67f'/><circle cx='50' cy='18' r='6' fill='%2335d67f'/><circle cx='78' cy='34' r='6' fill='%2354a9ff'/><circle cx='78' cy='66' r='6' fill='%23b07bff'/><circle cx='50' cy='82' r='6' fill='%2335d67f'/><circle cx='22' cy='66' r='6' fill='%2354a9ff'/><circle cx='22' cy='34' r='6' fill='%23b07bff'/></svg>">
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
     <div class="page">
-        <!-- Header -->
-        <section class="section" style="padding-bottom: 40px;">
-            <div class="reveal">
-                <p style="color: var(--amber); font-size: 14px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px;">Documentation & Contributing</p>
-                <h1 style="font-size: 42px; font-weight: 800; margin-bottom: 16px;">文档与贡献</h1>
-                <p style="color: var(--text-secondary); font-size: 18px; max-width: 600px;">完整的技术文档、设计方案和社区贡献指南</p>
+        <section class="page-hero compact">
+            <div class="stack reveal visible">
+                <div class="eyebrow">Documentation & Contributing</div>
+                <h1 class="page-title">从文档切入项目，从讨论进入贡献</h1>
+                <p class="page-subtitle">这个项目的信息密度高，最好的进入方式不是直接看仓库树，而是先看设计文档、映射方法和 P0 原型，再进入你最有判断力的那一层做反馈。</p>
             </div>
         </section>
 
-        <!-- Documentation -->
-        <section class="section" style="padding-top: 20px;">
+        <section class="section section-tight">
             <div class="section-header reveal">
-                <h2>项目文档</h2>
+                <div class="eyebrow">Docs</div>
+                <h2>核心文档入口</h2>
             </div>
             <div class="grid-3 reveal">
-                <a href="https://github.com/AICode-Nexus/ai-virtual-cell/blob/main/docs/DESIGN.md" target="_blank" class="card card-glow" style="text-decoration: none;">
-                    <div style="font-size: 28px; margin-bottom: 12px;">📐</div>
-                    <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 8px; color: var(--text-primary);">完整设计方案</h3>
-                    <p style="font-size: 13px; color: var(--text-secondary);">详细的技术设计文档，包含系统架构、核心机制和实现策略</p>
-                    <span style="display: inline-block; margin-top: 12px; font-size: 12px; color: var(--green);">查看文档 →</span>
+                <a class="doc-card" href="https://github.com/AICode-Nexus/ai-virtual-cell/blob/main/docs/DESIGN.md" target="_blank" rel="noopener noreferrer">
+                    <div class="doc-card-top">
+                        <div>
+                            <h3>完整设计方案</h3>
+                            <p>系统结构、核心主张、架构分层与实现思路。</p>
+                        </div>
+                        <span class="icon-badge icon-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 4h9l3 3v13H6z"></path><path d="M15 4v4h4"></path></svg></span>
+                    </div>
+                    <span class="story-link">打开文档 →</span>
                 </a>
-                <a href="https://github.com/AICode-Nexus/ai-virtual-cell/blob/main/docs/BIOLOGY_MAPPING.md" target="_blank" class="card card-glow" style="text-decoration: none;">
-                    <div style="font-size: 28px; margin-bottom: 12px;">🧬</div>
-                    <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 8px; color: var(--text-primary);">生物学映射</h3>
-                    <p style="font-size: 13px; color: var(--text-secondary);">生物学概念到计算架构的完整映射关系文档</p>
-                    <span style="display: inline-block; margin-top: 12px; font-size: 12px; color: var(--green);">查看文档 →</span>
+                <a class="doc-card" href="https://github.com/AICode-Nexus/ai-virtual-cell/blob/main/docs/BIOLOGY_MAPPING.md" target="_blank" rel="noopener noreferrer">
+                    <div class="doc-card-top">
+                        <div>
+                            <h3>生物学映射</h3>
+                            <p>生物概念如何转成系统组织与控制原语。</p>
+                        </div>
+                        <span class="icon-badge icon-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 6h16"></path><path d="M4 12h16"></path><path d="M4 18h16"></path><path d="M8 4v16"></path><path d="M16 4v16"></path></svg></span>
+                    </div>
+                    <span class="story-link">打开文档 →</span>
                 </a>
-                <a href="https://github.com/AICode-Nexus/ai-virtual-cell/blob/main/docs/ARCHITECTURE.md" target="_blank" class="card card-glow" style="text-decoration: none;">
-                    <div style="font-size: 28px; margin-bottom: 12px;">🏗️</div>
-                    <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 8px; color: var(--text-primary);">架构设计</h3>
-                    <p style="font-size: 13px; color: var(--text-secondary);">系统架构详解，从分子层到生态系统层的七层架构</p>
-                    <span style="display: inline-block; margin-top: 12px; font-size: 12px; color: var(--green);">查看文档 →</span>
+                <a class="doc-card" href="https://github.com/AICode-Nexus/ai-virtual-cell/blob/main/docs/ARCHITECTURE.md" target="_blank" rel="noopener noreferrer">
+                    <div class="doc-card-top">
+                        <div>
+                            <h3>架构设计</h3>
+                            <p>从分子、细胞、组织到器官系统的层级结构。</p>
+                        </div>
+                        <span class="icon-badge icon-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 20h16"></path><path d="M7 20v-6h4v6"></path><path d="M13 20v-10h4v10"></path><path d="M6 9l6-5 6 5"></path></svg></span>
+                    </div>
+                    <span class="story-link">打开文档 →</span>
                 </a>
-                <a href="https://github.com/AICode-Nexus/ai-virtual-cell/blob/main/docs/ROADMAP.md" target="_blank" class="card card-glow" style="text-decoration: none;">
-                    <div style="font-size: 28px; margin-bottom: 12px;">🗺️</div>
-                    <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 8px; color: var(--text-primary);">实施路线图</h3>
-                    <p style="font-size: 13px; color: var(--text-secondary);">开发计划和里程碑，从原型验证到生态演化</p>
-                    <span style="display: inline-block; margin-top: 12px; font-size: 12px; color: var(--green);">查看文档 →</span>
+                <a class="doc-card" href="https://github.com/AICode-Nexus/ai-virtual-cell/blob/main/docs/ROADMAP.md" target="_blank" rel="noopener noreferrer">
+                    <div class="doc-card-top">
+                        <div>
+                            <h3>实施路线图</h3>
+                            <p>按阶段拆解验证顺序、资源投入与论文路径。</p>
+                        </div>
+                        <span class="icon-badge icon-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 19V5"></path><path d="M19 19H5"></path><path d="M8 15l3-4 3 2 4-6"></path></svg></span>
+                    </div>
+                    <span class="story-link">打开文档 →</span>
                 </a>
-                <a href="https://github.com/AICode-Nexus/ai-virtual-cell/blob/main/src/innovations/README.md" target="_blank" class="card card-glow" style="text-decoration: none;">
-                    <div style="font-size: 28px; margin-bottom: 12px;">💡</div>
-                    <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 8px; color: var(--text-primary);">P0 创新原型</h3>
-                    <p style="font-size: 13px; color: var(--text-secondary);">三个高优先级创新的参考实现和使用指南</p>
-                    <span style="display: inline-block; margin-top: 12px; font-size: 12px; color: var(--green);">查看文档 →</span>
+                <a class="doc-card" href="https://github.com/AICode-Nexus/ai-virtual-cell/blob/main/src/innovations/README.md" target="_blank" rel="noopener noreferrer">
+                    <div class="doc-card-top">
+                        <div>
+                            <h3>P0 创新原型</h3>
+                            <p>三个原型的机制来源、使用方式与实验预期。</p>
+                        </div>
+                        <span class="icon-badge icon-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3l2.8 5.7L21 9.6l-4.5 4.3 1 6.1L12 17l-5.5 3 1-6.1L3 9.6l6.2-.9L12 3z"></path></svg></span>
+                    </div>
+                    <span class="story-link">打开文档 →</span>
                 </a>
-                <a href="https://github.com/AICode-Nexus/ai-virtual-cell/blob/main/docs/PROJECT_COMPLETION_REPORT.md" target="_blank" class="card card-glow" style="text-decoration: none;">
-                    <div style="font-size: 28px; margin-bottom: 12px;">📊</div>
-                    <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 8px; color: var(--text-primary);">项目完成报告</h3>
-                    <p style="font-size: 13px; color: var(--text-secondary);">知识映射框架与创新机会分析的完整报告</p>
-                    <span style="display: inline-block; margin-top: 12px; font-size: 12px; color: var(--green);">查看文档 →</span>
+                <a class="doc-card" href="https://github.com/AICode-Nexus/ai-virtual-cell/blob/main/docs/PROJECT_COMPLETION_REPORT.md" target="_blank" rel="noopener noreferrer">
+                    <div class="doc-card-top">
+                        <div>
+                            <h3>项目完成报告</h3>
+                            <p>知识库建设、机会筛选和优先级结论总览。</p>
+                        </div>
+                        <span class="icon-badge icon-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 19h14"></path><path d="M7 15V9"></path><path d="M12 15V5"></path><path d="M17 15v-3"></path></svg></span>
+                    </div>
+                    <span class="story-link">打开文档 →</span>
                 </a>
             </div>
         </section>
 
-        <!-- Contributing -->
-        <section class="section">
+        <section class="section section-compact">
             <div class="section-header reveal">
-                <h2>参与贡献</h2>
-                <p>我们欢迎来自不同领域的专家和爱好者</p>
+                <div class="eyebrow">Contribute</div>
+                <h2>最适合参与的角色</h2>
             </div>
-
-            <div class="grid-2 reveal" style="margin-bottom: 40px;">
-                <div class="card">
-                    <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 20px;">我们特别需要</h3>
-                    <div style="display: flex; flex-direction: column; gap: 12px;">
-                        <div style="display: flex; align-items: center; gap: 12px; padding: 12px; background: rgba(34, 197, 94, 0.05); border-radius: 8px; border: 1px solid rgba(34, 197, 94, 0.1);">
-                            <span style="font-size: 24px;">🧬</span>
-                            <div>
-                                <div style="font-weight: 600; font-size: 14px;">生物学家</div>
-                                <div style="font-size: 12px; color: var(--text-secondary);">验证细胞机制映射的准确性和合理性</div>
-                            </div>
-                        </div>
-                        <div style="display: flex; align-items: center; gap: 12px; padding: 12px; background: rgba(59, 130, 246, 0.05); border-radius: 8px; border: 1px solid rgba(59, 130, 246, 0.1);">
-                            <span style="font-size: 24px;">💻</span>
-                            <div>
-                                <div style="font-weight: 600; font-size: 14px;">AI 研究者</div>
-                                <div style="font-size: 12px; color: var(--text-secondary);">探讨技术可行性和创新点</div>
-                            </div>
-                        </div>
-                        <div style="display: flex; align-items: center; gap: 12px; padding: 12px; background: rgba(168, 85, 247, 0.05); border-radius: 8px; border: 1px solid rgba(168, 85, 247, 0.1);">
-                            <span style="font-size: 24px;">🏗️</span>
-                            <div>
-                                <div style="font-weight: 600; font-size: 14px;">系统架构师</div>
-                                <div style="font-size: 12px; color: var(--text-secondary);">优化系统设计和扩展性</div>
-                            </div>
-                        </div>
-                        <div style="display: flex; align-items: center; gap: 12px; padding: 12px; background: rgba(245, 158, 11, 0.05); border-radius: 8px; border: 1px solid rgba(245, 158, 11, 0.1);">
-                            <span style="font-size: 24px;">🎨</span>
-                            <div>
-                                <div style="font-weight: 600; font-size: 14px;">产品经理</div>
-                                <div style="font-size: 12px; color: var(--text-secondary);">探索应用场景和商业价值</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 20px;">贡献方式</h3>
-                    <div style="display: flex; flex-direction: column; gap: 16px;">
-                        <div>
-                            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
-                                <span style="background: var(--green); color: var(--bg-primary); width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700;">1</span>
-                                <span style="font-weight: 600; font-size: 14px;">参与讨论</span>
-                            </div>
-                            <p style="font-size: 13px; color: var(--text-secondary); padding-left: 32px;">在 GitHub Discussions 中分享想法、提出问题</p>
-                        </div>
-                        <div>
-                            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
-                                <span style="background: var(--blue); color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700;">2</span>
-                                <span style="font-weight: 600; font-size: 14px;">提出问题</span>
-                            </div>
-                            <p style="font-size: 13px; color: var(--text-secondary); padding-left: 32px;">发现设计中的问题或不足，在 Issues 中提出</p>
-                        </div>
-                        <div>
-                            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
-                                <span style="background: var(--purple); color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700;">3</span>
-                                <span style="font-weight: 600; font-size: 14px;">改进文档</span>
-                            </div>
-                            <p style="font-size: 13px; color: var(--text-secondary); padding-left: 32px;">帮助完善文档、修正错误或添加示例</p>
-                        </div>
-                        <div>
-                            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
-                                <span style="background: var(--amber); color: var(--bg-primary); width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700;">4</span>
-                                <span style="font-weight: 600; font-size: 14px;">代码贡献</span>
-                            </div>
-                            <p style="font-size: 13px; color: var(--text-secondary); padding-left: 32px;">实现阶段欢迎提交 Pull Request</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- CTA -->
-            <div class="reveal" style="text-align: center; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-                <a href="https://github.com/AICode-Nexus/ai-virtual-cell/discussions" target="_blank" class="btn btn-primary">参与讨论 →</a>
-                <a href="https://github.com/AICode-Nexus/ai-virtual-cell/issues" target="_blank" class="btn btn-outline">提交 Issue</a>
-                <a href="https://github.com/AICode-Nexus/ai-virtual-cell/blob/main/CONTRIBUTING.md" target="_blank" class="btn btn-outline">贡献指南</a>
+            <div class="role-list reveal">
+                <article class="role-card">
+                    <span class="icon-badge icon-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="8"></circle><path d="M12 8v8"></path><path d="M8 12h8"></path></svg></span>
+                    <div><h4>生物学家</h4><p>判断机制迁移是否抓住了真正有价值的控制逻辑，而不是只做术语类比。</p></div>
+                </article>
+                <article class="role-card">
+                    <span class="icon-badge icon-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 7h16"></path><path d="M4 12h10"></path><path d="M4 17h16"></path></svg></span>
+                    <div><h4>AI 研究者</h4><p>评估这些控制器与现有方法相比，是否有可证明的性能或能力差异。</p></div>
+                </article>
+                <article class="role-card">
+                    <span class="icon-badge icon-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 20V9"></path><path d="M12 20V4"></path><path d="M18 20v-7"></path></svg></span>
+                    <div><h4>系统架构师</h4><p>帮助把机制原型变成可组合的系统层，而不是零散实验脚本。</p></div>
+                </article>
+                <article class="role-card">
+                    <span class="icon-badge icon-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3l7 4v5c0 4.7-3 7.9-7 9-4-1.1-7-4.3-7-9V7l7-4z"></path></svg></span>
+                    <div><h4>安全研究者 / 产品研究者</h4><p>分别验证对齐机制与应用场景，帮助判断哪些方向最有现实价值。</p></div>
+                </article>
             </div>
         </section>
 
-        <!-- Quick Start -->
-        <section class="section">
-            <div class="section-header reveal">
-                <h2>快速开始</h2>
-            </div>
-            <div class="reveal">
-                <div class="card" style="max-width: 700px; margin: 0 auto;">
-                    <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 16px;">克隆仓库并阅读文档</h3>
-                    <div class="code-block">
-<span style="color: #94a3b8;"># 克隆仓库</span>
+        <section class="section section-compact">
+            <div class="contribute-layout reveal">
+                <article class="card stack">
+                    <h3 class="card-title">如何进入讨论</h3>
+                    <div class="stack-sm">
+                        <div class="role-card" style="padding: 0; border: none; background: none;">
+                            <span class="number-step green">1</span>
+                            <div><h4>先选文档入口</h4><p>先从设计、映射或原型三个入口里选一个，不要一开始就横向扫所有文件。</p></div>
+                        </div>
+                        <div class="role-card" style="padding: 0; border: none; background: none;">
+                            <span class="number-step blue">2</span>
+                            <div><h4>带着具体问题来</h4><p>例如“这条映射是否过度简化”“这个控制器是否能替代现有方案”。</p></div>
+                        </div>
+                        <div class="role-card" style="padding: 0; border: none; background: none;">
+                            <span class="number-step purple">3</span>
+                            <div><h4>在 Discussions 或 Issues 留下结论</h4><p>把反馈落成具体判断，而不是停留在“这个很有意思”。</p></div>
+                        </div>
+                    </div>
+                    <div class="cta-row">
+                        <a class="btn btn-primary" href="https://github.com/AICode-Nexus/ai-virtual-cell/discussions" target="_blank" rel="noopener noreferrer">参与 Discussions</a>
+                        <a class="btn btn-outline" href="https://github.com/AICode-Nexus/ai-virtual-cell/issues" target="_blank" rel="noopener noreferrer">提交 Issues</a>
+                    </div>
+                </article>
+                <article class="card stack">
+                    <h3 class="card-title">本地开始方式</h3>
+                    <pre class="code-block"><span style="color:#8da2c0;"># clone repo</span>
 git clone https://github.com/AICode-Nexus/ai-virtual-cell.git
 cd ai-virtual-cell
 
-<span style="color: #94a3b8;"># 阅读核心文档</span>
+<span style="color:#8da2c0;"># read the core docs</span>
 cat docs/DESIGN.md
 cat docs/BIOLOGY_MAPPING.md
+cat docs/PROJECT_COMPLETION_REPORT.md
 
-<span style="color: #94a3b8;"># 运行创新原型演示</span>
+<span style="color:#8da2c0;"># run innovation demos</span>
 python3 src/innovations/demo_integrated.py
 
-<span style="color: #94a3b8;"># 本地预览网站</span>
-cd website && python3 -m http.server 8000</div>
-                </div>
+<span style="color:#8da2c0;"># preview site locally</span>
+cd website && python3 -m http.server 8000</pre>
+                </article>
             </div>
         </section>
 
-        <!-- Discussion Topics -->
-        <section class="section">
+        <section class="section section-compact">
             <div class="section-header reveal">
-                <h2>讨论主题</h2>
+                <div class="eyebrow">Topics</div>
+                <h2>建议优先讨论的话题</h2>
             </div>
-            <div class="grid-2 reveal">
-                <a href="https://github.com/AICode-Nexus/ai-virtual-cell/discussions/categories/biology" target="_blank" class="card card-glow" style="text-decoration: none;">
-                    <h4 style="font-size: 16px; font-weight: 600; color: var(--text-primary); margin-bottom: 8px;">🧬 生物学验证</h4>
-                    <p style="font-size: 13px; color: var(--text-secondary);">帮助验证生物学机制的准确性和合理性</p>
+            <div class="topic-grid reveal">
+                <a class="topic-card" href="https://github.com/AICode-Nexus/ai-virtual-cell/discussions/categories/biology" target="_blank" rel="noopener noreferrer">
+                    <span class="icon-badge icon-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 4v16"></path><path d="M7 7h10"></path><path d="M7 12h10"></path><path d="M7 17h10"></path></svg></span>
+                    <div><h4>生物学验证</h4><p>哪些映射是强控制逻辑迁移，哪些只是弱类比。</p></div>
                 </a>
-                <a href="https://github.com/AICode-Nexus/ai-virtual-cell/discussions/categories/technical" target="_blank" class="card card-glow" style="text-decoration: none;">
-                    <h4 style="font-size: 16px; font-weight: 600; color: var(--text-primary); margin-bottom: 8px;">💻 技术实现</h4>
-                    <p style="font-size: 13px; color: var(--text-secondary);">探讨技术可行性、架构设计和实现细节</p>
+                <a class="topic-card" href="https://github.com/AICode-Nexus/ai-virtual-cell/discussions/categories/technical" target="_blank" rel="noopener noreferrer">
+                    <span class="icon-badge icon-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 19V5"></path><path d="M19 19H5"></path><path d="M8 15l3-4 3 2 4-6"></path></svg></span>
+                    <div><h4>技术实现</h4><p>哪些机制最适合先做成算法，哪些更像系统控制层。</p></div>
                 </a>
-                <a href="https://github.com/AICode-Nexus/ai-virtual-cell/discussions/categories/applications" target="_blank" class="card card-glow" style="text-decoration: none;">
-                    <h4 style="font-size: 16px; font-weight: 600; color: var(--text-primary); margin-bottom: 8px;">🎯 应用场景</h4>
-                    <p style="font-size: 13px; color: var(--text-secondary);">探索实际应用场景和商业价值</p>
+                <a class="topic-card" href="https://github.com/AICode-Nexus/ai-virtual-cell/discussions/categories/applications" target="_blank" rel="noopener noreferrer">
+                    <span class="icon-badge icon-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 7h16"></path><path d="M4 12h16"></path><path d="M4 17h8"></path></svg></span>
+                    <div><h4>应用场景</h4><p>哪些真实系统最需要持续学习、动态对齐和分层容错。</p></div>
                 </a>
-                <a href="https://github.com/AICode-Nexus/ai-virtual-cell/discussions/categories/ideas" target="_blank" class="card card-glow" style="text-decoration: none;">
-                    <h4 style="font-size: 16px; font-weight: 600; color: var(--text-primary); margin-bottom: 8px;">💡 创新想法</h4>
-                    <p style="font-size: 13px; color: var(--text-secondary);">分享你的创新想法和改进建议</p>
+                <a class="topic-card" href="https://github.com/AICode-Nexus/ai-virtual-cell/discussions/categories/ideas" target="_blank" rel="noopener noreferrer">
+                    <span class="icon-badge icon-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3a6 6 0 0 0-3 11.2V17h6v-2.8A6 6 0 0 0 12 3z"></path><path d="M9 21h6"></path></svg></span>
+                    <div><h4>新映射方向</h4><p>继续扩展表观遗传、代谢网络、细胞通讯等方向。</p></div>
                 </a>
             </div>
         </section>

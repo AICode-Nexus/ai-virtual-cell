@@ -4,243 +4,487 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>知识映射 - AI Virtual Cell</title>
-    <meta name="description" content="13个生物系统 × 15个AI领域 = 195个映射单元，系统性发现AI创新机会。">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧬</text></svg>">
+    <meta name="description" content="13 个生物系统 × 15 个 AI 领域的映射关系：从细胞机制到计算原语，再到创新缺口。">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='12' fill='%2335d67f'/><circle cx='50' cy='18' r='6' fill='%2335d67f'/><circle cx='78' cy='34' r='6' fill='%2354a9ff'/><circle cx='78' cy='66' r='6' fill='%23b07bff'/><circle cx='50' cy='82' r='6' fill='%2335d67f'/><circle cx='22' cy='66' r='6' fill='%2354a9ff'/><circle cx='22' cy='34' r='6' fill='%23b07bff'/></svg>">
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
     <div class="page">
-        <!-- Header -->
-        <section class="section" style="padding-bottom: 40px;">
-            <div class="reveal">
-                <p style="color: var(--blue); font-size: 14px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px;">Knowledge Mapping Framework</p>
-                <h1 style="font-size: 42px; font-weight: 800; margin-bottom: 16px;">知识映射框架</h1>
-                <p style="color: var(--text-secondary); font-size: 18px; max-width: 700px;">通过系统性对比细胞生物学与 AI 知识体系，建立映射关系，发现映射缺口——这些缺口就是创新机会。</p>
+        <section class="page-hero compact">
+            <div class="stack reveal visible">
+                <div class="eyebrow">Knowledge Mapping Framework</div>
+                <h1 class="page-title">知识映射不是“术语对照表”<br><span class="glow-blue">而是机制迁移框架</span></h1>
+                <p class="page-subtitle">这个页面回答的不是“某个生物名词像不像某个 AI 名词”，而是：生物系统里什么控制逻辑真正有价值、它在 AI 里对应什么原语、当前缺口在哪里、为什么值得优先实现。</p>
             </div>
         </section>
 
-        <!-- Matrix Overview -->
-        <section class="section" style="padding-top: 20px;">
-            <div class="grid-3 reveal">
-                <div class="glass-card" style="text-align: center;">
-                    <div class="stat-value glow-green" data-count="13">0</div>
-                    <div class="stat-label">生物系统</div>
+        <section class="section section-tight">
+            <div class="metric-grid reveal">
+                <div class="metric-card">
+                    <div class="metric-value glow-green" data-count="13">0</div>
+                    <div class="metric-label">生物系统维度</div>
                 </div>
-                <div class="glass-card" style="text-align: center;">
-                    <div class="stat-value glow-blue" data-count="15">0</div>
-                    <div class="stat-label">AI 领域</div>
+                <div class="metric-card">
+                    <div class="metric-value glow-blue" data-count="15">0</div>
+                    <div class="metric-label">AI 领域维度</div>
                 </div>
-                <div class="glass-card" style="text-align: center;">
-                    <div class="stat-value glow-purple" data-count="195">0</div>
-                    <div class="stat-label">映射单元</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Two Dimensions -->
-        <section class="section">
-            <div class="grid-2">
-                <!-- Biology -->
-                <div class="card reveal" style="border-color: rgba(34, 197, 94, 0.2);">
-                    <h3 style="color: var(--green); font-size: 18px; font-weight: 700; margin-bottom: 20px;">🧬 细胞生物学维度</h3>
-                    <div style="margin-bottom: 16px;">
-                        <div style="font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">分子信息层</div>
-                        <div style="display: flex; flex-wrap: wrap; gap: 6px;">
-                            <span class="tag tag-green">基因组系统</span>
-                            <span class="tag tag-green">转录调控</span>
-                            <span class="tag tag-green">翻译与蛋白质</span>
-                        </div>
-                    </div>
-                    <div style="margin-bottom: 16px;">
-                        <div style="font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">能量与代谢层</div>
-                        <div style="display: flex; flex-wrap: wrap; gap: 6px;">
-                            <span class="tag tag-green">生物能量学</span>
-                            <span class="tag tag-green">物质代谢网络</span>
-                        </div>
-                    </div>
-                    <div style="margin-bottom: 16px;">
-                        <div style="font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">信息传递层</div>
-                        <div style="display: flex; flex-wrap: wrap; gap: 6px;">
-                            <span class="tag tag-green">信号转导</span>
-                            <span class="tag tag-green">细胞通讯</span>
-                        </div>
-                    </div>
-                    <div style="margin-bottom: 16px;">
-                        <div style="font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">记忆与可塑性层</div>
-                        <div style="display: flex; flex-wrap: wrap; gap: 6px;">
-                            <span class="tag tag-green">神经可塑性</span>
-                            <span class="tag tag-green">表观遗传记忆</span>
-                        </div>
-                    </div>
-                    <div style="margin-bottom: 16px;">
-                        <div style="font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">防御与稳态层</div>
-                        <div style="display: flex; flex-wrap: wrap; gap: 6px;">
-                            <span class="tag tag-green">免疫系统</span>
-                            <span class="tag tag-green">应激响应</span>
-                        </div>
-                    </div>
-                    <div>
-                        <div style="font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">发育与进化层</div>
-                        <div style="display: flex; flex-wrap: wrap; gap: 6px;">
-                            <span class="tag tag-green">发育分化</span>
-                            <span class="tag tag-green">进化适应</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- AI -->
-                <div class="card reveal reveal-delay-2" style="border-color: rgba(59, 130, 246, 0.2);">
-                    <h3 style="color: var(--blue); font-size: 18px; font-weight: 700; margin-bottom: 20px;">🤖 AI 技术维度</h3>
-                    <div style="margin-bottom: 16px;">
-                        <div style="font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">模型架构层</div>
-                        <div style="display: flex; flex-wrap: wrap; gap: 6px;">
-                            <span class="tag tag-blue">深度神经网络</span>
-                            <span class="tag tag-blue">持续学习</span>
-                            <span class="tag tag-blue">神经形态计算</span>
-                        </div>
-                    </div>
-                    <div style="margin-bottom: 16px;">
-                        <div style="font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">学习范式层</div>
-                        <div style="display: flex; flex-wrap: wrap; gap: 6px;">
-                            <span class="tag tag-blue">强化学习</span>
-                            <span class="tag tag-blue">自监督学习</span>
-                            <span class="tag tag-blue">元学习</span>
-                        </div>
-                    </div>
-                    <div style="margin-bottom: 16px;">
-                        <div style="font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">知识与推理层</div>
-                        <div style="display: flex; flex-wrap: wrap; gap: 6px;">
-                            <span class="tag tag-blue">知识图谱</span>
-                            <span class="tag tag-blue">因果推理</span>
-                            <span class="tag tag-blue">世界模型</span>
-                        </div>
-                    </div>
-                    <div style="margin-bottom: 16px;">
-                        <div style="font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">多智能体与协作层</div>
-                        <div style="display: flex; flex-wrap: wrap; gap: 6px;">
-                            <span class="tag tag-blue">多智能体系统</span>
-                            <span class="tag tag-blue">联邦学习</span>
-                        </div>
-                    </div>
-                    <div style="margin-bottom: 16px;">
-                        <div style="font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">进化与优化层</div>
-                        <div style="display: flex; flex-wrap: wrap; gap: 6px;">
-                            <span class="tag tag-blue">进化算法</span>
-                            <span class="tag tag-blue">AutoML</span>
-                        </div>
-                    </div>
-                    <div>
-                        <div style="font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">系统与工程层</div>
-                        <div style="display: flex; flex-wrap: wrap; gap: 6px;">
-                            <span class="tag tag-blue">AI 系统架构</span>
-                            <span class="tag tag-blue">安全与对齐</span>
-                        </div>
-                    </div>
+                <div class="metric-card">
+                    <div class="metric-value glow-purple" data-count="195">0</div>
+                    <div class="metric-label">潜在映射单元</div>
                 </div>
             </div>
         </section>
 
-        <!-- Core Mapping Table -->
+        <section class="section section-compact">
+            <div class="section-header reveal">
+                <div class="eyebrow">Mapping logic</div>
+                <h2>映射的判断标准</h2>
+                <p>真正高质量的映射，不是外形相似，而是控制逻辑、资源约束、时序关系和层级作用方式能迁移。</p>
+            </div>
+            <div class="flow-grid reveal">
+                <article class="flow-card">
+                    <div class="flow-index">01</div>
+                    <h3 class="card-title">拆出生物机制</h3>
+                    <p class="body-copy">先明确机制真正做什么：记忆巩固、激活抑制、错误恢复、资源分配、分层协调，而不是只记一个名词。</p>
+                </article>
+                <article class="flow-card">
+                    <div class="flow-index">02</div>
+                    <h3 class="card-title">抽象控制原语</h3>
+                    <p class="body-copy">把机制翻译成计算语言：门控、阈值、自适应权重、局部修复、全局广播、层级反馈。</p>
+                </article>
+                <article class="flow-card">
+                    <div class="flow-index">03</div>
+                    <h3 class="card-title">核对当前缺口</h3>
+                    <p class="body-copy">看现有 AI 是否已有对应。若只有弱对应或割裂实现，这里就是创新进入点。</p>
+                </article>
+                <article class="flow-card">
+                    <div class="flow-index">04</div>
+                    <h3 class="card-title">设计新结构</h3>
+                    <p class="body-copy">把机制落实成可验证原型：算法、调度器、控制器或容错层，再用基准测试证明价值。</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section section-compact">
+            <div class="mapping-strands reveal">
+                <div class="axis-card">
+                    <div class="axis-label">生物机制侧</div>
+                    <h3>细胞系统真正擅长什么</h3>
+                    <ul class="mapping-list" style="color: var(--green);">
+                        <li><strong>局部-全局协同</strong>：局部活动触发，全局信号决定是否巩固。</li>
+                        <li><strong>抑制性控制</strong>：不是单纯激活，而是通过抑制保持系统不过载。</li>
+                        <li><strong>分层恢复</strong>：轻故障局部修复，重故障再重塑结构。</li>
+                        <li><strong>代谢预算</strong>：计算和决策都受能量约束。</li>
+                        <li><strong>多尺度协调</strong>：分子、细胞、组织三个层级同时作用。</li>
+                    </ul>
+                </div>
+                <div class="bridge-column">
+                    <div class="bridge-pill">门控</div>
+                    <div class="bridge-pill">阈值</div>
+                    <div class="bridge-pill">反馈</div>
+                    <div class="bridge-pill">预算</div>
+                    <div class="bridge-pill">层级</div>
+                </div>
+                <div class="axis-card">
+                    <div class="axis-label">AI 原语侧</div>
+                    <h3>应该被重写到哪里</h3>
+                    <ul class="mapping-list" style="color: var(--blue);">
+                        <li><strong>持续学习器</strong>：参数保护与新知识写入策略。</li>
+                        <li><strong>安全控制器</strong>：动态风险判断与上下文抑制。</li>
+                        <li><strong>鲁棒性层</strong>：系统退化、回滚、重训练编排。</li>
+                        <li><strong>算力调度器</strong>：按任务重要性分配预算。</li>
+                        <li><strong>多智能体结构</strong>：从模块协作升到组织级协调。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
         <section class="section">
             <div class="section-header reveal">
-                <h2>核心映射关系</h2>
-                <p>生物学概念到计算架构的对应</p>
+                <div class="eyebrow">High-value cases</div>
+                <h2>五个高价值映射案例</h2>
+                <p>下面不是“生物概念→AI 名词”的静态表，而是从机制、缺口到设计方向的完整映射链条。</p>
+            </div>
+
+            <div class="case-shell reveal">
+                <div class="case-nav" role="tablist" aria-label="高价值映射案例">
+                    <button class="case-tab active" data-case="dual-gate" role="tab" aria-selected="true">
+                        <strong>双重门控学习</strong>
+                        <span>突触标记 → 选择性巩固</span>
+                    </button>
+                    <button class="case-tab" data-case="immune" role="tab" aria-selected="false">
+                        <strong>免疫检查点对齐</strong>
+                        <span>抑制受体 → 动态阈值</span>
+                    </button>
+                    <button class="case-tab" data-case="stress" role="tab" aria-selected="false">
+                        <strong>分层应激响应</strong>
+                        <span>UPR 三臂 → 分级容错</span>
+                    </button>
+                    <button class="case-tab" data-case="epigenetic" role="tab" aria-selected="false">
+                        <strong>表观遗传元学习</strong>
+                        <span>环境记忆 → 快速适配</span>
+                    </button>
+                    <button class="case-tab" data-case="metabolic" role="tab" aria-selected="false">
+                        <strong>代谢式算力调度</strong>
+                        <span>能量约束 → 预算分配</span>
+                    </button>
+                </div>
+
+                <article class="case-panel active" id="case-dual-gate" role="tabpanel">
+                    <div class="case-header">
+                        <div>
+                            <span class="tag tag-green">P0 原型已实现</span>
+                            <h3 class="case-title">突触标记与捕获 → 双重门控持续学习</h3>
+                            <p class="case-subtitle">核心关系：生物记忆不是“都记住”，而是“局部标记 + 全局许可”后才长期巩固。</p>
+                        </div>
+                        <div class="inline-stack">
+                            <span class="tag tag-blue">持续学习</span>
+                            <span class="tag tag-purple">灾难性遗忘</span>
+                        </div>
+                    </div>
+                    <div class="case-grid">
+                        <section class="case-block">
+                            <h4>生物机制</h4>
+                            <ul class="mapping-list" style="color: var(--green);">
+                                <li><strong>局部标记</strong>：被强烈激活的突触先打上短时标签。</li>
+                                <li><strong>全局信号</strong>：细胞核生成 PRPs，广播给整个细胞。</li>
+                                <li><strong>巩固条件</strong>：只有局部标签和全局资源同时满足，记忆才长期保留。</li>
+                            </ul>
+                        </section>
+                        <section class="case-block">
+                            <h4>AI 中对应的控制原语</h4>
+                            <ul class="mapping-list" style="color: var(--blue);">
+                                <li><strong>局部标签</strong>：梯度幅度、损失敏感度、参数变化强度。</li>
+                                <li><strong>全局许可</strong>：任务重要性、奖励信号、上下文优先级。</li>
+                                <li><strong>巩固机制</strong>：不是保护所有重要参数，而是只保护真正被双重选中的参数。</li>
+                            </ul>
+                        </section>
+                        <section class="case-block">
+                            <h4>当前 AI 缺口</h4>
+                            <ul class="mapping-list" style="color: var(--amber);">
+                                <li>EWC 和 SI 主要依据全局重要性，缺少局部-全局协同。</li>
+                                <li>经验回放依赖存储样本，不是机制性保护。</li>
+                                <li>现有方法通常在“稳定性”和“可塑性”之间硬折中。</li>
+                            </ul>
+                        </section>
+                        <section class="case-block">
+                            <h4>可实现的新结构</h4>
+                            <ul class="mapping-list" style="color: var(--purple);">
+                                <li>训练阶段先打局部标签，再根据任务级信号生成巩固权重。</li>
+                                <li>推理/增量训练时只保护双重激活的参数簇。</li>
+                                <li>让保护比例变稀疏，为新任务保留更多学习空间。</li>
+                            </ul>
+                        </section>
+                    </div>
+                    <div class="case-foot">
+                        <h4>为什么这个映射重要</h4>
+                        <p class="body-copy">这里的价值不在“突触像参数”，而在“记忆巩固的准入逻辑”能直接迁移。它给持续学习提供了一个更细粒度的保护机制，这正是现有方法最薄弱的地方。</p>
+                    </div>
+                </article>
+
+                <article class="case-panel" id="case-immune" role="tabpanel">
+                    <div class="case-header">
+                        <div>
+                            <span class="tag tag-blue">P0 原型已实现</span>
+                            <h3 class="case-title">免疫检查点 → 上下文动态对齐</h3>
+                            <p class="case-subtitle">核心关系：安全不是固定阈值，而是根据风险、信任和上下文动态调节抑制强度。</p>
+                        </div>
+                        <div class="inline-stack">
+                            <span class="tag tag-blue">安全与对齐</span>
+                            <span class="tag tag-red">过度拒绝</span>
+                        </div>
+                    </div>
+                    <div class="case-grid">
+                        <section class="case-block">
+                            <h4>生物机制</h4>
+                            <ul class="mapping-list" style="color: var(--green);">
+                                <li>免疫系统不是只看“是否激活”，而是同时看抑制信号。</li>
+                                <li>PD-1/CTLA-4 类检查点防止系统在高敏状态下自伤。</li>
+                                <li>同一个刺激在不同上下文下会得到不同反应阈值。</li>
+                            </ul>
+                        </section>
+                        <section class="case-block">
+                            <h4>AI 中对应的控制原语</h4>
+                            <ul class="mapping-list" style="color: var(--blue);">
+                                <li>用户意图和任务类型决定基础激活度。</li>
+                                <li>历史交互、信任水平和风险评估产生抑制信号。</li>
+                                <li>安全控制器动态调整最终拒绝阈值，而不是写死一条线。</li>
+                            </ul>
+                        </section>
+                        <section class="case-block">
+                            <h4>当前 AI 缺口</h4>
+                            <ul class="mapping-list" style="color: var(--amber);">
+                                <li>很多对齐系统仍然依赖固定阈值或规则集。</li>
+                                <li>结果是安全性和有用性经常此消彼长。</li>
+                                <li>缺少针对上下文连续变化的抑制型调控逻辑。</li>
+                            </ul>
+                        </section>
+                        <section class="case-block">
+                            <h4>可实现的新结构</h4>
+                            <ul class="mapping-list" style="color: var(--purple);">
+                                <li>引入 activation / inhibition 两路信号，而不是单一 harm score。</li>
+                                <li>对不同用户场景动态抬高或降低触发阈值。</li>
+                                <li>将过度拒绝率作为核心指标，与拦截率一起优化。</li>
+                            </ul>
+                        </section>
+                    </div>
+                    <div class="case-foot">
+                        <h4>为什么这个映射重要</h4>
+                        <p class="body-copy">这个映射抓住的不是“免疫系统像安全系统”，而是“抑制性反馈”这一被现有 LLM 对齐系统低估的控制结构。它能把安全调节从二元开关推进到连续控制。</p>
+                    </div>
+                </article>
+
+                <article class="case-panel" id="case-stress" role="tabpanel">
+                    <div class="case-header">
+                        <div>
+                            <span class="tag tag-purple">P0 原型已实现</span>
+                            <h3 class="case-title">UPR 三臂机制 → 分层应激响应</h3>
+                            <p class="case-subtitle">核心关系：系统出错时不必立即全局回滚，而应根据故障强度选择不同恢复层级。</p>
+                        </div>
+                        <div class="inline-stack">
+                            <span class="tag tag-purple">系统鲁棒性</span>
+                            <span class="tag tag-amber">容错恢复</span>
+                        </div>
+                    </div>
+                    <div class="case-grid">
+                        <section class="case-block">
+                            <h4>生物机制</h4>
+                            <ul class="mapping-list" style="color: var(--green);">
+                                <li><strong>IRE1</strong>：轻度压力时先局部修复。</li>
+                                <li><strong>PERK</strong>：中度压力时暂停部分活动，控制损伤扩大。</li>
+                                <li><strong>ATF6</strong>：重度压力时触发全局重塑。</li>
+                            </ul>
+                        </section>
+                        <section class="case-block">
+                            <h4>AI 中对应的控制原语</h4>
+                            <ul class="mapping-list" style="color: var(--blue);">
+                                <li>轻故障：降级服务、限流、局部重试。</li>
+                                <li>中故障：回到稳定检查点，暂停高风险路径。</li>
+                                <li>重故障：重新训练、模型替换、拓扑重构。</li>
+                            </ul>
+                        </section>
+                        <section class="case-block">
+                            <h4>当前 AI 缺口</h4>
+                            <ul class="mapping-list" style="color: var(--amber);">
+                                <li>容错策略经常只有“继续跑”或“整体回滚”。</li>
+                                <li>系统监控只会报警，不会根据严重度形成分层动作。</li>
+                                <li>恢复策略缺少和错误类型绑定的决策逻辑。</li>
+                            </ul>
+                        </section>
+                        <section class="case-block">
+                            <h4>可实现的新结构</h4>
+                            <ul class="mapping-list" style="color: var(--purple);">
+                                <li>把 error_rate、latency、memory_pressure 合成为 stress score。</li>
+                                <li>设计三档恢复协议：degrade / rollback / rebuild。</li>
+                                <li>把恢复动作接入训练编排器或服务编排层。</li>
+                            </ul>
+                        </section>
+                    </div>
+                    <div class="case-foot">
+                        <h4>为什么这个映射重要</h4>
+                        <p class="body-copy">这里真正迁移的是“故障管理的层次性”。这比单纯讨论 checkpoint 频率更有结构价值，因为它把系统韧性写成了一套状态机。</p>
+                    </div>
+                </article>
+
+                <article class="case-panel" id="case-epigenetic" role="tabpanel">
+                    <div class="case-header">
+                        <div>
+                            <span class="tag tag-amber">高潜力待实现</span>
+                            <h3 class="case-title">表观遗传记忆 → 环境适应性元学习</h3>
+                            <p class="case-subtitle">核心关系：不仅学习任务本身，还学习“什么环境下该偏向什么策略”。</p>
+                        </div>
+                        <div class="inline-stack">
+                            <span class="tag tag-blue">元学习</span>
+                            <span class="tag tag-purple">环境记忆</span>
+                        </div>
+                    </div>
+                    <div class="case-grid">
+                        <section class="case-block">
+                            <h4>生物机制</h4>
+                            <ul class="mapping-list" style="color: var(--green);">
+                                <li>DNA 甲基化和组蛋白修饰会长期改变表达倾向。</li>
+                                <li>这种变化不一定改基因本体，但会改变“调用方式”。</li>
+                                <li>同一套基因在不同环境会形成不同激活偏置。</li>
+                            </ul>
+                        </section>
+                        <section class="case-block">
+                            <h4>AI 中对应的控制原语</h4>
+                            <ul class="mapping-list" style="color: var(--blue);">
+                                <li>学习环境级先验，而不只是任务级权重。</li>
+                                <li>让模型根据长期环境上下文调整初始化、路由或学习率。</li>
+                                <li>把上下文记忆从短期 prompt 扩展到跨任务偏置层。</li>
+                            </ul>
+                        </section>
+                        <section class="case-block">
+                            <h4>当前 AI 缺口</h4>
+                            <ul class="mapping-list" style="color: var(--amber);">
+                                <li>MAML 等方法更关注“快速适应”，不关注环境持久偏置。</li>
+                                <li>in-context learning 偏短期，不会积累跨轮环境记忆。</li>
+                                <li>迁移学习常常在任务之间做迁移，而不是在环境之间做迁移。</li>
+                            </ul>
+                        </section>
+                        <section class="case-block">
+                            <h4>可实现的新结构</h4>
+                            <ul class="mapping-list" style="color: var(--purple);">
+                                <li>引入 epigenetic layer，存储环境条件到策略偏置的映射。</li>
+                                <li>在进入任务前先读取环境标签，调整模型初态或路由器参数。</li>
+                                <li>把长期环境表现写回偏置层，而不是全量改主模型。</li>
+                            </ul>
+                        </section>
+                    </div>
+                    <div class="case-foot">
+                        <h4>为什么这个映射重要</h4>
+                        <p class="body-copy">这类映射的价值在于把“环境适应”从隐式现象变成显式结构。它有机会改变少样本与长期部署系统对环境变化的反应方式。</p>
+                    </div>
+                </article>
+
+                <article class="case-panel" id="case-metabolic" role="tabpanel">
+                    <div class="case-header">
+                        <div>
+                            <span class="tag tag-amber">高潜力待实现</span>
+                            <h3 class="case-title">代谢网络调控 → 预算感知计算</h3>
+                            <p class="case-subtitle">核心关系：不是所有任务都用同样算力，而是按能量状态和收益动态分配计算预算。</p>
+                        </div>
+                        <div class="inline-stack">
+                            <span class="tag tag-blue">系统调度</span>
+                            <span class="tag tag-green">资源约束</span>
+                        </div>
+                    </div>
+                    <div class="case-grid">
+                        <section class="case-block">
+                            <h4>生物机制</h4>
+                            <ul class="mapping-list" style="color: var(--green);">
+                                <li>细胞会根据 ATP、营养和压力状态调整代谢流向。</li>
+                                <li>高能耗路径只在必要时启动，低优先级任务可被抑制。</li>
+                                <li>能量状态本身会反馈影响决策与信号通路。</li>
+                            </ul>
+                        </section>
+                        <section class="case-block">
+                            <h4>AI 中对应的控制原语</h4>
+                            <ul class="mapping-list" style="color: var(--blue);">
+                                <li>依据任务价值、延迟约束和设备资源分配计算深度。</li>
+                                <li>动态决定是否调用大模型、专家模块或长链推理。</li>
+                                <li>让资源状态进入推理控制器，而不是只由外部调度器处理。</li>
+                            </ul>
+                        </section>
+                        <section class="case-block">
+                            <h4>当前 AI 缺口</h4>
+                            <ul class="mapping-list" style="color: var(--amber);">
+                                <li>训练和推理资源分配大多是粗粒度静态策略。</li>
+                                <li>模型内部通常不知道当前“能量状况”。</li>
+                                <li>成本优化与模型控制逻辑是分离的。</li>
+                            </ul>
+                        </section>
+                        <section class="case-block">
+                            <h4>可实现的新结构</h4>
+                            <ul class="mapping-list" style="color: var(--purple);">
+                                <li>引入 metabolic controller，输入延迟、成本、负载与任务等级。</li>
+                                <li>控制 token budget、专家调用数、检索深度、推理轮数。</li>
+                                <li>使“省算力”不只是外围限流，而是模型行为的一部分。</li>
+                            </ul>
+                        </section>
+                    </div>
+                    <div class="case-foot">
+                        <h4>为什么这个映射重要</h4>
+                        <p class="body-copy">许多 AI 系统在生产环境中的真正瓶颈不是能力上限，而是单位能力成本。代谢式映射能把成本意识从平台层推进到模型决策层。</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section section-compact">
+            <div class="section-header reveal">
+                <div class="eyebrow">Relationship types</div>
+                <h2>映射关系的四种类型</h2>
+                <p>不是所有映射都在同一层面发生。区分映射类型，才能判断它更适合做算法、系统还是组织级设计。</p>
+            </div>
+            <div class="matrix-grid reveal">
+                <article class="matrix-card">
+                    <span class="tag tag-green">结构映射</span>
+                    <h3>Structural analogy</h3>
+                    <p class="body-copy">例如 DNA → Skill、RNA → Agent。这类映射负责定义系统组件与层级边界。</p>
+                </article>
+                <article class="matrix-card">
+                    <span class="tag tag-blue">控制映射</span>
+                    <h3>Control logic transfer</h3>
+                    <p class="body-copy">例如检查点抑制、双重门控、UPR 三臂。最容易产出真正的新控制器。</p>
+                </article>
+                <article class="matrix-card">
+                    <span class="tag tag-purple">资源映射</span>
+                    <h3>Budget-aware regulation</h3>
+                    <p class="body-copy">例如代谢网络、能量感知和非必需过程暂停。适合解决成本与吞吐问题。</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section section-compact">
+            <div class="section-header reveal">
+                <div class="eyebrow">Where to dig next</div>
+                <h2>接下来最值得继续挖的映射方向</h2>
             </div>
             <div class="table-wrapper reveal">
                 <table>
                     <thead>
-                        <tr><th>生物概念</th><th>计算对应</th><th>说明</th><th>状态</th></tr>
+                        <tr>
+                            <th>方向</th>
+                            <th>生物逻辑</th>
+                            <th>AI 缺口</th>
+                            <th>优先级</th>
+                        </tr>
                     </thead>
                     <tbody>
-                        <tr><td>DNA（基因）</td><td style="color: var(--green);">Skill（技能）</td><td style="color: var(--text-secondary);">可执行的功能模块</td><td><span class="tag tag-green">✓ 已映射</span></td></tr>
-                        <tr><td>RNA</td><td style="color: var(--green);">Agent 实例</td><td style="color: var(--text-secondary);">临时的执行体</td><td><span class="tag tag-green">✓ 已映射</span></td></tr>
-                        <tr><td>蛋白质</td><td style="color: var(--green);">Function</td><td style="color: var(--text-secondary);">具体功能实现</td><td><span class="tag tag-green">✓ 已映射</span></td></tr>
-                        <tr><td>线粒体</td><td style="color: var(--green);">算力调度器</td><td style="color: var(--text-secondary);">管理计算资源</td><td><span class="tag tag-green">✓ 已映射</span></td></tr>
-                        <tr><td>突触可塑性</td><td style="color: var(--green);">权重调整</td><td style="color: var(--text-secondary);">Hebbian 学习 / LTP / LTD</td><td><span class="tag tag-green">✓ 已映射</span></td></tr>
-                        <tr><td>突触标记与捕获</td><td style="color: var(--blue);">双重门控 EWC</td><td style="color: var(--text-secondary);">选择性参数保护</td><td><span class="tag tag-blue">★ P0 创新</span></td></tr>
-                        <tr><td>免疫检查点</td><td style="color: var(--blue);">动态安全阈值</td><td style="color: var(--text-secondary);">上下文感知的安全决策</td><td><span class="tag tag-blue">★ P0 创新</span></td></tr>
-                        <tr><td>UPR 三臂机制</td><td style="color: var(--blue);">分层容错</td><td style="color: var(--text-secondary);">分级应激响应策略</td><td><span class="tag tag-blue">★ P0 创新</span></td></tr>
-                        <tr><td>表观遗传</td><td style="color: var(--purple);">环境适应性元学习</td><td style="color: var(--text-secondary);">长期环境记忆 + 跨代遗传</td><td><span class="tag tag-amber">⚠ 待探索</span></td></tr>
-                        <tr><td>代谢网络</td><td style="color: var(--purple);">动态计算预算</td><td style="color: var(--text-secondary);">根据需求分配算力</td><td><span class="tag tag-amber">⚠ 待探索</span></td></tr>
-                        <tr><td>信号级联</td><td style="color: var(--purple);">级联注意力</td><td style="color: var(--text-secondary);">信号逐级放大 + 反馈调控</td><td><span class="tag tag-amber">⚠ 待探索</span></td></tr>
+                        <tr>
+                            <td><strong>表观遗传 × 元学习</strong></td>
+                            <td>长期环境记忆改变后续表达偏置</td>
+                            <td>少环境级长期适配机制</td>
+                            <td><span class="tag tag-amber">P1</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>代谢网络 × 计算效率</strong></td>
+                            <td>按能量状态调配代谢流量</td>
+                            <td>模型内部缺少预算感知</td>
+                            <td><span class="tag tag-amber">P1</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>信号转导 × 注意力</strong></td>
+                            <td>级联放大、多通路整合、反馈稳定</td>
+                            <td>注意力层缺少反馈式控制</td>
+                            <td><span class="tag tag-amber">P1</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>细胞通讯 × 多智能体系统</strong></td>
+                            <td>旁分泌、远距信号、局部同步</td>
+                            <td>协作协议常常过于中心化</td>
+                            <td><span class="tag tag-blue">P2</span></td>
+                        </tr>
                     </tbody>
                 </table>
-            </div>
-        </section>
-
-        <!-- Methodology -->
-        <section class="section">
-            <div class="section-header reveal">
-                <h2>映射方法论</h2>
-                <p>每个映射单元的分析框架</p>
-            </div>
-            <div class="grid-4 reveal">
-                <div class="glass-card">
-                    <div style="color: var(--green); font-size: 24px; margin-bottom: 12px;">1</div>
-                    <h4 style="font-size: 14px; font-weight: 600; margin-bottom: 8px;">生物机制列表</h4>
-                    <p style="font-size: 12px; color: var(--text-secondary);">具体到分子、通路、调控方式</p>
-                </div>
-                <div class="glass-card">
-                    <div style="color: var(--blue); font-size: 24px; margin-bottom: 12px;">2</div>
-                    <h4 style="font-size: 14px; font-weight: 600; margin-bottom: 8px;">AI 技术列表</h4>
-                    <p style="font-size: 12px; color: var(--text-secondary);">具体到算法、架构、实现方式</p>
-                </div>
-                <div class="glass-card">
-                    <div style="color: var(--purple); font-size: 24px; margin-bottom: 12px;">3</div>
-                    <h4 style="font-size: 14px; font-weight: 600; margin-bottom: 8px;">映射关系分析</h4>
-                    <p style="font-size: 12px; color: var(--text-secondary);">✓ 已映射 / ⚠ 部分 / ✗ 缺口</p>
-                </div>
-                <div class="glass-card">
-                    <div style="color: var(--pink); font-size: 24px; margin-bottom: 12px;">4</div>
-                    <h4 style="font-size: 14px; font-weight: 600; margin-bottom: 8px;">创新机会评估</h4>
-                    <p style="font-size: 12px; color: var(--text-secondary);">可行性 + 价值 + 优先级</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Architecture -->
-        <section class="section">
-            <div class="section-header reveal">
-                <h2>系统架构</h2>
-                <p>从分子到生态系统的七层架构</p>
-            </div>
-            <div class="reveal" style="max-width: 600px; margin: 0 auto;">
-                <div style="display: flex; flex-direction: column; gap: 8px;">
-                    <div class="glass-card" style="padding: 16px 24px; text-align: center; border-color: rgba(168, 85, 247, 0.3); box-shadow: 0 0 20px rgba(168, 85, 247, 0.1);">
-                        <div style="font-weight: 700;">Layer 7: Ecosystem</div>
-                        <div style="font-size: 12px; color: var(--text-muted);">多生命体协作与竞争</div>
-                    </div>
-                    <div class="glass-card" style="padding: 16px 24px; text-align: center; margin-left: 20px; border-color: rgba(99, 102, 241, 0.3);">
-                        <div style="font-weight: 700;">Layer 6: Organism</div>
-                        <div style="font-size: 12px; color: var(--text-muted);">完整的智能个体</div>
-                    </div>
-                    <div class="glass-card" style="padding: 16px 24px; text-align: center; margin-left: 40px; border-color: rgba(59, 130, 246, 0.3);">
-                        <div style="font-weight: 700;">Layer 5: Organ</div>
-                        <div style="font-size: 12px; color: var(--text-muted);">Brain / Sensory / Executive</div>
-                    </div>
-                    <div class="glass-card" style="padding: 16px 24px; text-align: center; margin-left: 60px; border-color: rgba(6, 182, 212, 0.3);">
-                        <div style="font-weight: 700;">Layer 4: Tissue</div>
-                        <div style="font-size: 12px; color: var(--text-muted);">多细胞协作功能模块</div>
-                    </div>
-                    <div class="glass-card" style="padding: 16px 24px; text-align: center; margin-left: 80px; border-color: rgba(20, 184, 166, 0.3);">
-                        <div style="font-weight: 700;">Layer 3: Cell Network</div>
-                        <div style="font-size: 12px; color: var(--text-muted);">突触连接与信号传递</div>
-                    </div>
-                    <div class="glass-card" style="padding: 16px 24px; text-align: center; margin-left: 100px; border-color: rgba(34, 197, 94, 0.3);">
-                        <div style="font-weight: 700;">Layer 2: Cell</div>
-                        <div style="font-size: 12px; color: var(--text-muted);">基础智能单元</div>
-                    </div>
-                    <div class="glass-card" style="padding: 16px 24px; text-align: center; margin-left: 120px; border-color: rgba(16, 185, 129, 0.3); box-shadow: 0 0 20px rgba(16, 185, 129, 0.1);">
-                        <div style="font-weight: 700;">Layer 1: Molecular</div>
-                        <div style="font-size: 12px; color: var(--text-muted);">DNA / RNA / 蛋白质</div>
-                    </div>
-                </div>
             </div>
         </section>
     </div>
 
     <script src="js/components.js"></script>
     <script src="js/animations.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabs = Array.from(document.querySelectorAll('.case-tab'));
+            const panels = Array.from(document.querySelectorAll('.case-panel'));
+
+            function activateCase(id) {
+                tabs.forEach((tab) => {
+                    const active = tab.dataset.case === id;
+                    tab.classList.toggle('active', active);
+                    tab.setAttribute('aria-selected', active ? 'true' : 'false');
+                });
+                panels.forEach((panel) => {
+                    panel.classList.toggle('active', panel.id === `case-${id}`);
+                });
+            }
+
+            tabs.forEach((tab) => {
+                tab.addEventListener('click', () => activateCase(tab.dataset.case));
+            });
+        });
+    </script>
 </body>
 </html>
