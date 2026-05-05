@@ -1107,6 +1107,161 @@ button { cursor: pointer; }
 .number-step.purple { background: var(--purple); color: white; }
 .number-step.amber { background: var(--amber); }
 
+/* Mapping matrix grid visualization */
+.mapping-matrix-grid {
+    background: rgba(8,17,31,0.6);
+    border-radius: 16px;
+    padding: 24px;
+    overflow-x: auto;
+}
+
+.matrix-header {
+    display: flex;
+    margin-bottom: 8px;
+}
+
+.matrix-corner {
+    width: 120px;
+    flex-shrink: 0;
+}
+
+.matrix-ai-labels {
+    display: grid;
+    grid-template-columns: repeat(15, 60px);
+    gap: 4px;
+    flex: 1;
+}
+
+.matrix-ai-labels span {
+    font-size: 10px;
+    color: var(--text-muted);
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    height: 120px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 4px 0;
+    font-weight: 600;
+}
+
+.matrix-body {
+    display: flex;
+}
+
+.matrix-bio-labels {
+    width: 120px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.matrix-bio-labels span {
+    height: 40px;
+    font-size: 11px;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    padding-right: 8px;
+    text-align: right;
+    font-weight: 600;
+}
+
+.matrix-cells {
+    display: grid;
+    grid-template-columns: repeat(15, 60px);
+    grid-template-rows: repeat(13, 40px);
+    gap: 4px;
+    flex: 1;
+}
+
+.matrix-cell {
+    border-radius: 6px;
+    border: 1px solid rgba(255,255,255,0.08);
+    cursor: pointer;
+    transition: all 200ms ease;
+    position: relative;
+}
+
+.matrix-cell:hover {
+    transform: scale(1.1);
+    z-index: 10;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.matrix-cell.mapping-strong {
+    background: linear-gradient(135deg, rgba(53,214,127,0.6), rgba(53,214,127,0.4));
+    border-color: rgba(53,214,127,0.8);
+}
+
+.matrix-cell.mapping-medium {
+    background: linear-gradient(135deg, rgba(84,169,255,0.5), rgba(84,169,255,0.3));
+    border-color: rgba(84,169,255,0.6);
+}
+
+.matrix-cell.mapping-weak {
+    background: linear-gradient(135deg, rgba(240,179,74,0.4), rgba(240,179,74,0.2));
+    border-color: rgba(240,179,74,0.5);
+}
+
+.matrix-cell.mapping-empty {
+    background: rgba(255,255,255,0.02);
+    border-style: dashed;
+    border-color: rgba(255,255,255,0.06);
+}
+
+.matrix-cell.mapping-empty:hover {
+    background: rgba(255,255,255,0.05);
+    border-color: rgba(255,255,255,0.15);
+}
+
+@media (max-width: 1200px) {
+    .matrix-ai-labels {
+        grid-template-columns: repeat(15, 50px);
+    }
+
+    .matrix-cells {
+        grid-template-columns: repeat(15, 50px);
+        grid-template-rows: repeat(13, 35px);
+    }
+
+    .matrix-bio-labels span {
+        height: 35px;
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 760px) {
+    .mapping-matrix-grid {
+        padding: 16px;
+    }
+
+    .matrix-corner,
+    .matrix-bio-labels {
+        width: 100px;
+    }
+
+    .matrix-ai-labels {
+        grid-template-columns: repeat(15, 40px);
+    }
+
+    .matrix-ai-labels span {
+        font-size: 9px;
+        height: 100px;
+    }
+
+    .matrix-cells {
+        grid-template-columns: repeat(15, 40px);
+        grid-template-rows: repeat(13, 30px);
+    }
+
+    .matrix-bio-labels span {
+        height: 30px;
+        font-size: 9px;
+    }
+}
+
 /* Mapping matrix table */
 .mapping-matrix-table {
     width: 100%;
