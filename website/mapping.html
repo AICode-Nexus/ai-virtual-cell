@@ -41,6 +41,52 @@
                 <h2>映射的判断标准</h2>
                 <p>真正高质量的映射，不是外形相似，而是控制逻辑、资源约束、时序关系和层级作用方式能迁移。</p>
             </div>
+            <div class="reveal" style="margin-bottom: 32px;">
+                <div class="card" style="padding: 40px; background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));">
+                    <svg viewBox="0 0 800 180" style="width: 100%; height: auto; max-width: 800px; margin: 0 auto; display: block;">
+                        <!-- Bio side -->
+                        <text x="80" y="30" fill="#35d67f" font-size="14" font-weight="700" text-anchor="middle">生物机制</text>
+                        <rect x="20" y="50" width="120" height="40" rx="8" fill="rgba(53,214,127,0.12)" stroke="rgba(53,214,127,0.3)" stroke-width="1.5"/>
+                        <text x="80" y="75" fill="#eef4ff" font-size="12" text-anchor="middle">突触标记与捕获</text>
+
+                        <rect x="20" y="110" width="120" height="40" rx="8" fill="rgba(53,214,127,0.12)" stroke="rgba(53,214,127,0.3)" stroke-width="1.5"/>
+                        <text x="80" y="135" fill="#eef4ff" font-size="12" text-anchor="middle">免疫检查点</text>
+
+                        <!-- Control primitives -->
+                        <text x="400" y="30" fill="#54a9ff" font-size="14" font-weight="700" text-anchor="middle">控制原语</text>
+                        <ellipse cx="400" cy="70" rx="50" ry="20" fill="rgba(84,169,255,0.12)" stroke="rgba(84,169,255,0.3)" stroke-width="1.5"/>
+                        <text x="400" y="75" fill="#eef4ff" font-size="11" text-anchor="middle">双重门控</text>
+
+                        <ellipse cx="400" cy="110" rx="50" ry="20" fill="rgba(84,169,255,0.12)" stroke="rgba(84,169,255,0.3)" stroke-width="1.5"/>
+                        <text x="400" y="115" fill="#eef4ff" font-size="11" text-anchor="middle">动态阈值</text>
+
+                        <ellipse cx="400" cy="150" rx="50" ry="20" fill="rgba(84,169,255,0.12)" stroke="rgba(84,169,255,0.3)" stroke-width="1.5"/>
+                        <text x="400" y="155" fill="#eef4ff" font-size="11" text-anchor="middle">分级响应</text>
+
+                        <!-- AI side -->
+                        <text x="720" y="30" fill="#b07bff" font-size="14" font-weight="700" text-anchor="middle">AI 实现</text>
+                        <rect x="660" y="50" width="120" height="40" rx="8" fill="rgba(176,123,255,0.12)" stroke="rgba(176,123,255,0.3)" stroke-width="1.5"/>
+                        <text x="720" y="75" fill="#eef4ff" font-size="12" text-anchor="middle">持续学习控制器</text>
+
+                        <rect x="660" y="110" width="120" height="40" rx="8" fill="rgba(176,123,255,0.12)" stroke="rgba(176,123,255,0.3)" stroke-width="1.5"/>
+                        <text x="720" y="135" fill="#eef4ff" font-size="12" text-anchor="middle">安全对齐控制器</text>
+
+                        <!-- Arrows -->
+                        <defs>
+                            <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                                <polygon points="0 0, 10 3, 0 6" fill="rgba(84,169,255,0.5)" />
+                            </marker>
+                        </defs>
+
+                        <path d="M 140 70 Q 270 70 350 70" stroke="rgba(84,169,255,0.4)" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+                        <path d="M 140 130 Q 270 120 350 110" stroke="rgba(84,169,255,0.4)" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+
+                        <path d="M 450 70 Q 580 70 660 70" stroke="rgba(176,123,255,0.4)" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+                        <path d="M 450 110 Q 580 120 660 130" stroke="rgba(176,123,255,0.4)" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+                    </svg>
+                    <p class="body-copy" style="margin: 24px 0 0; text-align: center; font-size: 13px; color: var(--text-muted);">映射流程：生物机制 → 抽象控制原语 → AI 可实现结构</p>
+                </div>
+            </div>
             <div class="flow-grid reveal">
                 <article class="flow-card">
                     <div class="flow-index">01</div>
@@ -213,9 +259,30 @@
                             </ul>
                         </section>
                     </div>
-                    <div class="case-foot">
+                    <div class=”case-foot”>
                         <h4>为什么这个映射重要</h4>
-                        <p class="body-copy">这里的价值不在“突触像参数”，而在“记忆巩固的准入逻辑”能直接迁移。它给持续学习提供了一个更细粒度的保护机制，这正是现有方法最薄弱的地方。</p>
+                        <p class=”body-copy”>这里的价值不在”突触像参数”，而在”记忆巩固的准入逻辑”能直接迁移。它给持续学习提供了一个更细粒度的保护机制，这正是现有方法最薄弱的地方。</p>
+                    </div>
+                    <div class=”case-foot” style=”margin-top: 18px; border-color: rgba(84,169,255,0.14); background: linear-gradient(180deg, rgba(84,169,255,0.08), rgba(84,169,255,0.03));”>
+                        <h4>实验设计与基准测试</h4>
+                        <div style=”display: grid; gap: 14px; margin-top: 12px;”>
+                            <div>
+                                <strong style=”color: var(--text-primary); font-size: 14px;”>基准数据集</strong>
+                                <p class=”body-copy” style=”margin: 6px 0 0; font-size: 13px;”>Split CIFAR-10/100、Permuted MNIST、CORe50（持续学习标准基准）</p>
+                            </div>
+                            <div>
+                                <strong style=”color: var(--text-primary); font-size: 14px;”>评估指标</strong>
+                                <p class=”body-copy” style=”margin: 6px 0 0; font-size: 13px;”>平均准确率、遗忘率、前向迁移、后向迁移、参数保护比例</p>
+                            </div>
+                            <div>
+                                <strong style=”color: var(--text-primary); font-size: 14px;”>对比基线</strong>
+                                <p class=”body-copy” style=”margin: 6px 0 0; font-size: 13px;”>Fine-tuning、EWC、SI、经验回放、PackNet、渐进网络</p>
+                            </div>
+                            <div>
+                                <strong style=”color: var(--text-primary); font-size: 14px;”>预期结果</strong>
+                                <p class=”body-copy” style=”margin: 6px 0 0; font-size: 13px;”>遗忘率降低 30-40%，同时保持 85%+ 新任务准确率，参数保护比例降至 35% 以下</p>
+                            </div>
+                        </div>
                     </div>
                 </article>
 
@@ -265,9 +332,30 @@
                             </ul>
                         </section>
                     </div>
-                    <div class="case-foot">
+                    <div class=”case-foot”>
                         <h4>为什么这个映射重要</h4>
-                        <p class="body-copy">这个映射抓住的不是“免疫系统像安全系统”，而是“抑制性反馈”这一被现有 LLM 对齐系统低估的控制结构。它能把安全调节从二元开关推进到连续控制。</p>
+                        <p class=”body-copy”>这个映射抓住的不是”免疫系统像安全系统”，而是”抑制性反馈”这一被现有 LLM 对齐系统低估的控制结构。它能把安全调节从二元开关推进到连续控制。</p>
+                    </div>
+                    <div class=”case-foot” style=”margin-top: 18px; border-color: rgba(84,169,255,0.14); background: linear-gradient(180deg, rgba(84,169,255,0.08), rgba(84,169,255,0.03));”>
+                        <h4>实验设计与基准测试</h4>
+                        <div style=”display: grid; gap: 14px; margin-top: 12px;”>
+                            <div>
+                                <strong style=”color: var(--text-primary); font-size: 14px;”>基准数据集</strong>
+                                <p class=”body-copy” style=”margin: 6px 0 0; font-size: 13px;”>Anthropic HH-RLHF、OpenAI Moderation、ToxicChat、XSTest（安全对齐基准）</p>
+                            </div>
+                            <div>
+                                <strong style=”color: var(--text-primary); font-size: 14px;”>评估指标</strong>
+                                <p class=”body-copy” style=”margin: 6px 0 0; font-size: 13px;”>有害内容拦截率、过度拒绝率、用户满意度、上下文适应性</p>
+                            </div>
+                            <div>
+                                <strong style=”color: var(--text-primary); font-size: 14px;”>对比基线</strong>
+                                <p class=”body-copy” style=”margin: 6px 0 0; font-size: 13px;”>固定阈值过滤、RLHF、Constitutional AI、红队测试</p>
+                            </div>
+                            <div>
+                                <strong style=”color: var(--text-primary); font-size: 14px;”>预期结果</strong>
+                                <p class=”body-copy” style=”margin: 6px 0 0; font-size: 13px;”>过度拒绝率降低 60%+，同时保持 93%+ 有害内容拦截率，用户满意度提升 25%</p>
+                            </div>
+                        </div>
                     </div>
                 </article>
 
@@ -317,9 +405,30 @@
                             </ul>
                         </section>
                     </div>
-                    <div class="case-foot">
+                    <div class=”case-foot”>
                         <h4>为什么这个映射重要</h4>
-                        <p class="body-copy">这里真正迁移的是“故障管理的层次性”。这比单纯讨论 checkpoint 频率更有结构价值，因为它把系统韧性写成了一套状态机。</p>
+                        <p class=”body-copy”>这里真正迁移的是”故障管理的层次性”。这比单纯讨论 checkpoint 频率更有结构价值，因为它把系统韧性写成了一套状态机。</p>
+                    </div>
+                    <div class=”case-foot” style=”margin-top: 18px; border-color: rgba(84,169,255,0.14); background: linear-gradient(180deg, rgba(84,169,255,0.08), rgba(84,169,255,0.03));”>
+                        <h4>实验设计与基准测试</h4>
+                        <div style=”display: grid; gap: 14px; margin-top: 12px;”>
+                            <div>
+                                <strong style=”color: var(--text-primary); font-size: 14px;”>测试环境</strong>
+                                <p class=”body-copy” style=”margin: 6px 0 0; font-size: 13px;”>分布式训练集群、推理服务集群、模拟故障注入环境</p>
+                            </div>
+                            <div>
+                                <strong style=”color: var(--text-primary); font-size: 14px;”>评估指标</strong>
+                                <p class=”body-copy” style=”margin: 6px 0 0; font-size: 13px;”>平均恢复时间（MTTR）、服务可用性、数据丢失率、故障检测延迟</p>
+                            </div>
+                            <div>
+                                <strong style=”color: var(--text-primary); font-size: 14px;”>故障类型</strong>
+                                <p class=”body-copy” style=”margin: 6px 0 0; font-size: 13px;”>节点故障、网络分区、梯度异常、OOM、数据损坏</p>
+                            </div>
+                            <div>
+                                <strong style=”color: var(--text-primary); font-size: 14px;”>预期结果</strong>
+                                <p class=”body-copy” style=”margin: 6px 0 0; font-size: 13px;”>MTTR 降低 70%+，可用性提升至 99.8%+，数据丢失率降至 0.1% 以下</p>
+                            </div>
+                        </div>
                     </div>
                 </article>
 
@@ -860,6 +969,45 @@
                         </tr>
                     </tbody>
                 </table>
+            </div>
+        </section>
+
+        <section class="section section-compact">
+            <div class="section-header reveal">
+                <div class="eyebrow">Case relationships</div>
+                <h2>案例之间的协同关系</h2>
+                <p>这些映射不是孤立的，它们共同构成一个多层级的控制系统：学习层、安全层、容错层、效率层相互配合。</p>
+            </div>
+            <div class="reveal">
+                <div class="card" style="padding: 32px;">
+                    <div style="display: grid; gap: 24px;">
+                        <article style="padding: 20px; border-radius: 16px; border: 1px solid rgba(53,214,127,0.14); background: linear-gradient(135deg, rgba(53,214,127,0.06), rgba(53,214,127,0.02));">
+                            <h3 style="margin: 0 0 12px; font-size: 16px; color: var(--green);">核心学习层</h3>
+                            <p class="body-copy" style="margin: 0 0 12px; font-size: 14px;">双重门控学习 + 活动依赖元学习 + 表观遗传元学习</p>
+                            <p class="body-copy" style="margin: 0; font-size: 13px; color: var(--text-muted);">三者共同解决"如何学习、如何巩固、如何适应"。双重门控控制记忆写入，元可塑性调整学习规则，表观遗传记住环境偏好。</p>
+                        </article>
+                        <article style="padding: 20px; border-radius: 16px; border: 1px solid rgba(84,169,255,0.14); background: linear-gradient(135deg, rgba(84,169,255,0.06), rgba(84,169,255,0.02));">
+                            <h3 style="margin: 0 0 12px; font-size: 16px; color: var(--blue);">安全控制层</h3>
+                            <p class="body-copy" style="margin: 0 0 12px; font-size: 14px;">免疫检查点对齐 + 攻击模式记忆</p>
+                            <p class="body-copy" style="margin: 0; font-size: 13px; color: var(--text-muted);">检查点提供动态阈值调节，记忆库提供快速识别。前者解决过度拒绝，后者解决重复攻击的效率问题。</p>
+                        </article>
+                        <article style="padding: 20px; border-radius: 16px; border: 1px solid rgba(176,123,255,0.14); background: linear-gradient(135deg, rgba(176,123,255,0.06), rgba(176,123,255,0.02));">
+                            <h3 style="margin: 0 0 12px; font-size: 16px; color: var(--purple);">系统容错层</h3>
+                            <p class="body-copy" style="margin: 0 0 12px; font-size: 14px;">分层应激响应 + 自噬式模型修复</p>
+                            <p class="body-copy" style="margin: 0; font-size: 13px; color: var(--text-muted);">应激响应处理突发故障，自噬处理持续退化。前者是应急机制，后者是日常维护，共同保证系统长期健康。</p>
+                        </article>
+                        <article style="padding: 20px; border-radius: 16px; border: 1px solid rgba(240,179,74,0.14); background: linear-gradient(135deg, rgba(240,179,74,0.06), rgba(240,179,74,0.02));">
+                            <h3 style="margin: 0 0 12px; font-size: 16px; color: var(--amber);">效率优化层</h3>
+                            <p class="body-copy" style="margin: 0 0 12px; font-size: 14px;">代谢式算力调度 + 能量代谢调控</p>
+                            <p class="body-copy" style="margin: 0; font-size: 13px; color: var(--text-muted);">两者都关注资源约束下的智能决策。前者在任务级调度，后者在模型内部决策，形成两级预算控制。</p>
+                        </article>
+                        <article style="padding: 20px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.08); background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));">
+                            <h3 style="margin: 0 0 12px; font-size: 16px;">架构协调层</h3>
+                            <p class="body-copy" style="margin: 0 0 12px; font-size: 14px;">信号转导级联 + 细胞通讯协议 + 形态发生素梯度</p>
+                            <p class="body-copy" style="margin: 0; font-size: 13px; color: var(--text-muted);">信号转导解决模块内协调，细胞通讯解决模块间协调，形态发生素解决全局-局部协调。三者共同构成多尺度协调机制。</p>
+                        </article>
+                    </div>
+                </div>
             </div>
         </section>
 
