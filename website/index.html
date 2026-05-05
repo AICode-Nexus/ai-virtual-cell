@@ -4,691 +4,135 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Virtual Cell - 基于细胞生物学机制的AI架构</title>
-    <meta name="description" content="AI Virtual Cell 是一个革命性的 AI 架构项目，通过模拟生物细胞的运行机制，实现自组织、自适应、自进化的智能系统。">
+    <meta name="description" content="AI Virtual Cell 通过模拟生物细胞的运行机制，实现自组织、自适应、自进化的智能系统。">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧬</text></svg>">
+    <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        bio: { 50: '#f0fdf4', 100: '#dcfce7', 200: '#bbf7d0', 500: '#22c55e', 600: '#16a34a', 700: '#15803d' },
-                        ai: { 50: '#eff6ff', 100: '#dbeafe', 200: '#bfdbfe', 500: '#3b82f6', 600: '#2563eb', 700: '#1d4ed8' },
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        html { scroll-behavior: smooth; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', sans-serif; }
-        .gradient-text { background: linear-gradient(135deg, #16a34a, #2563eb); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-        .card-hover { transition: transform 0.2s, box-shadow 0.2s; }
-        .card-hover:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(0,0,0,0.1); }
-        .fade-in { animation: fadeIn 0.6s ease-out; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        .nav-active { border-bottom: 2px solid #2563eb; color: #2563eb; }
-        @media (max-width: 768px) { .mobile-menu { display: none; } .mobile-menu.active { display: flex; } }
-    </style>
+    <script>tailwind.config={theme:{extend:{}}}</script>
 </head>
-<body class="bg-gray-50 text-gray-900">
-    <!-- Navigation -->
-    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex items-center">
-                    <a href="#" class="flex items-center space-x-2">
-                        <span class="text-2xl">🧬</span>
-                        <span class="text-xl font-bold gradient-text">AI Virtual Cell</span>
-                    </a>
+<body>
+    <div class="page">
+        <!-- Hero -->
+        <section class="hero section">
+            <div class="hero-content">
+                <p style="color: var(--green); font-size: 14px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px;">Bio-Inspired AI Architecture</p>
+                <h1>用细胞的智慧<br><span class="glow-green">重新定义 AI</span></h1>
+                <p>通过模拟生物细胞 38 亿年进化的运行机制——基因表达、代谢调控、信号转导、突触可塑性——构建自组织、自适应、自进化的下一代智能系统。</p>
+                <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+                    <a href="innovations.html" class="btn btn-primary">查看创新成果 →</a>
+                    <a href="https://github.com/AICode-Nexus/ai-virtual-cell/discussions" target="_blank" class="btn btn-outline">参与讨论</a>
                 </div>
-                <div class="hidden md:flex items-center space-x-6">
-                    <a href="#about" class="text-sm font-medium text-gray-600 hover:text-ai-600 transition">关于</a>
-                    <a href="#innovations" class="text-sm font-medium text-gray-600 hover:text-ai-600 transition">创新成果</a>
-                    <a href="#mapping" class="text-sm font-medium text-gray-600 hover:text-ai-600 transition">知识映射</a>
-                    <a href="#roadmap" class="text-sm font-medium text-gray-600 hover:text-ai-600 transition">路线图</a>
-                    <a href="#docs" class="text-sm font-medium text-gray-600 hover:text-ai-600 transition">文档</a>
-                    <a href="https://github.com/AICode-Nexus/ai-virtual-cell" target="_blank" class="bg-gray-900 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-700 transition">GitHub</a>
-                </div>
-                <button id="mobile-toggle" class="md:hidden flex items-center" aria-label="Toggle menu">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-                </button>
             </div>
-        </div>
-        <div id="mobile-menu" class="mobile-menu md:hidden flex-col bg-white border-t px-4 py-3 space-y-2">
-            <a href="#about" class="block py-2 text-gray-600">关于</a>
-            <a href="#innovations" class="block py-2 text-gray-600">创新成果</a>
-            <a href="#mapping" class="block py-2 text-gray-600">知识映射</a>
-            <a href="#roadmap" class="block py-2 text-gray-600">路线图</a>
-            <a href="#docs" class="block py-2 text-gray-600">文档</a>
-        </div>
-    </nav>
+        </section>
 
-    <!-- Hero Section -->
-    <section class="pt-16">
-        <div class="relative overflow-hidden bg-gradient-to-br from-green-600 via-emerald-600 to-blue-700 text-white">
-            <div class="absolute inset-0 opacity-10">
-                <svg width="100%" height="100%"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="0.5"/></pattern></defs><rect width="100%" height="100%" fill="url(#grid)"/></svg>
-            </div>
-            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
-                <div class="max-w-3xl">
-                    <p class="text-green-200 text-sm font-medium uppercase tracking-wider mb-4">Bio-Inspired AI Architecture</p>
-                    <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">AI Virtual Cell</h1>
-                    <p class="text-xl md:text-2xl text-green-100 mb-8 leading-relaxed">通过模拟生物细胞的运行机制，实现自组织、自适应、自进化的智能系统</p>
-                    <div class="flex flex-wrap gap-4">
-                        <a href="#innovations" class="bg-white text-green-700 px-6 py-3 rounded-lg font-semibold hover:bg-green-50 transition">查看创新成果</a>
-                        <a href="https://github.com/AICode-Nexus/ai-virtual-cell/discussions" target="_blank" class="border-2 border-white/80 text-white px-6 py-3 rounded-lg font-semibold hover:bg-white/10 transition">参与讨论</a>
-                    </div>
+        <!-- Stats -->
+        <section class="section" style="padding-top: 0;">
+            <div class="grid-4 reveal">
+                <div class="stat">
+                    <div class="stat-value" data-count="195">0</div>
+                    <div class="stat-label">映射单元</div>
                 </div>
-                <!-- Stats -->
-                <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
-                    <div class="text-center"><div class="text-3xl font-bold">195</div><div class="text-green-200 text-sm">映射单元</div></div>
-                    <div class="text-center"><div class="text-3xl font-bold">3</div><div class="text-green-200 text-sm">P0 创新原型</div></div>
-                    <div class="text-center"><div class="text-3xl font-bold">29</div><div class="text-green-200 text-sm">技术文档</div></div>
-                    <div class="text-center"><div class="text-3xl font-bold">7,166</div><div class="text-green-200 text-sm">代码行数</div></div>
+                <div class="stat">
+                    <div class="stat-value" data-count="3">0</div>
+                    <div class="stat-label">P0 创新原型</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" data-count="29">0</div>
+                    <div class="stat-label">技术文档</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" data-count="7166">0</div>
+                    <div class="stat-label">代码行数</div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">为什么需要 AI Virtual Cell？</h2>
-                <p class="text-gray-600 text-lg max-w-2xl mx-auto">传统 AI 架构面临根本性局限，生物细胞经过 38 亿年进化的智慧提供了全新的解决思路</p>
+        <!-- Core Breakthroughs -->
+        <section class="section">
+            <div class="section-header reveal">
+                <h2>核心突破</h2>
+                <p>四个根本性的范式转变</p>
             </div>
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h3 class="text-xl font-semibold mb-4 text-red-600">传统 AI 的局限</h3>
-                    <ul class="space-y-3 text-gray-600">
-                        <li class="flex items-start"><span class="text-red-400 mr-2 mt-1">✗</span>静态模型，无法持续学习（灾难性遗忘）</li>
-                        <li class="flex items-start"><span class="text-red-400 mr-2 mt-1">✗</span>记忆与能力分离，外部存储依赖</li>
-                        <li class="flex items-start"><span class="text-red-400 mr-2 mt-1">✗</span>中心化架构，单点故障风险</li>
-                        <li class="flex items-start"><span class="text-red-400 mr-2 mt-1">✗</span>固定能力边界，无法自适应进化</li>
-                        <li class="flex items-start"><span class="text-red-400 mr-2 mt-1">✗</span>安全对齐僵化，过度拒绝问题</li>
+            <div class="grid-2">
+                <div class="card card-glow reveal reveal-delay-1">
+                    <div style="font-size: 32px; margin-bottom: 16px;">🧬</div>
+                    <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 8px;">记忆即结构</h3>
+                    <p style="color: var(--text-secondary); font-size: 14px;">记忆不是外部数据库中的记录，而是神经网络连接的物理重构。通过突触标记与捕获机制，实现选择性记忆巩固。</p>
+                </div>
+                <div class="card card-glow reveal reveal-delay-2">
+                    <div style="font-size: 32px; margin-bottom: 16px;">🔄</div>
+                    <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 8px;">能力即组织</h3>
+                    <p style="color: var(--text-secondary); font-size: 14px;">从单细胞到组织器官系统的层次化智能涌现。能力不是预设的，而是通过细胞分化和组织协作动态生成。</p>
+                </div>
+                <div class="card card-glow reveal reveal-delay-3">
+                    <div style="font-size: 32px; margin-bottom: 16px;">🌱</div>
+                    <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 8px;">学习即进化</h3>
+                    <p style="color: var(--text-secondary); font-size: 14px;">通过突触可塑性和神经发生实现持续学习，无需重新训练。双重门控机制解决灾难性遗忘问题。</p>
+                </div>
+                <div class="card card-glow reveal reveal-delay-4">
+                    <div style="font-size: 32px; margin-bottom: 16px;">🤝</div>
+                    <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 8px;">协作即生态</h3>
+                    <p style="color: var(--text-secondary); font-size: 14px;">去中心化的细胞间信号转导替代中心化调度。免疫检查点机制实现动态安全平衡。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Section -->
+        <section class="section">
+            <div class="section-header reveal">
+                <h2>为什么需要 AI Virtual Cell？</h2>
+                <p>传统 AI 架构面临根本性局限</p>
+            </div>
+            <div class="grid-2 reveal">
+                <div class="card" style="border-color: rgba(239, 68, 68, 0.2);">
+                    <h3 style="color: #ef4444; font-size: 16px; font-weight: 600; margin-bottom: 16px;">传统 AI 的局限</h3>
+                    <ul style="list-style: none; color: var(--text-secondary); font-size: 14px;">
+                        <li style="padding: 8px 0; border-bottom: 1px solid var(--border); display: flex; align-items: start; gap: 8px;"><span style="color: #ef4444;">✗</span> 静态模型，灾难性遗忘</li>
+                        <li style="padding: 8px 0; border-bottom: 1px solid var(--border); display: flex; align-items: start; gap: 8px;"><span style="color: #ef4444;">✗</span> 记忆与能力分离，外部存储依赖</li>
+                        <li style="padding: 8px 0; border-bottom: 1px solid var(--border); display: flex; align-items: start; gap: 8px;"><span style="color: #ef4444;">✗</span> 中心化架构，单点故障</li>
+                        <li style="padding: 8px 0; border-bottom: 1px solid var(--border); display: flex; align-items: start; gap: 8px;"><span style="color: #ef4444;">✗</span> 安全对齐僵化，过度拒绝</li>
+                        <li style="padding: 8px 0; display: flex; align-items: start; gap: 8px;"><span style="color: #ef4444;">✗</span> 固定能力边界，无法自适应</li>
                     </ul>
                 </div>
-                <div>
-                    <h3 class="text-xl font-semibold mb-4 text-green-600">AI Virtual Cell 的突破</h3>
-                    <ul class="space-y-3 text-gray-600">
-                        <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">✓</span>双重门控机制，选择性巩固重要记忆</li>
-                        <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">✓</span>记忆即结构，能力即组织</li>
-                        <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">✓</span>去中心化自组织，分层容错</li>
-                        <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">✓</span>适应性分化，自我进化</li>
-                        <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">✓</span>免疫检查点式动态安全阈值</li>
-                    </ul>
-                </div>
-            </div>
-            <!-- Core Principles -->
-            <div class="mt-16 grid md:grid-cols-4 gap-6">
-                <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-xl border border-green-100 card-hover">
-                    <div class="text-3xl mb-3">🧬</div>
-                    <h4 class="font-semibold mb-2">记忆即结构</h4>
-                    <p class="text-sm text-gray-600">记忆不是外部存储，而是神经网络的物理重构</p>
-                </div>
-                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-xl border border-blue-100 card-hover">
-                    <div class="text-3xl mb-3">🔄</div>
-                    <h4 class="font-semibold mb-2">能力即组织</h4>
-                    <p class="text-sm text-gray-600">从单细胞到组织器官系统的层次化智能涌现</p>
-                </div>
-                <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-xl border border-purple-100 card-hover">
-                    <div class="text-3xl mb-3">🌱</div>
-                    <h4 class="font-semibold mb-2">学习即进化</h4>
-                    <p class="text-sm text-gray-600">通过突触可塑性和神经发生实现持续学习</p>
-                </div>
-                <div class="bg-gradient-to-br from-amber-50 to-orange-50 p-6 rounded-xl border border-amber-100 card-hover">
-                    <div class="text-3xl mb-3">🤝</div>
-                    <h4 class="font-semibold mb-2">协作即生态</h4>
-                    <p class="text-sm text-gray-600">去中心化的细胞间信号转导替代中心化调度</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Innovations Section -->
-    <section id="innovations" class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">P0 创新原型</h2>
-                <p class="text-gray-600 text-lg max-w-2xl mx-auto">三个高优先级创新，源自生物系统与AI技术的深度映射分析</p>
-            </div>
-
-            <!-- Innovation 1: Dual-Gate -->
-            <div class="mb-12 bg-white rounded-2xl shadow-sm border overflow-hidden card-hover">
-                <div class="md:flex">
-                    <div class="md:w-1/3 bg-gradient-to-br from-green-500 to-emerald-600 p-8 text-white flex flex-col justify-center">
-                        <div class="text-sm font-medium uppercase tracking-wider opacity-80 mb-2">P0-1</div>
-                        <h3 class="text-2xl font-bold mb-3">双重门控持续学习</h3>
-                        <p class="text-green-100 text-sm">Dual-Gate Continual Learning</p>
-                        <div class="mt-4 flex items-center space-x-2">
-                            <span class="bg-white/20 px-2 py-1 rounded text-xs">NeurIPS 2027</span>
-                            <span class="bg-white/20 px-2 py-1 rounded text-xs">预期引用 100+/年</span>
-                        </div>
-                    </div>
-                    <div class="md:w-2/3 p-8">
-                        <div class="grid md:grid-cols-2 gap-6">
-                            <div>
-                                <h4 class="font-semibold text-green-700 mb-2">生物学基础</h4>
-                                <p class="text-sm text-gray-600 mb-3">突触标记与捕获 (STC)：局部标记 + 全局信号双重门控，只有同时满足才巩固长期记忆</p>
-                                <h4 class="font-semibold text-blue-700 mb-2">AI 映射</h4>
-                                <p class="text-sm text-gray-600">局部标记 → 梯度幅度；全局信号 → 任务重要性；双重门控 → 选择性参数保护</p>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold mb-2">实验结果（预期）</h4>
-                                <div class="space-y-2 text-sm">
-                                    <div class="flex justify-between"><span class="text-gray-600">遗忘率</span><span class="font-medium text-green-600">8.7%（EWC: 12.3%）</span></div>
-                                    <div class="flex justify-between"><span class="text-gray-600">新任务准确率</span><span class="font-medium text-green-600">88.3%（EWC: 78.5%）</span></div>
-                                    <div class="flex justify-between"><span class="text-gray-600">保护参数比例</span><span class="font-medium text-green-600">35%（EWC: 100%）</span></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Innovation 2: Immune Checkpoint -->
-            <div class="mb-12 bg-white rounded-2xl shadow-sm border overflow-hidden card-hover">
-                <div class="md:flex">
-                    <div class="md:w-1/3 bg-gradient-to-br from-blue-500 to-indigo-600 p-8 text-white flex flex-col justify-center">
-                        <div class="text-sm font-medium uppercase tracking-wider opacity-80 mb-2">P0-2</div>
-                        <h3 class="text-2xl font-bold mb-3">免疫检查点式对齐</h3>
-                        <p class="text-blue-100 text-sm">Immune Checkpoint Alignment</p>
-                        <div class="mt-4 flex items-center space-x-2">
-                            <span class="bg-white/20 px-2 py-1 rounded text-xs">ICLR 2028</span>
-                            <span class="bg-white/20 px-2 py-1 rounded text-xs">预期引用 150+/年</span>
-                        </div>
-                    </div>
-                    <div class="md:w-2/3 p-8">
-                        <div class="grid md:grid-cols-2 gap-6">
-                            <div>
-                                <h4 class="font-semibold text-green-700 mb-2">生物学基础</h4>
-                                <p class="text-sm text-gray-600 mb-3">PD-1/CTLA-4 免疫检查点：动态平衡激活与抑制信号，根据上下文调节免疫响应强度</p>
-                                <h4 class="font-semibold text-blue-700 mb-2">AI 映射</h4>
-                                <p class="text-sm text-gray-600">激活信号 → 用户意图；抑制信号 → 安全评估；动态阈值 → 上下文感知的安全决策</p>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold mb-2">实验结果（预期）</h4>
-                                <div class="space-y-2 text-sm">
-                                    <div class="flex justify-between"><span class="text-gray-600">过度拒绝率</span><span class="font-medium text-green-600">9.3%（固定: 28.5%）</span></div>
-                                    <div class="flex justify-between"><span class="text-gray-600">有害内容拦截</span><span class="font-medium text-green-600">93.1%（固定: 94.2%）</span></div>
-                                    <div class="flex justify-between"><span class="text-gray-600">用户满意度</span><span class="font-medium text-green-600">8.7/10（固定: 6.8）</span></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Innovation 3: Layered Stress -->
-            <div class="bg-white rounded-2xl shadow-sm border overflow-hidden card-hover">
-                <div class="md:flex">
-                    <div class="md:w-1/3 bg-gradient-to-br from-purple-500 to-pink-600 p-8 text-white flex flex-col justify-center">
-                        <div class="text-sm font-medium uppercase tracking-wider opacity-80 mb-2">P0-3</div>
-                        <h3 class="text-2xl font-bold mb-3">分层应激响应系统</h3>
-                        <p class="text-purple-100 text-sm">Layered Stress Response</p>
-                        <div class="mt-4 flex items-center space-x-2">
-                            <span class="bg-white/20 px-2 py-1 rounded text-xs">MLSys 2027</span>
-                            <span class="bg-white/20 px-2 py-1 rounded text-xs">预期引用 80+/年</span>
-                        </div>
-                    </div>
-                    <div class="md:w-2/3 p-8">
-                        <div class="grid md:grid-cols-2 gap-6">
-                            <div>
-                                <h4 class="font-semibold text-green-700 mb-2">生物学基础</h4>
-                                <p class="text-sm text-gray-600 mb-3">未折叠蛋白响应 (UPR) 三臂机制：IRE1（轻度修复）→ PERK（暂停恢复）→ ATF6（全局重塑）</p>
-                                <h4 class="font-semibold text-blue-700 mb-2">AI 映射</h4>
-                                <p class="text-sm text-gray-600">轻度 → 降级服务；中度 → 检查点回滚；重度 → 模型重训</p>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold mb-2">实验结果（预期）</h4>
-                                <div class="space-y-2 text-sm">
-                                    <div class="flex justify-between"><span class="text-gray-600">平均恢复时间</span><span class="font-medium text-green-600">12s（单一: 45s）</span></div>
-                                    <div class="flex justify-between"><span class="text-gray-600">服务可用性</span><span class="font-medium text-green-600">99.8%（单一: 99.2%）</span></div>
-                                    <div class="flex justify-between"><span class="text-gray-600">数据丢失率</span><span class="font-medium text-green-600">0.1%（单一: 0.8%）</span></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Knowledge Mapping Section -->
-    <section id="mapping" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">知识映射框架</h2>
-                <p class="text-gray-600 text-lg max-w-2xl mx-auto">13 个生物系统 × 15 个 AI 领域 = 195 个映射单元，系统性发现创新机会</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-8 mb-12">
-                <!-- Biology Dimension -->
-                <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8 border border-green-100">
-                    <h3 class="text-xl font-bold text-green-800 mb-6 flex items-center"><span class="mr-2">🧬</span>细胞生物学维度（13 大系统）</h3>
-                    <div class="space-y-4">
-                        <div>
-                            <h4 class="text-sm font-semibold text-green-700 uppercase tracking-wider mb-2">分子信息层</h4>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-white px-3 py-1 rounded-full text-xs border border-green-200">基因组系统</span>
-                                <span class="bg-white px-3 py-1 rounded-full text-xs border border-green-200">转录调控</span>
-                                <span class="bg-white px-3 py-1 rounded-full text-xs border border-green-200">翻译与蛋白质</span>
-                            </div>
-                        </div>
-                        <div>
-                            <h4 class="text-sm font-semibold text-green-700 uppercase tracking-wider mb-2">能量与代谢层</h4>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-white px-3 py-1 rounded-full text-xs border border-green-200">生物能量学</span>
-                                <span class="bg-white px-3 py-1 rounded-full text-xs border border-green-200">物质代谢网络</span>
-                            </div>
-                        </div>
-                        <div>
-                            <h4 class="text-sm font-semibold text-green-700 uppercase tracking-wider mb-2">记忆与可塑性层</h4>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-white px-3 py-1 rounded-full text-xs border border-green-200">神经可塑性</span>
-                                <span class="bg-white px-3 py-1 rounded-full text-xs border border-green-200">表观遗传记忆</span>
-                            </div>
-                        </div>
-                        <div>
-                            <h4 class="text-sm font-semibold text-green-700 uppercase tracking-wider mb-2">防御与稳态层</h4>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-white px-3 py-1 rounded-full text-xs border border-green-200">免疫系统</span>
-                                <span class="bg-white px-3 py-1 rounded-full text-xs border border-green-200">应激响应</span>
-                            </div>
-                        </div>
-                        <div>
-                            <h4 class="text-sm font-semibold text-green-700 uppercase tracking-wider mb-2">发育与进化层</h4>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-white px-3 py-1 rounded-full text-xs border border-green-200">发育分化</span>
-                                <span class="bg-white px-3 py-1 rounded-full text-xs border border-green-200">进化适应</span>
-                                <span class="bg-white px-3 py-1 rounded-full text-xs border border-green-200">膜运输</span>
-                                <span class="bg-white px-3 py-1 rounded-full text-xs border border-green-200">细胞周期</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- AI Dimension -->
-                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 border border-blue-100">
-                    <h3 class="text-xl font-bold text-blue-800 mb-6 flex items-center"><span class="mr-2">🤖</span>AI 技术维度（15 大领域）</h3>
-                    <div class="space-y-4">
-                        <div>
-                            <h4 class="text-sm font-semibold text-blue-700 uppercase tracking-wider mb-2">模型架构层</h4>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-white px-3 py-1 rounded-full text-xs border border-blue-200">深度神经网络</span>
-                                <span class="bg-white px-3 py-1 rounded-full text-xs border border-blue-200">持续学习</span>
-                                <span class="bg-white px-3 py-1 rounded-full text-xs border border-blue-200">神经形态计算</span>
-                            </div>
-                        </div>
-                        <div>
-                            <h4 class="text-sm font-semibold text-blue-700 uppercase tracking-wider mb-2">学习范式层</h4>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-white px-3 py-1 rounded-full text-xs border border-blue-200">强化学习</span>
-                                <span class="bg-white px-3 py-1 rounded-full text-xs border border-blue-200">自监督学习</span>
-                                <span class="bg-white px-3 py-1 rounded-full text-xs border border-blue-200">元学习</span>
-                            </div>
-                        </div>
-                        <div>
-                            <h4 class="text-sm font-semibold text-blue-700 uppercase tracking-wider mb-2">知识与推理层</h4>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-white px-3 py-1 rounded-full text-xs border border-blue-200">知识图谱</span>
-                                <span class="bg-white px-3 py-1 rounded-full text-xs border border-blue-200">因果推理</span>
-                                <span class="bg-white px-3 py-1 rounded-full text-xs border border-blue-200">世界模型</span>
-                            </div>
-                        </div>
-                        <div>
-                            <h4 class="text-sm font-semibold text-blue-700 uppercase tracking-wider mb-2">多智能体与协作层</h4>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-white px-3 py-1 rounded-full text-xs border border-blue-200">多智能体系统</span>
-                                <span class="bg-white px-3 py-1 rounded-full text-xs border border-blue-200">联邦学习</span>
-                            </div>
-                        </div>
-                        <div>
-                            <h4 class="text-sm font-semibold text-blue-700 uppercase tracking-wider mb-2">系统与工程层</h4>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-white px-3 py-1 rounded-full text-xs border border-blue-200">进化算法</span>
-                                <span class="bg-white px-3 py-1 rounded-full text-xs border border-blue-200">AutoML</span>
-                                <span class="bg-white px-3 py-1 rounded-full text-xs border border-blue-200">AI 系统架构</span>
-                                <span class="bg-white px-3 py-1 rounded-full text-xs border border-blue-200">安全与对齐</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Mapping Table -->
-            <div class="bg-white rounded-2xl shadow-sm border overflow-hidden">
-                <div class="p-6 border-b bg-gray-50">
-                    <h3 class="text-lg font-semibold">核心映射关系</h3>
-                </div>
-                <div class="overflow-x-auto">
-                    <table class="w-full text-sm">
-                        <thead class="bg-gray-50">
-                            <tr>
-                                <th class="px-6 py-3 text-left font-medium text-gray-500">生物概念</th>
-                                <th class="px-6 py-3 text-left font-medium text-gray-500">计算对应</th>
-                                <th class="px-6 py-3 text-left font-medium text-gray-500">说明</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y">
-                            <tr><td class="px-6 py-3 font-medium">DNA（基因）</td><td class="px-6 py-3 text-blue-600">Skill（技能）</td><td class="px-6 py-3 text-gray-600">可执行的功能模块</td></tr>
-                            <tr><td class="px-6 py-3 font-medium">RNA</td><td class="px-6 py-3 text-blue-600">Agent 实例</td><td class="px-6 py-3 text-gray-600">临时的执行体</td></tr>
-                            <tr><td class="px-6 py-3 font-medium">蛋白质</td><td class="px-6 py-3 text-blue-600">Function</td><td class="px-6 py-3 text-gray-600">具体功能实现</td></tr>
-                            <tr><td class="px-6 py-3 font-medium">线粒体</td><td class="px-6 py-3 text-blue-600">算力调度器</td><td class="px-6 py-3 text-gray-600">管理计算资源</td></tr>
-                            <tr><td class="px-6 py-3 font-medium">突触</td><td class="px-6 py-3 text-blue-600">Cell 间连接</td><td class="px-6 py-3 text-gray-600">动态权重的连接</td></tr>
-                            <tr><td class="px-6 py-3 font-medium">突触可塑性</td><td class="px-6 py-3 text-blue-600">权重调整</td><td class="px-6 py-3 text-gray-600">Hebbian 学习</td></tr>
-                            <tr><td class="px-6 py-3 font-medium">神经发生</td><td class="px-6 py-3 text-blue-600">Cell 创建</td><td class="px-6 py-3 text-gray-600">动态生成新细胞</td></tr>
-                            <tr><td class="px-6 py-3 font-medium">免疫检查点</td><td class="px-6 py-3 text-blue-600">安全阈值调节</td><td class="px-6 py-3 text-gray-600">动态平衡安全与有用性</td></tr>
-                            <tr><td class="px-6 py-3 font-medium">UPR 三臂</td><td class="px-6 py-3 text-blue-600">分层容错</td><td class="px-6 py-3 text-gray-600">分级应激响应策略</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Roadmap Section -->
-    <section id="roadmap" class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">实施路线图</h2>
-                <p class="text-gray-600 text-lg max-w-2xl mx-auto">从概念验证到生态演化的完整实施路径</p>
-            </div>
-
-            <!-- Timeline -->
-            <div class="relative">
-                <div class="hidden md:block absolute left-1/2 transform -translate-x-px h-full w-0.5 bg-gray-200"></div>
-
-                <!-- Phase 0 -->
-                <div class="relative mb-12">
-                    <div class="md:flex items-center">
-                        <div class="md:w-1/2 md:pr-12 md:text-right">
-                            <div class="bg-white p-6 rounded-xl shadow-sm border inline-block text-left">
-                                <div class="flex items-center justify-between mb-2">
-                                    <span class="bg-green-100 text-green-700 text-xs font-medium px-2 py-1 rounded">当前阶段</span>
-                                </div>
-                                <h3 class="text-lg font-bold mb-2">Phase 0：设计评审</h3>
-                                <ul class="text-sm text-gray-600 space-y-1">
-                                    <li>✅ 核心理念文档</li>
-                                    <li>✅ 生物学映射表（13/13 完成）</li>
-                                    <li>✅ AI 知识库（15/15 完成）</li>
-                                    <li>✅ P0 创新原型实现</li>
-                                    <li>⬜ 社区讨论和反馈</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-green-500 rounded-full items-center justify-center">
-                            <div class="w-3 h-3 bg-white rounded-full"></div>
-                        </div>
-                        <div class="md:w-1/2 md:pl-12"></div>
-                    </div>
-                </div>
-
-                <!-- Phase 1 -->
-                <div class="relative mb-12">
-                    <div class="md:flex items-center">
-                        <div class="md:w-1/2 md:pr-12"></div>
-                        <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-blue-500 rounded-full items-center justify-center">
-                            <div class="w-3 h-3 bg-white rounded-full"></div>
-                        </div>
-                        <div class="md:w-1/2 md:pl-12">
-                            <div class="bg-white p-6 rounded-xl shadow-sm border">
-                                <span class="text-xs text-gray-500">第 1-3 个月</span>
-                                <h3 class="text-lg font-bold mb-2">Phase 1：概念验证</h3>
-                                <ul class="text-sm text-gray-600 space-y-1">
-                                    <li>⬜ 分层应激响应系统 PyTorch 集成</li>
-                                    <li>⬜ 模拟故障环境测试</li>
-                                    <li>⬜ MLSys 2027 投稿</li>
-                                    <li>⬜ 完成 10 个映射单元</li>
-                                </ul>
-                                <p class="text-xs text-gray-400 mt-2">预算：$10K</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Phase 2 -->
-                <div class="relative mb-12">
-                    <div class="md:flex items-center">
-                        <div class="md:w-1/2 md:pr-12 md:text-right">
-                            <div class="bg-white p-6 rounded-xl shadow-sm border inline-block text-left">
-                                <span class="text-xs text-gray-500">第 4-6 个月</span>
-                                <h3 class="text-lg font-bold mb-2">Phase 2：核心创新</h3>
-                                <ul class="text-sm text-gray-600 space-y-1">
-                                    <li>⬜ 双重门控持续学习原型</li>
-                                    <li>⬜ Split CIFAR-10 验证</li>
-                                    <li>⬜ 与 EWC/经验回放对比</li>
-                                    <li>⬜ NeurIPS 2027 投稿</li>
-                                </ul>
-                                <p class="text-xs text-gray-400 mt-2">预算：$20K</p>
-                            </div>
-                        </div>
-                        <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-purple-500 rounded-full items-center justify-center">
-                            <div class="w-3 h-3 bg-white rounded-full"></div>
-                        </div>
-                        <div class="md:w-1/2 md:pl-12"></div>
-                    </div>
-                </div>
-
-                <!-- Phase 3 -->
-                <div class="relative">
-                    <div class="md:flex items-center">
-                        <div class="md:w-1/2 md:pr-12"></div>
-                        <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-pink-500 rounded-full items-center justify-center">
-                            <div class="w-3 h-3 bg-white rounded-full"></div>
-                        </div>
-                        <div class="md:w-1/2 md:pl-12">
-                            <div class="bg-white p-6 rounded-xl shadow-sm border">
-                                <span class="text-xs text-gray-500">第 7-9 个月</span>
-                                <h3 class="text-lg font-bold mb-2">Phase 3：高影响力工作</h3>
-                                <ul class="text-sm text-gray-600 space-y-1">
-                                    <li>⬜ 免疫检查点式对齐原型</li>
-                                    <li>⬜ 开源大模型测试（Llama）</li>
-                                    <li>⬜ 用户研究验证</li>
-                                    <li>⬜ ICLR 2028 投稿</li>
-                                </ul>
-                                <p class="text-xs text-gray-400 mt-2">预算：$50K</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Expected Output -->
-            <div class="mt-16 grid md:grid-cols-3 gap-6">
-                <div class="bg-white p-6 rounded-xl shadow-sm border text-center">
-                    <div class="text-3xl font-bold text-blue-600 mb-2">3</div>
-                    <div class="text-sm text-gray-600">顶会论文（MLSys / NeurIPS / ICLR）</div>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-sm border text-center">
-                    <div class="text-3xl font-bold text-green-600 mb-2">330+</div>
-                    <div class="text-sm text-gray-600">预期年引用次数</div>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-sm border text-center">
-                    <div class="text-3xl font-bold text-purple-600 mb-2">$250K</div>
-                    <div class="text-sm text-gray-600">9 个月总预算</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Documentation Section -->
-    <section id="docs" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">项目文档</h2>
-                <p class="text-gray-600 text-lg max-w-2xl mx-auto">完整的技术文档、设计方案和贡献指南</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <a href="https://github.com/AICode-Nexus/ai-virtual-cell/blob/main/docs/DESIGN.md" target="_blank" class="bg-white p-6 rounded-xl shadow-sm border card-hover block">
-                    <div class="text-2xl mb-3">📐</div>
-                    <h3 class="font-semibold mb-2">完整设计方案</h3>
-                    <p class="text-sm text-gray-600">详细的技术设计文档，包含系统架构、核心机制和实现策略</p>
-                </a>
-                <a href="https://github.com/AICode-Nexus/ai-virtual-cell/blob/main/docs/BIOLOGY_MAPPING.md" target="_blank" class="bg-white p-6 rounded-xl shadow-sm border card-hover block">
-                    <div class="text-2xl mb-3">🧬</div>
-                    <h3 class="font-semibold mb-2">生物学映射</h3>
-                    <p class="text-sm text-gray-600">生物学概念到计算架构的完整映射关系</p>
-                </a>
-                <a href="https://github.com/AICode-Nexus/ai-virtual-cell/blob/main/docs/ARCHITECTURE.md" target="_blank" class="bg-white p-6 rounded-xl shadow-sm border card-hover block">
-                    <div class="text-2xl mb-3">🏗️</div>
-                    <h3 class="font-semibold mb-2">架构设计</h3>
-                    <p class="text-sm text-gray-600">系统架构详解，从分子层到生态系统层的七层架构</p>
-                </a>
-                <a href="https://github.com/AICode-Nexus/ai-virtual-cell/blob/main/docs/ROADMAP.md" target="_blank" class="bg-white p-6 rounded-xl shadow-sm border card-hover block">
-                    <div class="text-2xl mb-3">🗺️</div>
-                    <h3 class="font-semibold mb-2">实施路线图</h3>
-                    <p class="text-sm text-gray-600">开发计划和里程碑，从原型验证到生态演化</p>
-                </a>
-                <a href="https://github.com/AICode-Nexus/ai-virtual-cell/blob/main/src/innovations/README.md" target="_blank" class="bg-white p-6 rounded-xl shadow-sm border card-hover block">
-                    <div class="text-2xl mb-3">💡</div>
-                    <h3 class="font-semibold mb-2">P0 创新原型</h3>
-                    <p class="text-sm text-gray-600">三个高优先级创新的参考实现和使用指南</p>
-                </a>
-                <a href="https://github.com/AICode-Nexus/ai-virtual-cell/blob/main/docs/PROJECT_COMPLETION_REPORT.md" target="_blank" class="bg-white p-6 rounded-xl shadow-sm border card-hover block">
-                    <div class="text-2xl mb-3">📊</div>
-                    <h3 class="font-semibold mb-2">项目完成报告</h3>
-                    <p class="text-sm text-gray-600">知识映射框架与创新机会分析的完整报告</p>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Architecture Section -->
-    <section class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">系统架构</h2>
-                <p class="text-gray-600 text-lg">从分子到生态系统的七层架构</p>
-            </div>
-            <div class="max-w-3xl mx-auto">
-                <div class="space-y-3">
-                    <div class="bg-gradient-to-r from-purple-500 to-pink-500 text-white p-4 rounded-xl text-center shadow-lg">
-                        <div class="font-bold">Layer 7: Ecosystem 生态系统</div>
-                        <div class="text-xs text-purple-100">多生命体协作与竞争</div>
-                    </div>
-                    <div class="bg-gradient-to-r from-indigo-500 to-purple-500 text-white p-4 rounded-xl text-center shadow-lg ml-4">
-                        <div class="font-bold">Layer 6: Organism 生命体</div>
-                        <div class="text-xs text-indigo-100">完整的智能个体</div>
-                    </div>
-                    <div class="bg-gradient-to-r from-blue-500 to-indigo-500 text-white p-4 rounded-xl text-center shadow-lg ml-8">
-                        <div class="font-bold">Layer 5: Organ 器官</div>
-                        <div class="text-xs text-blue-100">Brain / Sensory / Executive</div>
-                    </div>
-                    <div class="bg-gradient-to-r from-cyan-500 to-blue-500 text-white p-4 rounded-xl text-center shadow-lg ml-12">
-                        <div class="font-bold">Layer 4: Tissue 组织</div>
-                        <div class="text-xs text-cyan-100">多细胞协作功能模块</div>
-                    </div>
-                    <div class="bg-gradient-to-r from-teal-500 to-cyan-500 text-white p-4 rounded-xl text-center shadow-lg ml-16">
-                        <div class="font-bold">Layer 3: Cell Network 细胞网络</div>
-                        <div class="text-xs text-teal-100">突触连接与信号传递</div>
-                    </div>
-                    <div class="bg-gradient-to-r from-green-500 to-teal-500 text-white p-4 rounded-xl text-center shadow-lg ml-20">
-                        <div class="font-bold">Layer 2: Cell 细胞</div>
-                        <div class="text-xs text-green-100">基础智能单元</div>
-                    </div>
-                    <div class="bg-gradient-to-r from-emerald-500 to-green-500 text-white p-4 rounded-xl text-center shadow-lg ml-24">
-                        <div class="font-bold">Layer 1: Molecular 分子</div>
-                        <div class="text-xs text-emerald-100">DNA / RNA / 蛋白质</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contributing Section -->
-    <section id="contribute" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">参与贡献</h2>
-                <p class="text-gray-600 text-lg max-w-2xl mx-auto">我们欢迎来自不同领域的专家和爱好者参与</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-4 mb-12">
-                <div class="bg-green-50 p-5 rounded-xl border border-green-100 text-center">
-                    <div class="text-2xl mb-2">🧬</div>
-                    <h4 class="font-semibold text-sm mb-1">生物学家</h4>
-                    <p class="text-xs text-gray-600">验证机制准确性</p>
-                </div>
-                <div class="bg-blue-50 p-5 rounded-xl border border-blue-100 text-center">
-                    <div class="text-2xl mb-2">💻</div>
-                    <h4 class="font-semibold text-sm mb-1">AI 研究者</h4>
-                    <p class="text-xs text-gray-600">探讨技术可行性</p>
-                </div>
-                <div class="bg-purple-50 p-5 rounded-xl border border-purple-100 text-center">
-                    <div class="text-2xl mb-2">🏗️</div>
-                    <h4 class="font-semibold text-sm mb-1">架构师</h4>
-                    <p class="text-xs text-gray-600">优化系统设计</p>
-                </div>
-                <div class="bg-amber-50 p-5 rounded-xl border border-amber-100 text-center">
-                    <div class="text-2xl mb-2">🎨</div>
-                    <h4 class="font-semibold text-sm mb-1">产品经理</h4>
-                    <p class="text-xs text-gray-600">探索应用场景</p>
-                </div>
-                <div class="bg-pink-50 p-5 rounded-xl border border-pink-100 text-center">
-                    <div class="text-2xl mb-2">🌍</div>
-                    <h4 class="font-semibold text-sm mb-1">爱好者</h4>
-                    <p class="text-xs text-gray-600">提出想法建议</p>
-                </div>
-            </div>
-
-            <div class="text-center space-x-4">
-                <a href="https://github.com/AICode-Nexus/ai-virtual-cell/discussions" target="_blank" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">参与讨论</a>
-                <a href="https://github.com/AICode-Nexus/ai-virtual-cell/issues" target="_blank" class="inline-block bg-gray-100 text-gray-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition">提交 Issue</a>
-                <a href="https://github.com/AICode-Nexus/ai-virtual-cell/blob/main/CONTRIBUTING.md" target="_blank" class="inline-block bg-gray-100 text-gray-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition">贡献指南</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-8">
-                <div class="md:col-span-2">
-                    <div class="flex items-center space-x-2 mb-4">
-                        <span class="text-2xl">🧬</span>
-                        <span class="text-xl font-bold">AI Virtual Cell</span>
-                    </div>
-                    <p class="text-gray-400 text-sm leading-relaxed">基于细胞生物学机制的全新 AI 架构范式。通过 38 亿年进化智慧，构建自组织、自适应、自进化的下一代智能系统。</p>
-                </div>
-                <div>
-                    <h4 class="font-semibold mb-4">链接</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="https://github.com/AICode-Nexus/ai-virtual-cell" class="hover:text-white transition" target="_blank">GitHub 仓库</a></li>
-                        <li><a href="https://github.com/AICode-Nexus/ai-virtual-cell/discussions" class="hover:text-white transition" target="_blank">讨论区</a></li>
-                        <li><a href="https://github.com/AICode-Nexus/ai-virtual-cell/issues" class="hover:text-white transition" target="_blank">问题追踪</a></li>
-                        <li><a href="https://github.com/AICode-Nexus/ai-virtual-cell/blob/main/CONTRIBUTING.md" class="hover:text-white transition" target="_blank">贡献指南</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-semibold mb-4">文档</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="https://github.com/AICode-Nexus/ai-virtual-cell/blob/main/docs/DESIGN.md" class="hover:text-white transition" target="_blank">设计方案</a></li>
-                        <li><a href="https://github.com/AICode-Nexus/ai-virtual-cell/blob/main/docs/ARCHITECTURE.md" class="hover:text-white transition" target="_blank">架构设计</a></li>
-                        <li><a href="https://github.com/AICode-Nexus/ai-virtual-cell/blob/main/docs/ROADMAP.md" class="hover:text-white transition" target="_blank">路线图</a></li>
-                        <li><a href="https://github.com/AICode-Nexus/ai-virtual-cell/blob/main/docs/BIOLOGY_MAPPING.md" class="hover:text-white transition" target="_blank">生物学映射</a></li>
+                <div class="card" style="border-color: rgba(34, 197, 94, 0.2);">
+                    <h3 style="color: var(--green); font-size: 16px; font-weight: 600; margin-bottom: 16px;">AI Virtual Cell 的突破</h3>
+                    <ul style="list-style: none; color: var(--text-secondary); font-size: 14px;">
+                        <li style="padding: 8px 0; border-bottom: 1px solid var(--border); display: flex; align-items: start; gap: 8px;"><span style="color: var(--green);">✓</span> 双重门控选择性巩固记忆</li>
+                        <li style="padding: 8px 0; border-bottom: 1px solid var(--border); display: flex; align-items: start; gap: 8px;"><span style="color: var(--green);">✓</span> 记忆即结构，能力即组织</li>
+                        <li style="padding: 8px 0; border-bottom: 1px solid var(--border); display: flex; align-items: start; gap: 8px;"><span style="color: var(--green);">✓</span> 去中心化自组织，分层容错</li>
+                        <li style="padding: 8px 0; border-bottom: 1px solid var(--border); display: flex; align-items: start; gap: 8px;"><span style="color: var(--green);">✓</span> 免疫检查点式动态安全阈值</li>
+                        <li style="padding: 8px 0; display: flex; align-items: start; gap: 8px;"><span style="color: var(--green);">✓</span> 适应性分化，自我进化</li>
                     </ul>
                 </div>
             </div>
-            <div class="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-sm text-gray-500">MIT License &copy; 2026 AI Virtual Cell Team</p>
-                <p class="text-sm text-gray-500 mt-2 md:mt-0">让我们一起构建下一代 AI 架构</p>
-            </div>
-        </div>
-    </footer>
+        </section>
 
-    <!-- Mobile Menu Script -->
-    <script>
-        document.getElementById('mobile-toggle').addEventListener('click', function() {
-            document.getElementById('mobile-menu').classList.toggle('active');
-        });
-        document.querySelectorAll('#mobile-menu a').forEach(function(link) {
-            link.addEventListener('click', function() {
-                document.getElementById('mobile-menu').classList.remove('active');
-            });
-        });
-    </script>
+        <!-- Quick Navigation -->
+        <section class="section">
+            <div class="section-header reveal">
+                <h2>探索项目</h2>
+            </div>
+            <div class="grid-3 reveal">
+                <a href="innovations.html" class="card card-glow" style="text-decoration: none;">
+                    <div style="color: var(--green); font-size: 14px; font-weight: 600; margin-bottom: 8px;">P0 创新</div>
+                    <h3 style="font-size: 18px; margin-bottom: 8px; color: var(--text-primary);">创新成果</h3>
+                    <p style="color: var(--text-secondary); font-size: 13px;">双重门控学习 · 免疫检查点对齐 · 分层应激响应</p>
+                </a>
+                <a href="mapping.html" class="card card-glow" style="text-decoration: none;">
+                    <div style="color: var(--blue); font-size: 14px; font-weight: 600; margin-bottom: 8px;">13 × 15 矩阵</div>
+                    <h3 style="font-size: 18px; margin-bottom: 8px; color: var(--text-primary);">知识映射</h3>
+                    <p style="color: var(--text-secondary); font-size: 13px;">195 个映射单元，系统性发现创新机会</p>
+                </a>
+                <a href="roadmap.html" class="card card-glow" style="text-decoration: none;">
+                    <div style="color: var(--purple); font-size: 14px; font-weight: 600; margin-bottom: 8px;">12 个月计划</div>
+                    <h3 style="font-size: 18px; margin-bottom: 8px; color: var(--text-primary);">路线图</h3>
+                    <p style="color: var(--text-secondary); font-size: 13px;">从概念验证到顶会论文的完整路径</p>
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <script src="js/components.js"></script>
+    <script src="js/animations.js"></script>
 </body>
 </html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>路线图 - AI Virtual Cell</title>
+    <meta name="description" content="AI Virtual Cell 从概念验证到生态演化的完整实施路径。">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧬</text></svg>">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="page">
+        <!-- Header -->
+        <section class="section" style="padding-bottom: 40px;">
+            <div class="reveal">
+                <p style="color: var(--purple); font-size: 14px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px;">Implementation Roadmap</p>
+                <h1 style="font-size: 42px; font-weight: 800; margin-bottom: 16px;">实施路线图</h1>
+                <p style="color: var(--text-secondary); font-size: 18px; max-width: 600px;">从概念验证到顶会论文的 12 个月完整路径</p>
+            </div>
+        </section>
+
+        <!-- Timeline -->
+        <section class="section" style="padding-top: 20px;">
+            <div class="timeline reveal">
+                <!-- Phase 0 -->
+                <div class="timeline-item active">
+                    <div class="card" style="border-color: rgba(34, 197, 94, 0.3);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 16px;">
+                            <div>
+                                <span class="tag tag-green">当前阶段</span>
+                                <h3 style="font-size: 20px; font-weight: 700; margin-top: 8px;">Phase 0：设计评审</h3>
+                            </div>
+                            <span style="font-size: 13px; color: var(--text-muted);">已完成</span>
+                        </div>
+                        <div class="grid-2" style="gap: 16px;">
+                            <ul style="list-style: none; font-size: 14px; color: var(--text-secondary);">
+                                <li style="padding: 4px 0;"><span style="color: var(--green);">✓</span> 核心理念文档</li>
+                                <li style="padding: 4px 0;"><span style="color: var(--green);">✓</span> 生物学知识库（13/13）</li>
+                                <li style="padding: 4px 0;"><span style="color: var(--green);">✓</span> AI 知识库（15/15）</li>
+                            </ul>
+                            <ul style="list-style: none; font-size: 14px; color: var(--text-secondary);">
+                                <li style="padding: 4px 0;"><span style="color: var(--green);">✓</span> P0 创新原型实现（3/3）</li>
+                                <li style="padding: 4px 0;"><span style="color: var(--green);">✓</span> 项目网站上线</li>
+                                <li style="padding: 4px 0;"><span style="color: var(--amber);">◐</span> 社区讨论和反馈</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 1 -->
+                <div class="timeline-item">
+                    <div class="card">
+                        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 16px;">
+                            <div>
+                                <span class="tag tag-blue">第 1-3 个月</span>
+                                <h3 style="font-size: 20px; font-weight: 700; margin-top: 8px;">Phase 1：概念验证</h3>
+                            </div>
+                            <span style="font-size: 13px; color: var(--text-muted);">预算 $10K</span>
+                        </div>
+                        <p style="color: var(--text-secondary); font-size: 14px; margin-bottom: 16px;">完成分层应激响应系统原型，集成到 PyTorch 框架</p>
+                        <ul style="list-style: none; font-size: 14px; color: var(--text-secondary);">
+                            <li style="padding: 4px 0;"><span style="color: var(--text-muted);">○</span> Week 1-2：设计三层响应协议</li>
+                            <li style="padding: 4px 0;"><span style="color: var(--text-muted);">○</span> Week 3-6：实现原型并集成到 PyTorch</li>
+                            <li style="padding: 4px 0;"><span style="color: var(--text-muted);">○</span> Week 7-10：模拟故障环境测试</li>
+                            <li style="padding: 4px 0;"><span style="color: var(--text-muted);">○</span> Week 11-12：撰写技术报告 → <strong style="color: var(--text-primary);">MLSys 2027 投稿</strong></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Phase 2 -->
+                <div class="timeline-item">
+                    <div class="card">
+                        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 16px;">
+                            <div>
+                                <span class="tag tag-purple">第 4-6 个月</span>
+                                <h3 style="font-size: 20px; font-weight: 700; margin-top: 8px;">Phase 2：核心创新</h3>
+                            </div>
+                            <span style="font-size: 13px; color: var(--text-muted);">预算 $20K</span>
+                        </div>
+                        <p style="color: var(--text-secondary); font-size: 14px; margin-bottom: 16px;">完成双重门控持续学习原型，在标准基准上验证</p>
+                        <ul style="list-style: none; font-size: 14px; color: var(--text-secondary);">
+                            <li style="padding: 4px 0;"><span style="color: var(--text-muted);">○</span> Month 4：设计局部标记 + 全局捕获算法</li>
+                            <li style="padding: 4px 0;"><span style="color: var(--text-muted);">○</span> Month 5：在 Split CIFAR-10 上验证</li>
+                            <li style="padding: 4px 0;"><span style="color: var(--text-muted);">○</span> Month 6：与 EWC/经验回放对比 → <strong style="color: var(--text-primary);">NeurIPS 2027 投稿</strong></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Phase 3 -->
+                <div class="timeline-item">
+                    <div class="card">
+                        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 16px;">
+                            <div>
+                                <span class="tag tag-pink">第 7-9 个月</span>
+                                <h3 style="font-size: 20px; font-weight: 700; margin-top: 8px;">Phase 3：高影响力工作</h3>
+                            </div>
+                            <span style="font-size: 13px; color: var(--text-muted);">预算 $50K</span>
+                        </div>
+                        <p style="color: var(--text-secondary); font-size: 14px; margin-bottom: 16px;">完成免疫检查点式对齐原型，在开源大模型上验证</p>
+                        <ul style="list-style: none; font-size: 14px; color: var(--text-secondary);">
+                            <li style="padding: 4px 0;"><span style="color: var(--text-muted);">○</span> Month 7：设计动态阈值调节机制</li>
+                            <li style="padding: 4px 0;"><span style="color: var(--text-muted);">○</span> Month 8：在 Llama 上测试</li>
+                            <li style="padding: 4px 0;"><span style="color: var(--text-muted);">○</span> Month 9：用户研究验证 → <strong style="color: var(--text-primary);">ICLR 2028 投稿</strong></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Phase 4 -->
+                <div class="timeline-item future">
+                    <div class="card" style="opacity: 0.7;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 16px;">
+                            <div>
+                                <span class="tag" style="background: rgba(255,255,255,0.05); color: var(--text-muted);">第 10-18 个月</span>
+                                <h3 style="font-size: 20px; font-weight: 700; margin-top: 8px;">Phase 4：综述与生态</h3>
+                            </div>
+                        </div>
+                        <p style="color: var(--text-secondary); font-size: 14px;">Nature Machine Intelligence 综述论文 · 开源框架 v1.0 · 研究社区建设</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Expected Output -->
+        <section class="section">
+            <div class="section-header reveal">
+                <h2>预期产出</h2>
+            </div>
+            <div class="grid-3 reveal">
+                <div class="card" style="text-align: center;">
+                    <div style="font-size: 14px; color: var(--text-muted); margin-bottom: 8px;">学术论文</div>
+                    <div style="font-size: 36px; font-weight: 700; color: var(--green);" data-count="3">0</div>
+                    <div style="font-size: 13px; color: var(--text-secondary); margin-top: 8px;">MLSys · NeurIPS · ICLR</div>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <div style="font-size: 14px; color: var(--text-muted); margin-bottom: 8px;">预期年引用</div>
+                    <div style="font-size: 36px; font-weight: 700; color: var(--blue);" data-count="330">0</div>
+                    <div style="font-size: 13px; color: var(--text-secondary); margin-top: 8px;">3 篇论文合计</div>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <div style="font-size: 14px; color: var(--text-muted); margin-bottom: 8px;">总预算</div>
+                    <div style="font-size: 36px; font-weight: 700; color: var(--purple);">$250K</div>
+                    <div style="font-size: 13px; color: var(--text-secondary); margin-top: 8px;">9 个月（人力 + 算力）</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team -->
+        <section class="section">
+            <div class="section-header reveal">
+                <h2>团队配置</h2>
+            </div>
+            <div class="grid-2 reveal">
+                <div class="card">
+                    <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 16px;">核心团队（5-7 人）</h3>
+                    <ul style="list-style: none; font-size: 14px; color: var(--text-secondary);">
+                        <li style="padding: 8px 0; border-bottom: 1px solid var(--border);">2 名 ML 研究员（持续学习、安全对齐）</li>
+                        <li style="padding: 8px 0; border-bottom: 1px solid var(--border);">1 名系统工程师（分布式训练、容错）</li>
+                        <li style="padding: 8px 0; border-bottom: 1px solid var(--border);">1 名神经科学顾问（生物机制验证）</li>
+                        <li style="padding: 8px 0; border-bottom: 1px solid var(--border);">1 名 ML 工程师（原型实现）</li>
+                        <li style="padding: 8px 0;">2 名安全研究员（第 7-9 月加入）</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 16px;">算力需求</h3>
+                    <div style="margin-bottom: 16px;">
+                        <div style="display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 6px;">
+                            <span>Phase 1（4×A100）</span><span style="color: var(--green);">$5K</span>
+                        </div>
+                        <div style="height: 6px; background: var(--bg-tertiary); border-radius: 3px; overflow: hidden;">
+                            <div data-progress="7" style="height: 100%; width: 0; background: var(--green); border-radius: 3px; transition: width 1s ease;"></div>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 16px;">
+                        <div style="display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 6px;">
+                            <span>Phase 2（8×A100）</span><span style="color: var(--blue);">$20K</span>
+                        </div>
+                        <div style="height: 6px; background: var(--bg-tertiary); border-radius: 3px; overflow: hidden;">
+                            <div data-progress="27" style="height: 100%; width: 0; background: var(--blue); border-radius: 3px; transition: width 1s ease;"></div>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 16px;">
+                        <div style="display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 6px;">
+                            <span>Phase 3（16×A100）</span><span style="color: var(--purple);">$50K</span>
+                        </div>
+                        <div style="height: 6px; background: var(--bg-tertiary); border-radius: 3px; overflow: hidden;">
+                            <div data-progress="67" style="height: 100%; width: 0; background: var(--purple); border-radius: 3px; transition: width 1s ease;"></div>
+                        </div>
+                    </div>
+                    <div style="font-size: 13px; color: var(--text-muted); margin-top: 20px; padding-top: 12px; border-top: 1px solid var(--border);">
+                        总算力成本：<strong style="color: var(--text-primary);">$75K</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Risk -->
+        <section class="section">
+            <div class="section-header reveal">
+                <h2>风险管理</h2>
+            </div>
+            <div class="grid-2 reveal">
+                <div class="glass-card">
+                    <h4 style="font-size: 14px; font-weight: 600; color: var(--amber); margin-bottom: 8px;">⚠ 生物机制过度简化</h4>
+                    <p style="font-size: 13px; color: var(--text-secondary);">缓解：每个机会必须有可验证原型，与神经科学家联合验证</p>
+                </div>
+                <div class="glass-card">
+                    <h4 style="font-size: 14px; font-weight: 600; color: var(--amber); margin-bottom: 8px;">⚠ 基准测试不足</h4>
+                    <p style="font-size: 13px; color: var(--text-secondary);">缓解：建立标准化评估协议，包含多个基准数据集</p>
+                </div>
+                <div class="glass-card">
+                    <h4 style="font-size: 14px; font-weight: 600; color: var(--amber); margin-bottom: 8px;">⚠ 工程复杂度爆炸</h4>
+                    <p style="font-size: 13px; color: var(--text-secondary);">缓解：优先选择工程友好的机制，提供多抽象层次实现</p>
+                </div>
+                <div class="glass-card">
+                    <h4 style="font-size: 14px; font-weight: 600; color: var(--amber); margin-bottom: 8px;">⚠ 竞争对手抢先</h4>
+                    <p style="font-size: 13px; color: var(--text-secondary);">缓解：快速原型验证（3 个月内），及时发布 arXiv 预印本</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="js/components.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+</html>
