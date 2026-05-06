@@ -1202,11 +1202,115 @@ container.bind('writer', WriterService)</code></pre>
                 </article>
             </div>
         </section>
+
+        <section class="section section-compact">
+            <div class="section-header reveal">
+                <div class="eyebrow">Design principles</div>
+                <h2>映射设计原则</h2>
+                <p>什么样的映射是好映射，什么样的映射只是表面相似。</p>
+            </div>
+
+            <div class="grid-2 reveal">
+                <article class="card">
+                    <div class="kicker">
+                        <span class="icon-badge icon-green">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 13l4 4L19 7"></path></svg>
+                        </span>
+                        <div>
+                            <h3 class="card-title">好的映射</h3>
+                            <p class="card-subtitle">控制逻辑相似，可直接落地</p>
+                        </div>
+                    </div>
+                    <ul class="divider-list">
+                        <li><strong>控制逻辑一致：</strong>细胞膜的选择性通透 = API 的鉴权和限流，两者都是"按规则决定什么能进"</li>
+                        <li><strong>可直接实现：</strong>线粒体的动态 ATP 分配 = GPU 池的按需分配，可以写成 <code>allocate_if_available()</code></li>
+                        <li><strong>解决实际问题：</strong>溶酶体的定向降解 = GC 的标记清除，都解决"如何安全回收资源"</li>
+                        <li><strong>有明确边界：</strong>核糖体只负责翻译，代码生成器只负责生成，职责清晰</li>
+                    </ul>
+                </article>
+
+                <article class="card">
+                    <div class="kicker">
+                        <span class="icon-badge icon-red">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 6L6 18M6 6l12 12"></path></svg>
+                        </span>
+                        <div>
+                            <h3 class="card-title">表面映射</h3>
+                            <p class="card-subtitle">只是名字像，无法落地</p>
+                        </div>
+                    </div>
+                    <ul class="divider-list">
+                        <li><strong>只有形状相似：</strong>"细胞是圆的，所以系统也要圆形架构" — 形状不决定控制逻辑</li>
+                        <li><strong>无法实现：</strong>"细胞会自我修复，所以代码也要自我修复" — 没说清楚怎么修复</li>
+                        <li><strong>过度抽象：</strong>"生命是复杂的，所以系统也要复杂" — 复杂不是目标</li>
+                        <li><strong>强行类比：</strong>"DNA 有四种碱基，所以系统要四层架构" — 数字巧合不是映射依据</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section class="section section-compact">
+            <div class="section-header reveal">
+                <div class="eyebrow">When to use</div>
+                <h2>什么时候用生物映射</h2>
+                <p>生物映射不是万能的，但在这些场景下特别有用。</p>
+            </div>
+
+            <div class="grid-3 reveal">
+                <article class="card">
+                    <h3 class="card-title">设计新系统</h3>
+                    <p class="body-copy">当你需要设计一个复杂系统的架构时，可以先问：细胞是怎么解决类似问题的？例如：设计 Agent 系统时，参考细胞的控制中心（细胞核）、能量分配（线粒体）、通信机制（突触）。</p>
+                </article>
+
+                <article class="card">
+                    <h3 class="card-title">优化现有系统</h3>
+                    <p class="body-copy">当系统遇到瓶颈时，可以对照生物组件找灵感。例如：系统资源分配不合理 → 学习线粒体的动态 ATP 分配；错误处理混乱 → 学习溶酶体的定向降解。</p>
+                </article>
+
+                <article class="card">
+                    <h3 class="card-title">团队沟通</h3>
+                    <p class="body-copy">用生物类比可以快速建立共识。例如："我们需要一个类似细胞膜的 API Gateway" 比 "我们需要一个带鉴权、限流、输入校验的边界层" 更容易理解和记忆。</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section section-compact">
+            <div class="section-header reveal">
+                <div class="eyebrow">Anti-patterns</div>
+                <h2>常见误区</h2>
+                <p>避免这些常见的生物映射陷阱。</p>
+            </div>
+
+            <div class="grid-2 reveal">
+                <article class="card">
+                    <h3 class="card-title">误区 1：过度类比</h3>
+                    <p class="body-copy"><strong>错误做法：</strong>"细胞有 37 万亿个，所以我们的系统也要支持 37 万亿个实例。"</p>
+                    <p class="body-copy"><strong>正确做法：</strong>只借鉴控制逻辑，不照搬数量级。细胞数量多是因为生物体需要，不是因为"多就是好"。</p>
+                </article>
+
+                <article class="card">
+                    <h3 class="card-title">误区 2：忽略差异</h3>
+                    <p class="body-copy"><strong>错误做法：</strong>"细胞分裂需要几小时，所以系统扩容也应该几小时。"</p>
+                    <p class="body-copy"><strong>正确做法：</strong>软件可以瞬间复制，不需要模拟生物的时间尺度。借鉴机制，不照搬约束。</p>
+                </article>
+
+                <article class="card">
+                    <h3 class="card-title">误区 3：为了映射而映射</h3>
+                    <p class="body-copy"><strong>错误做法：</strong>"我们必须找到对应线粒体的组件，否则架构不完整。"</p>
+                    <p class="body-copy"><strong>正确做法：</strong>只在有实际需求时才引入对应组件。不是所有系统都需要动态资源分配。</p>
+                </article>
+
+                <article class="card">
+                    <h3 class="card-title">误区 4：忽略工程约束</h3>
+                    <p class="body-copy"><strong>错误做法：</strong>"细胞可以自我修复，所以我们的系统也不需要监控。"</p>
+                    <p class="body-copy"><strong>正确做法：</strong>生物系统经过亿万年进化，软件系统需要主动设计监控、日志、告警。</p>
+                </article>
+            </div>
+        </section>
     </div>
 
     <script src="js/components.js"></script>
     <script src="js/animations.js"></script>
-    <script src="js/component-mapping.js"></script>
     <script src="js/component-mapping.js"></script>
 </body>
 </html>
