@@ -36,6 +36,7 @@
                 <div class="eyebrow">Layer 1: Components</div>
                 <h2>细胞组件 → 软件组件</h2>
                 <p>从细胞的物理结构到软件的功能模块，一对一的直接映射。</p>
+                <p class="interaction-hint">点击任意组件卡片，会高亮它对应的系统架构案例；点击空白区域可恢复默认状态。</p>
             </div>
 
             <div class="component-mapping-grid reveal">
@@ -832,7 +833,7 @@ on_event('user_request', payload => {
             </div>
 
             <div class="grid-3 reveal">
-                <article class="card">
+                <article class="card case-system-card" data-system="research">
                     <div class="kicker">
                         <span class="icon-badge icon-green">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19h16"></path><path d="M6 19V8l6-4 6 4v11"></path><path d="M9 11h6"></path></svg>
@@ -857,7 +858,7 @@ on_event('user_request', payload => {
 └── golgi/output_formatter</code></pre>
                 </article>
 
-                <article class="card">
+                <article class="card case-system-card" data-system="inference">
                     <div class="kicker">
                         <span class="icon-badge icon-blue">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l7 4v5c0 4.7-3 7.9-7 9-4-1.1-7-4.3-7-9V7l7-4z"></path><path d="M9 12l2 2 4-4"></path></svg>
@@ -882,7 +883,7 @@ on_event('user_request', payload => {
 └── stress_recovery</code></pre>
                 </article>
 
-                <article class="card">
+                <article class="card case-system-card" data-system="tissue">
                     <div class="kicker">
                         <span class="icon-badge icon-purple">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="7" cy="7" r="3"></circle><circle cx="17" cy="7" r="3"></circle><circle cx="12" cy="17" r="3"></circle><path d="M9.5 8.8l2 5.4M14.5 8.8l-2 5.4"></path></svg>
@@ -937,5 +938,6 @@ on_event('user_request', payload => {
 
     <script src="js/components.js"></script>
     <script src="js/animations.js"></script>
+    <script src="js/component-mapping.js"></script>
 </body>
 </html>

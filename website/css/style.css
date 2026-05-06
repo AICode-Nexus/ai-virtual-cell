@@ -1686,15 +1686,47 @@ button { cursor: pointer; }
     .story-block { padding: 22px; }
 }
 
-@media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
-    *, *::before, *::after {
-        animation: none !important;
-        transition: none !important;
+/* Component interaction states */
+.component-card {
+    cursor: pointer;
+}
+
+.component-card.is-active {
+    border-color: rgba(84,169,255,0.45);
+    box-shadow: 0 0 0 1px rgba(84,169,255,0.2), 0 16px 36px rgba(84,169,255,0.12);
+    transform: translateY(-4px);
+}
+
+.component-card.is-dimmed,
+.case-system-card.is-dimmed {
+    opacity: 0.42;
+    filter: saturate(0.72);
+}
+
+.case-system-card.is-highlight {
+    border-color: rgba(84,169,255,0.45);
+    box-shadow: 0 0 0 1px rgba(84,169,255,0.2), 0 16px 36px rgba(84,169,255,0.12);
+    transform: translateY(-4px);
+}
+
+.interaction-hint {
+    margin: 10px auto 0;
+    max-width: 720px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 13px;
+}
+
+@media (max-width: 760px) {
+    .component-card.is-dimmed,
+    .case-system-card.is-dimmed {
+        opacity: 0.65;
     }
-    .reveal {
-        opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .component-card.is-active,
+    .case-system-card.is-highlight {
         transform: none;
     }
-    #particles-canvas { display: none; }
 }
