@@ -1526,6 +1526,19 @@ button { cursor: pointer; }
 }
 
 /* Architecture comparison styles */
+.arch-part {
+    cursor: pointer;
+    transition: opacity 180ms ease, filter 180ms ease;
+}
+
+.arch-part.is-active {
+    filter: drop-shadow(0 0 8px rgba(84,169,255,0.7));
+}
+
+.arch-part.is-dimmed {
+    opacity: 0.25;
+}
+
 .architecture-comparison {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
