@@ -578,6 +578,90 @@ except Exception as e:
 
         <section class="section section-compact">
             <div class="section-header reveal">
+                <div class="eyebrow">System architecture cases</div>
+                <h2>实际系统架构案例</h2>
+                <p>把前面的组件映射真正组装成系统，而不是停留在术语对照表。</p>
+            </div>
+
+            <div class="grid-3 reveal">
+                <article class="card">
+                    <div class="kicker">
+                        <span class="icon-badge icon-green">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19h16"></path><path d="M6 19V8l6-4 6 4v11"></path><path d="M9 11h6"></path></svg>
+                        </span>
+                        <div>
+                            <h3 class="card-title">研究型 Agent Cell</h3>
+                            <p class="card-subtitle">检索、阅读、总结、引用的一体化单元</p>
+                        </div>
+                    </div>
+                    <ul class="divider-list">
+                        <li><strong>DNA</strong> → Skills：search / read / compare / summarize</li>
+                        <li><strong>细胞核</strong> → Scheduler：决定先检索还是先读文档</li>
+                        <li><strong>线粒体</strong> → Compute Pool：限制 token、工具和上下文预算</li>
+                        <li><strong>内质网</strong> → Queue：结果进入整理流水线</li>
+                        <li><strong>高尔基体</strong> → Formatter：输出 markdown / JSON 报告</li>
+                    </ul>
+                    <pre class="code-block" style="margin-top: 18px;"><code>ResearchCell
+├── nucleus/scheduler
+├── dna/skills
+├── mitochondria/compute_pool
+├── er/pipeline
+└── golgi/output_formatter</code></pre>
+                </article>
+
+                <article class="card">
+                    <div class="kicker">
+                        <span class="icon-badge icon-blue">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l7 4v5c0 4.7-3 7.9-7 9-4-1.1-7-4.3-7-9V7l7-4z"></path><path d="M9 12l2 2 4-4"></path></svg>
+                        </span>
+                        <div>
+                            <h3 class="card-title">自修复推理服务</h3>
+                            <p class="card-subtitle">长期运行的模型推理 API</p>
+                        </div>
+                    </div>
+                    <ul class="divider-list">
+                        <li><strong>细胞膜</strong> → API Gateway：鉴权、限流、输入校验</li>
+                        <li><strong>免疫检查点</strong> → Safety Controller：动态拒绝阈值</li>
+                        <li><strong>过氧化物酶体</strong> → Error Handler：危险输入与异常处理</li>
+                        <li><strong>溶酶体</strong> → GC：回收超时请求和无用缓存</li>
+                        <li><strong>应激响应</strong> → Recovery Layer：降级、回滚、重建</li>
+                    </ul>
+                    <pre class="code-block" style="margin-top: 18px;"><code>InferenceService
+├── membrane/api_gateway
+├── checkpoint/safety_controller
+├── peroxisome/error_handler
+├── lysosome/gc
+└── stress_recovery</code></pre>
+                </article>
+
+                <article class="card">
+                    <div class="kicker">
+                        <span class="icon-badge icon-purple">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="7" cy="7" r="3"></circle><circle cx="17" cy="7" r="3"></circle><circle cx="12" cy="17" r="3"></circle><path d="M9.5 8.8l2 5.4M14.5 8.8l-2 5.4"></path></svg>
+                        </span>
+                        <div>
+                            <h3 class="card-title">多 Agent 组织网络</h3>
+                            <p class="card-subtitle">分工、协作和结果整合的网络</p>
+                        </div>
+                    </div>
+                    <ul class="divider-list">
+                        <li><strong>细胞通讯</strong> → Agent Messaging：局部广播、邻域同步、全局信号</li>
+                        <li><strong>突触</strong> → Interfaces：标准消息格式和连接强度</li>
+                        <li><strong>形态发生素</strong> → Global Signal：高层目标引导分工</li>
+                        <li><strong>蛋白质</strong> → Specialized Services：检索、分析、写作、验证</li>
+                        <li><strong>代谢调控</strong> → Budget Control：按任务重要性分配算力</li>
+                    </ul>
+                    <pre class="code-block" style="margin-top: 18px;"><code>AgentTissue
+├── coordinator_signal
+├── agents/*
+├── synapse/interfaces
+└── metabolism/budget_allocator</code></pre>
+                </article>
+            </div>
+        </section>
+
+        <section class="section section-compact">
+            <div class="section-header reveal">
                 <div class="eyebrow">Practical application</div>
                 <h2>如何应用这些映射</h2>
                 <p>从生物启发到实际系统设计的三个步骤。</p>
