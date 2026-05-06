@@ -8,6 +8,11 @@ const PAGES = [
     { href: 'docs.html', label: '文档' },
 ];
 
+function getPathPrefix() {
+    const dir = window.location.pathname.replace(/\/[^/]*$/, '');
+    return dir.endsWith('/innovations') ? '../' : '';
+}
+
 function getCurrentPage() {
     const path = window.location.pathname;
     const file = path.split('/').pop() || 'index.html';
@@ -33,17 +38,18 @@ function logoMark() {
 
 function renderNav() {
     const current = getCurrentPage();
+    const prefix = getPathPrefix();
     const nav = document.createElement('nav');
     nav.className = 'nav';
     nav.id = 'main-nav';
     nav.innerHTML = `
         <div class="nav-inner">
-            <a href="index.html" class="nav-logo" aria-label="AI Virtual Cell 首页">
+            <a href="${prefix}index.html" class="nav-logo" aria-label="AI Virtual Cell 首页">
                 ${logoMark()}
                 <span>AI Virtual Cell</span>
             </a>
             <ul class="nav-links">
-                ${PAGES.map((p) => `<li><a href="${p.href}" class="${current === p.href ? 'active' : ''}">${p.label}</a></li>`).join('')}
+                ${PAGES.map((p) => `<li><a href="${prefix}${p.href}" class="${current === p.href ? 'active' : ''}">${p.label}</a></li>`).join('')}
                 <li><a href="https://github.com/AICode-Nexus/ai-virtual-cell" target="_blank" rel="noopener noreferrer" class="nav-github">GitHub</a></li>
             </ul>
             <button class="nav-toggle" id="nav-toggle" aria-label="打开导航菜单" aria-expanded="false" aria-controls="mobile-menu">
@@ -55,7 +61,7 @@ function renderNav() {
             </button>
         </div>
         <div class="mobile-menu" id="mobile-menu">
-            ${PAGES.map((p) => `<a href="${p.href}" class="${current === p.href ? 'active' : ''}">${p.label}</a>`).join('')}
+            ${PAGES.map((p) => `<a href="${prefix}${p.href}" class="${current === p.href ? 'active' : ''}">${p.label}</a>`).join('')}
             <a href="https://github.com/AICode-Nexus/ai-virtual-cell" target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>
     `;
@@ -83,6 +89,7 @@ function renderNav() {
 }
 
 function renderFooter() {
+    const prefix = getPathPrefix();
     const footer = document.createElement('footer');
     footer.className = 'footer';
     footer.innerHTML = `
@@ -94,7 +101,7 @@ function renderFooter() {
             <div class="footer-links">
                 <h4>导航</h4>
                 <ul>
-                    ${PAGES.map((p) => `<li><a href="${p.href}">${p.label}</a></li>`).join('')}
+                    ${PAGES.map((p) => `<li><a href="${prefix}${p.href}">${p.label}</a></li>`).join('')}
                 </ul>
             </div>
             <div class="footer-links">
