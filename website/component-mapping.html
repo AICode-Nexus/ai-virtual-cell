@@ -17,7 +17,7 @@
         <section class="section section-tight">
             <div class="metric-grid reveal">
                 <div class="metric-card">
-                    <div class="metric-value glow-green" data-count="20">0</div>
+                    <div class="metric-value glow-green" data-count="30">0</div>
                     <div class="metric-label">细胞组件映射</div>
                 </div>
                 <div class="metric-card">
@@ -25,7 +25,7 @@
                     <div class="metric-label">细胞过程映射</div>
                 </div>
                 <div class="metric-card">
-                    <div class="metric-value glow-purple" data-count="26">0</div>
+                    <div class="metric-value glow-purple" data-count="36">0</div>
                     <div class="metric-label">总映射数量</div>
                 </div>
             </div>
@@ -651,33 +651,268 @@ return compute_and_store(cache_key)</code></pre>
                     </div>
                 </article>
 
-                <!-- 配体 → 外部触发事件 -->
+                </article>
+
+                <!-- 中心体 → 任务启动器 -->
                 <article class="component-card">
                     <div class="component-header">
                         <div class="component-bio">
-                            <span class="component-icon">🧪</span>
-                            <h3>配体</h3>
+                            <span class="component-icon">🎛️</span>
+                            <h3>中心体</h3>
                         </div>
                         <div class="component-arrow">→</div>
                         <div class="component-ai">
-                            <span class="component-icon">📨</span>
-                            <h3>外部触发事件</h3>
+                            <span class="component-icon">🚀</span>
+                            <h3>任务启动器</h3>
                         </div>
                     </div>
                     <div class="component-body">
-                        <p class="component-logic"><strong>映射逻辑：</strong>外部输入决定内部模块是否被唤醒</p>
+                        <p class="component-logic"><strong>映射逻辑：</strong>组织起始点并协调分发</p>
                         <ul class="component-details">
-                            <li><strong>配体：</strong>与受体结合后激活通路</li>
-                            <li><strong>触发事件：</strong>进入系统后激活对应工作流</li>
-                            <li><strong>共同点：</strong>外部信号、选择性激活、条件触发</li>
+                            <li><strong>中心体：</strong>组织微管并控制细胞分裂极性</li>
+                            <li><strong>启动器：</strong>定义任务从哪里开始、如何展开</li>
+                            <li><strong>共同点：</strong>起始组织、方向设定、主轴建立</li>
                         </ul>
                         <div class="component-example">
                             <strong>代码示例：</strong>
-                            <pre><code>// 配体 = external trigger
-on_event('user_request', payload => {
-    receptor.match(payload)
-    pathway.activate(payload)
-})</code></pre>
+                            <pre><code>// 中心体 = job launcher
+class JobLauncher:
+    def bootstrap(self, request):
+        plan = self.seed_plan(request)
+        return self.spawn_workers(plan)</code></pre>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 染色质 → 访问控制层 -->
+                <article class="component-card">
+                    <div class="component-header">
+                        <div class="component-bio">
+                            <span class="component-icon">🧷</span>
+                            <h3>染色质</h3>
+                        </div>
+                        <div class="component-arrow">→</div>
+                        <div class="component-ai">
+                            <span class="component-icon">🔐</span>
+                            <h3>访问控制层</h3>
+                        </div>
+                    </div>
+                    <div class="component-body">
+                        <p class="component-logic"><strong>映射逻辑：</strong>决定哪些能力当前可被访问</p>
+                        <ul class="component-details">
+                            <li><strong>染色质：</strong>通过开放/压缩状态决定基因可达性</li>
+                            <li><strong>访问层：</strong>控制哪些模块、工具、上下文当前可见</li>
+                            <li><strong>共同点：</strong>可访问性管理、状态切换、权限控制</li>
+                        </ul>
+                        <div class="component-example">
+                            <strong>代码示例：</strong>
+                            <pre><code>// 染色质 = access layer
+if policy.is_open('tool:web_search'):
+    tools.enable('web_search')
+else:
+    tools.disable('web_search')</code></pre>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 增强子/启动子 → 触发规则 -->
+                <article class="component-card">
+                    <div class="component-header">
+                        <div class="component-bio">
+                            <span class="component-icon">📍</span>
+                            <h3>增强子 / 启动子</h3>
+                        </div>
+                        <div class="component-arrow">→</div>
+                        <div class="component-ai">
+                            <span class="component-icon">🪄</span>
+                            <h3>触发规则</h3>
+                        </div>
+                    </div>
+                    <div class="component-body">
+                        <p class="component-logic"><strong>映射逻辑：</strong>规定在什么条件下激活某段能力</p>
+                        <ul class="component-details">
+                            <li><strong>增强子/启动子：</strong>控制基因何时被转录</li>
+                            <li><strong>触发规则：</strong>决定工作流或技能何时被触发</li>
+                            <li><strong>共同点：</strong>条件激活、灵敏度调节、上下文依赖</li>
+                        </ul>
+                        <div class="component-example">
+                            <strong>代码示例：</strong>
+                            <pre><code>// 增强子 = trigger rule
+if request.depth > 2 and risk &lt; 0.4:
+    activate('deep_reasoning')</code></pre>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 泛素标签 → 退役标记 -->
+                <article class="component-card">
+                    <div class="component-header">
+                        <div class="component-bio">
+                            <span class="component-icon">🏷️</span>
+                            <h3>泛素标签</h3>
+                        </div>
+                        <div class="component-arrow">→</div>
+                        <div class="component-ai">
+                            <span class="component-icon">🧹</span>
+                            <h3>退役标记</h3>
+                        </div>
+                    </div>
+                    <div class="component-body">
+                        <p class="component-logic"><strong>映射逻辑：</strong>显式标记哪些对象该被清理</p>
+                        <ul class="component-details">
+                            <li><strong>泛素标签：</strong>标识蛋白质进入降解流程</li>
+                            <li><strong>退役标记：</strong>标识缓存、任务、模型版本进入清理流程</li>
+                            <li><strong>共同点：</strong>生命周期结束标记、定向回收、避免误删</li>
+                        </ul>
+                        <div class="component-example">
+                            <strong>代码示例：</strong>
+                            <pre><code>// 泛素标签 = retirement marker
+item.mark('retire')
+reaper.enqueue(item)</code></pre>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 剪接体 → 指令重写器 -->
+                <article class="component-card">
+                    <div class="component-header">
+                        <div class="component-bio">
+                            <span class="component-icon">✂️</span>
+                            <h3>剪接体</h3>
+                        </div>
+                        <div class="component-arrow">→</div>
+                        <div class="component-ai">
+                            <span class="component-icon">📝</span>
+                            <h3>指令重写器</h3>
+                        </div>
+                    </div>
+                    <div class="component-body">
+                        <p class="component-logic"><strong>映射逻辑：</strong>在执行前重组和裁剪指令结构</p>
+                        <ul class="component-details">
+                            <li><strong>剪接体：</strong>把前体 mRNA 剪接成可用版本</li>
+                            <li><strong>重写器：</strong>把原始请求改写成更精确的中间表示</li>
+                            <li><strong>共同点：</strong>预处理、裁剪噪声、生成可执行版本</li>
+                        </ul>
+                        <div class="component-example">
+                            <strong>代码示例：</strong>
+                            <pre><code>// 剪接体 = instruction rewriter
+clean = rewriter.remove_noise(prompt)
+plan = rewriter.expand(clean)</code></pre>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 分泌囊泡 → 外发消息器 -->
+                <article class="component-card">
+                    <div class="component-header">
+                        <div class="component-bio">
+                            <span class="component-icon">📤</span>
+                            <h3>分泌囊泡</h3>
+                        </div>
+                        <div class="component-arrow">→</div>
+                        <div class="component-ai">
+                            <span class="component-icon">🔔</span>
+                            <h3>外发消息器</h3>
+                        </div>
+                    </div>
+                    <div class="component-body">
+                        <p class="component-logic"><strong>映射逻辑：</strong>把内部结果定向发布到外部世界</p>
+                        <ul class="component-details">
+                            <li><strong>分泌囊泡：</strong>将分子送到细胞外或特定靶点</li>
+                            <li><strong>外发消息器：</strong>发送 webhook、通知或回调</li>
+                            <li><strong>共同点：</strong>封装、发布、面向目标投递</li>
+                        </ul>
+                        <div class="component-example">
+                            <strong>代码示例：</strong>
+                            <pre><code>// 分泌囊泡 = outbound publisher
+publisher.emit('report.ready', payload)</code></pre>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 胞吞作用 → 输入接入器 -->
+                <article class="component-card">
+                    <div class="component-header">
+                        <div class="component-bio">
+                            <span class="component-icon">📥</span>
+                            <h3>胞吞作用</h3>
+                        </div>
+                        <div class="component-arrow">→</div>
+                        <div class="component-ai">
+                            <span class="component-icon">📮</span>
+                            <h3>输入接入器</h3>
+                        </div>
+                    </div>
+                    <div class="component-body">
+                        <p class="component-logic"><strong>映射逻辑：</strong>把外部输入安全地接入内部系统</p>
+                        <ul class="component-details">
+                            <li><strong>胞吞作用：</strong>摄取外部颗粒并转入内部处理</li>
+                            <li><strong>接入器：</strong>拉取文件、消息、事件并进入内部队列</li>
+                            <li><strong>共同点：</strong>接入、封装、交给内部流程处理</li>
+                        </ul>
+                        <div class="component-example">
+                            <strong>代码示例：</strong>
+                            <pre><code>// 胞吞作用 = ingestor
+payload = ingest(source)
+queue.push(payload)</code></pre>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 第二信使 → 瞬时状态变量 -->
+                <article class="component-card">
+                    <div class="component-header">
+                        <div class="component-bio">
+                            <span class="component-icon">📶</span>
+                            <h3>第二信使</h3>
+                        </div>
+                        <div class="component-arrow">→</div>
+                        <div class="component-ai">
+                            <span class="component-icon">🧠</span>
+                            <h3>瞬时状态变量</h3>
+                        </div>
+                    </div>
+                    <div class="component-body">
+                        <p class="component-logic"><strong>映射逻辑：</strong>在短时间内广播局部状态，影响多个模块</p>
+                        <ul class="component-details">
+                            <li><strong>第二信使：</strong>快速扩散并放大局部激活信号</li>
+                            <li><strong>状态变量：</strong>临时上下文值影响多个后续决策</li>
+                            <li><strong>共同点：</strong>短生命周期、广域影响、快速放大</li>
+                        </ul>
+                        <div class="component-example">
+                            <strong>代码示例：</strong>
+                            <pre><code>// 第二信使 = transient state
+context.flash('urgency', 0.9)
+router.adjust(context)</code></pre>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Scaffold protein → 依赖注入容器 -->
+                <article class="component-card">
+                    <div class="component-header">
+                        <div class="component-bio">
+                            <span class="component-icon">🧱</span>
+                            <h3>Scaffold 蛋白</h3>
+                        </div>
+                        <div class="component-arrow">→</div>
+                        <div class="component-ai">
+                            <span class="component-icon">🗃️</span>
+                            <h3>依赖注入容器</h3>
+                        </div>
+                    </div>
+                    <div class="component-body">
+                        <p class="component-logic"><strong>映射逻辑：</strong>把多个功能模块组装到同一局部环境中</p>
+                        <ul class="component-details">
+                            <li><strong>Scaffold 蛋白：</strong>把多个信号蛋白固定到一起提高反应效率</li>
+                            <li><strong>DI 容器：</strong>把服务注册到统一容器中方便装配</li>
+                            <li><strong>共同点：</strong>组装、局部性、降低耦合成本</li>
+                        </ul>
+                        <div class="component-example">
+                            <strong>代码示例：</strong>
+                            <pre><code>// Scaffold = dependency container
+container.bind('search', SearchService)
+container.bind('writer', WriterService)</code></pre>
                         </div>
                     </div>
                 </article>

@@ -24,7 +24,16 @@ document.addEventListener('DOMContentLoaded', () => {
         '检查点蛋白': ['inference'],
         '囊泡 / 记忆载体': ['research'],
         '配体': ['tissue', 'inference'],
-        '线粒体': ['research', 'inference', 'tissue']
+        '线粒体': ['research', 'inference', 'tissue'],
+        '中心体': ['research', 'tissue'],
+        '染色质': ['research', 'inference'],
+        '增强子 / 启动子': ['research', 'inference'],
+        '泛素标签': ['inference'],
+        '剪接体': ['research'],
+        '分泌囊泡': ['tissue', 'inference'],
+        '胞吞作用': ['inference'],
+        '第二信使': ['research', 'tissue'],
+        'Scaffold 蛋白': ['research', 'inference', 'tissue']
     };
 
     const componentToCategory = {
@@ -47,13 +56,22 @@ document.addEventListener('DOMContentLoaded', () => {
         '检查点蛋白': 'safety',
         '囊泡 / 记忆载体': 'memory',
         '配体': 'signal',
-        '线粒体': 'compute'
+        '线粒体': 'compute',
+        '中心体': 'control',
+        '染色质': 'memory',
+        '增强子 / 启动子': 'signal',
+        '泛素标签': 'safety',
+        '剪接体': 'execution',
+        '分泌囊泡': 'transport',
+        '胞吞作用': 'transport',
+        '第二信使': 'signal',
+        'Scaffold 蛋白': 'control'
     };
 
     const systemToComponents = {
-        research: ['DNA 片段', 'RNA', '核糖体', '细胞核', '线粒体', '内质网', '高尔基体', '细胞骨架', '转录因子', '囊泡 / 记忆载体'],
-        inference: ['细胞膜', '线粒体', '过氧化物酶体', '溶酶体', '受体', '离子通道', '转录因子', '分子伴侣', '检查点蛋白', '配体'],
-        tissue: ['蛋白质', '突触', '线粒体', '细胞骨架', '受体', '配体']
+        research: ['DNA 片段', 'RNA', '核糖体', '细胞核', '线粒体', '内质网', '高尔基体', '细胞骨架', '转录因子', '囊泡 / 记忆载体', '中心体', '染色质', '增强子 / 启动子', '剪接体', '第二信使', 'Scaffold 蛋白'],
+        inference: ['细胞膜', '线粒体', '过氧化物酶体', '溶酶体', '受体', '离子通道', '转录因子', '分子伴侣', '检查点蛋白', '配体', '染色质', '增强子 / 启动子', '泛素标签', '分泌囊泡', '胞吞作用', 'Scaffold 蛋白'],
+        tissue: ['蛋白质', '突触', '线粒体', '细胞骨架', '受体', '配体', '中心体', '分泌囊泡', '第二信使', 'Scaffold 蛋白']
     };
 
     const architectureToComponent = {
