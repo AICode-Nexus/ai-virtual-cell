@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>宽度对比测试</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            padding: 40px;
+            background: #08111f;
+        }
+        .test-section {
+            margin-bottom: 60px;
+            padding: 30px;
+            border: 2px solid #35d67f;
+            border-radius: 16px;
+        }
+        .test-label {
+            color: #35d67f;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .width-info {
+            color: #54a9ff;
+            font-size: 14px;
+            margin-bottom: 20px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="color: #eef4ff; text-align: center; margin-bottom: 40px;">High-value cases 宽度对比测试</h1>
+
+    <div class="test-section">
+        <div class="test-label">❌ 修复前 - 使用默认 .section (1180px)</div>
+        <div class="width-info">容器宽度: min(1180px, calc(100% - 40px))</div>
+        <section class="section section-compact">
+            <div class="case-shell">
+                <div class="case-nav">
+                    <button class="case-tab active">
+                        <strong>双重门控学习</strong>
+                        <span>突触标记 → 选择性巩固</span>
+                    </button>
+                    <button class="case-tab">
+                        <strong>免疫检查点对齐</strong>
+                        <span>抑制受体 → 动态阈值</span>
+                    </button>
+                    <button class="case-tab">
+                        <strong>分层应激响应</strong>
+                        <span>UPR 三臂 → 分级容错</span>
+                    </button>
+                    <button class="case-tab">
+                        <strong>表观遗传元学习</strong>
+                        <span>环境记忆 → 快速适配</span>
+                    </button>
+                    <button class="case-tab">
+                        <strong>代谢式算力调度</strong>
+                        <span>能量约束 → 预算分配</span>
+                    </button>
+                    <button class="case-tab">
+                        <strong>信号转导级联</strong>
+                        <span>多通路整合 → 注意力反馈</span>
+                    </button>
+                    <button class="case-tab">
+                        <strong>细胞通讯协议</strong>
+                        <span>旁分泌信号 → 去中心协作</span>
+                    </button>
+                    <button class="case-tab">
+                        <strong>形态发生素梯度</strong>
+                        <span>位置编码 → 架构搜索</span>
+                    </button>
+                    <button class="case-tab">
+                        <strong>活动依赖元学习</strong>
+                        <span>学习规则可塑性 → 自适应优化</span>
+                    </button>
+                    <button class="case-tab">
+                        <strong>攻击模式记忆</strong>
+                        <span>免疫记忆 → 快速防御</span>
+                    </button>
+                    <button class="case-tab">
+                        <strong>自噬式模型修复</strong>
+                        <span>选择性降解 → 自动修复</span>
+                    </button>
+                    <button class="case-tab">
+                        <strong>能量代谢调控</strong>
+                        <span>ATP 感知 → 效率优化</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="test-section" style="border-color: #54a9ff;">
+        <div class="test-label" style="color: #54a9ff;">✅ 修复后 - 使用 .section-wide (1400px)</div>
+        <div class="width-info">容器宽度: min(1400px, calc(100% - 40px))</div>
+        <section class="section section-compact section-wide">
+            <div class="case-shell">
+                <div class="case-nav">
+                    <button class="case-tab active">
+                        <strong>双重门控学习</strong>
+                        <span>突触标记 → 选择性巩固</span>
+                    </button>
+                    <button class="case-tab">
+                        <strong>免疫检查点对齐</strong>
+                        <span>抑制受体 → 动态阈值</span>
+                    </button>
+                    <button class="case-tab">
+                        <strong>分层应激响应</strong>
+                        <span>UPR 三臂 → 分级容错</span>
+                    </button>
+                    <button class="case-tab">
+                        <strong>表观遗传元学习</strong>
+                        <span>环境记忆 → 快速适配</span>
+                    </button>
+                    <button class="case-tab">
+                        <strong>代谢式算力调度</strong>
+                        <span>能量约束 → 预算分配</span>
+                    </button>
+                    <button class="case-tab">
+                        <strong>信号转导级联</strong>
+                        <span>多通路整合 → 注意力反馈</span>
+                    </button>
+                    <button class="case-tab">
+                        <strong>细胞通讯协议</strong>
+                        <span>旁分泌信号 → 去中心协作</span>
+                    </button>
+                    <button class="case-tab">
+                        <strong>形态发生素梯度</strong>
+                        <span>位置编码 → 架构搜索</span>
+                    </button>
+                    <button class="case-tab">
+                        <strong>活动依赖元学习</strong>
+                        <span>学习规则可塑性 → 自适应优化</span>
+                    </button>
+                    <button class="case-tab">
+                        <strong>攻击模式记忆</strong>
+                        <span>免疫记忆 → 快速防御</span>
+                    </button>
+                    <button class="case-tab">
+                        <strong>自噬式模型修复</strong>
+                        <span>选择性降解 → 自动修复</span>
+                    </button>
+                    <button class="case-tab">
+                        <strong>能量代谢调控</strong>
+                        <span>ATP 感知 → 效率优化</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // 显示实际宽度
+        window.addEventListener('load', () => {
+            const sections = document.querySelectorAll('.test-section section');
+            const widthInfos = document.querySelectorAll('.width-info');
+
+            sections.forEach((section, index) => {
+                const width = section.offsetWidth;
+                const caseNav = section.querySelector('.case-nav');
+                const caseNavWidth = caseNav ? caseNav.offsetWidth : 0;
+                const firstTab = section.querySelector('.case-tab');
+                const tabWidth = firstTab ? firstTab.offsetWidth : 0;
+
+                widthInfos[index].innerHTML = `
+                    容器宽度: ${width}px<br>
+                    case-nav 宽度: ${caseNavWidth}px<br>
+                    单个 tab 宽度: ${tabWidth}px
+                `;
+            });
+        });
+    </script>
+</body>
+</html>

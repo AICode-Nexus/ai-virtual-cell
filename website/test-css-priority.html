@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS 优先级测试</title>
+    <style>
+        /* 模拟当前的 CSS */
+        .section {
+            width: min(1180px, calc(100% - 40px));
+            background: red;
+            padding: 20px;
+            margin: 20px auto;
+        }
+
+        .section-wide {
+            width: min(1400px, calc(100% - 40px));
+        }
+
+        /* 正确的修复 */
+        .section.section-wide {
+            width: min(1400px, calc(100% - 40px));
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS 优先级测试</h1>
+
+    <div class="section">
+        <p>普通 section: 应该是 1180px</p>
+        <p>实际宽度: <span id="width1"></span></p>
+    </div>
+
+    <div class="section section-wide">
+        <p>section + section-wide (当前实现): 应该是 1400px</p>
+        <p>实际宽度: <span id="width2"></span></p>
+    </div>
+
+    <script>
+        document.getElementById('width1').textContent = document.querySelectorAll('.section')[0].offsetWidth + 'px';
+        document.getElementById('width2').textContent = document.querySelectorAll('.section')[1].offsetWidth + 'px';
+    </script>
+</body>
+</html>

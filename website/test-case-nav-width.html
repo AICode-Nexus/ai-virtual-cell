@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Case Nav Width</title>
+    <style>
+        body {
+            margin: 40px;
+            font-family: sans-serif;
+        }
+        .test-container {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 2px solid #ccc;
+        }
+
+        /* 原始样式 - 有问题 */
+        .case-nav-old {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 12px;
+            margin-bottom: 40px;
+        }
+
+        /* 修复后的样式 */
+        .case-nav-new {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+
+        .case-tab {
+            min-height: 82px;
+            padding: 16px 18px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background: #f5f5f5;
+        }
+
+        h2 {
+            color: #333;
+            margin-top: 0;
+        }
+
+        .label {
+            font-weight: bold;
+            color: #666;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>Case Nav Width Test</h1>
+
+        <div class="label">❌ 原始样式 (有问题) - auto-fit with minmax(160px, 1fr)</div>
+        <div class="case-nav-old">
+            <div class="case-tab">Tab 1</div>
+            <div class="case-tab">Tab 2</div>
+            <div class="case-tab">Tab 3</div>
+            <div class="case-tab">Tab 4</div>
+            <div class="case-tab">Tab 5</div>
+            <div class="case-tab">Tab 6</div>
+            <div class="case-tab">Tab 7</div>
+            <div class="case-tab">Tab 8</div>
+            <div class="case-tab">Tab 9</div>
+            <div class="case-tab">Tab 10</div>
+            <div class="case-tab">Tab 11</div>
+            <div class="case-tab">Tab 12</div>
+        </div>
+
+        <div class="label">✅ 修复后的样式 - repeat(4, 1fr)</div>
+        <div class="case-nav-new">
+            <div class="case-tab">Tab 1</div>
+            <div class="case-tab">Tab 2</div>
+            <div class="case-tab">Tab 3</div>
+            <div class="case-tab">Tab 4</div>
+            <div class="case-tab">Tab 5</div>
+            <div class="case-tab">Tab 6</div>
+            <div class="case-tab">Tab 7</div>
+            <div class="case-tab">Tab 8</div>
+            <div class="case-tab">Tab 9</div>
+            <div class="case-tab">Tab 10</div>
+            <div class="case-tab">Tab 11</div>
+            <div class="case-tab">Tab 12</div>
+        </div>
+    </div>
+</body>
+</html>
