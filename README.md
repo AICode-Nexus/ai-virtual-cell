@@ -6,6 +6,7 @@
 [![Discussions](https://img.shields.io/github/discussions/AICode-Nexus/ai-virtual-cell)](https://github.com/AICode-Nexus/ai-virtual-cell/discussions)
 [![Website](https://img.shields.io/badge/website-online-green)](https://aicode-nexus.github.io/ai-virtual-cell)
 [![GitHub Pages](https://img.shields.io/github/actions/workflow/status/AICode-Nexus/ai-virtual-cell/deploy-pages.yml?label=pages)](https://github.com/AICode-Nexus/ai-virtual-cell/actions/workflows/deploy-pages.yml)
+[![Mappings](https://img.shields.io/badge/mappings-195%2F195-brightgreen)](https://aicode-nexus.github.io/ai-virtual-cell/mapping.html)
 
 ## 🌟 项目愿景
 
@@ -17,15 +18,24 @@ AI Virtual Cell 是一个革命性的 AI 架构项目，通过模拟生物细胞
 - 🌱 **学习即进化**：通过突触可塑性和神经发生实现持续学习
 - 🤝 **协作即生态**：去中心化的细胞间信号转导替代中心化调度
 
-## 📚 文档
+## 📚 文档与资源
 
+### 核心文档
 - [完整设计方案](docs/DESIGN.md) - 详细的技术设计文档
 - [生物学映射](docs/BIOLOGY_MAPPING.md) - 生物学概念到计算架构的映射
 - [架构设计](docs/ARCHITECTURE.md) - 系统架构详解
 - [实施路线图](docs/ROADMAP.md) - 开发计划和里程碑
-- [P0 创新原型](src/innovations/README.md) - 三个高优先级创新的参考实现
 - [项目完成报告](docs/PROJECT_COMPLETION_REPORT.md) - 知识映射与创新机会分析
-- [知识映射框架](docs/knowledge-mapping/README.md) - 13×15 映射矩阵
+
+### 创新成果
+- [P0 创新原型](src/innovations/README.md) - 三个高优先级创新的参考实现
+- [知识映射框架](docs/knowledge-mapping/README.md) - 13×15 映射矩阵（195个映射单元）
+
+### 在线资源
+- [项目网站](https://aicode-nexus.github.io/ai-virtual-cell) - 交互式文档和可视化
+- [知识映射浏览器](https://aicode-nexus.github.io/ai-virtual-cell/mapping.html) - 195个生物-AI映射的交互式探索
+- [组件架构字典](https://aicode-nexus.github.io/ai-virtual-cell/component-mapping.html) - 30个核心组件的双向映射
+- [完整映射列表](https://aicode-nexus.github.io/ai-virtual-cell/all-mappings.html) - 所有映射的详细视图
 
 ## 🌐 参与讨论
 
@@ -37,11 +47,12 @@ AI Virtual Cell 是一个革命性的 AI 架构项目，通过模拟生物细胞
 - 🎨 **产品经理**：探索应用场景和商业价值
 - 🌍 **任何感兴趣的人**：提出想法和建议
 
-### 讨论方式
+### 参与方式
 
-1. **GitHub Discussions**：[参与讨论](https://github.com/AICode-Nexus/ai-virtual-cell/discussions)
-2. **项目网站**：[访问讨论平台](https://aicode-nexus.github.io/ai-virtual-cell)
-3. **Issue 提交**：[提交问题或建议](https://github.com/AICode-Nexus/ai-virtual-cell/issues)
+1. **GitHub Discussions**：[参与讨论](https://github.com/AICode-Nexus/ai-virtual-cell/discussions) - 分享想法和见解
+2. **项目网站**：[浏览交互式文档](https://aicode-nexus.github.io/ai-virtual-cell) - 探索知识映射和组件架构
+3. **Issue 提交**：[提交问题或建议](https://github.com/AICode-Nexus/ai-virtual-cell/issues) - 报告问题或提出改进建议
+4. **生物学审查**：[提交生物学反馈](https://github.com/AICode-Nexus/ai-virtual-cell/issues/new?template=biology_review.md) - 帮助验证生物学机制的准确性
 
 ## 🚀 快速开始
 
@@ -103,17 +114,33 @@ AI Virtual Cell 的优势：
 
 ## 🛣️ 项目状态
 
-**当前阶段**：设计方案评审 + P0 创新原型完成
+**当前阶段**：Phase 0 - 设计评审与社区反馈
 
+### 已完成 ✅
 - [x] 核心理念确定
-- [x] 生物学映射完成（13/13 生物系统）
-- [x] AI 知识库完成（15/15 AI 领域）
-- [x] 架构设计初稿
+- [x] 生物学知识库（13/13 系统，100%）
+- [x] AI 知识库（15/15 领域，100%）
+- [x] 知识映射矩阵（195/195 映射单元，100%）
+- [x] 架构设计文档
 - [x] P0 创新原型实现（3/3）
-- [x] 项目网站上线（GitHub Pages）
-- [ ] 社区讨论和反馈
-- [ ] PyTorch/JAX 集成
+- [x] 项目网站上线（7个交互式页面）
+- [x] 组件架构字典（30个核心组件）
+
+### 进行中 🚧
+- [ ] 社区讨论和反馈收集
+- [ ] 生物学家审查反馈
+- [ ] AI 研究者审查反馈
+
+### 下一步 📋
+- [ ] 设计方案 v2.0（基于社区反馈）
+- [ ] PyTorch/JAX 原型实现
 - [ ] 标准基准测试验证
+
+### 项目统计 📊
+- **文档数量**：29篇核心文档
+- **代码行数**：7,166行（原型实现）
+- **映射单元**：195个生物-AI映射
+- **参考文献**：200+篇权威来源
 
 ### 🔬 P0 创新成果
 
