@@ -1730,6 +1730,42 @@ button { cursor: pointer; }
     font-size: 13px;
 }
 
+.component-filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin: 0 0 28px;
+}
+
+.component-filter {
+    min-height: 40px;
+    padding: 0 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.03);
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 200ms ease;
+}
+
+.component-filter:hover {
+    border-color: rgba(84,169,255,0.3);
+    color: var(--text-primary);
+}
+
+.component-filter.is-active {
+    color: var(--text-primary);
+    background: linear-gradient(135deg, rgba(84,169,255,0.18), rgba(84,169,255,0.08));
+    border-color: rgba(84,169,255,0.4);
+    box-shadow: 0 8px 20px rgba(84,169,255,0.14);
+}
+
+.component-card.is-hidden {
+    display: none;
+}
+
 @media (max-width: 760px) {
     .component-card.is-dimmed,
     .case-system-card.is-dimmed {

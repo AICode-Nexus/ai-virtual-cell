@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const cards = Array.from(document.querySelectorAll('.component-card'));
     const systems = Array.from(document.querySelectorAll('.case-system-card'));
     const archParts = Array.from(document.querySelectorAll('.arch-part'));
+    const filters = Array.from(document.querySelectorAll('.component-filter'));
 
     const componentToSystems = {
         'DNA 片段': ['research'],
@@ -26,6 +27,29 @@ document.addEventListener('DOMContentLoaded', () => {
         '线粒体': ['research', 'inference', 'tissue']
     };
 
+    const componentToCategory = {
+        'DNA 片段': 'memory',
+        'RNA': 'memory',
+        '蛋白质': 'execution',
+        '核糖体': 'execution',
+        '细胞核': 'control',
+        '细胞膜': 'control',
+        '内质网': 'transport',
+        '高尔基体': 'transport',
+        '溶酶体': 'safety',
+        '突触': 'signal',
+        '过氧化物酶体': 'safety',
+        '细胞骨架': 'control',
+        '受体': 'signal',
+        '离子通道': 'control',
+        '转录因子': 'control',
+        '分子伴侣': 'safety',
+        '检查点蛋白': 'safety',
+        '囊泡 / 记忆载体': 'memory',
+        '配体': 'signal',
+        '线粒体': 'compute'
+    };
+
     const systemToComponents = {
         research: ['DNA 片段', 'RNA', '核糖体', '细胞核', '线粒体', '内质网', '高尔基体', '细胞骨架', '转录因子', '囊泡 / 记忆载体'],
         inference: ['细胞膜', '线粒体', '过氧化物酶体', '溶酶体', '受体', '离子通道', '转录因子', '分子伴侣', '检查点蛋白', '配体'],
@@ -42,11 +66,26 @@ document.addEventListener('DOMContentLoaded', () => {
         '溶酶体': '溶酶体'
     };
 
+    let currentFilter = 'all';
     const titleToCard = new Map();
+
     cards.forEach((card) => {
         const title = card.querySelector('.component-bio h3')?.textContent?.trim();
-        if (title) titleToCard.set(title, card);
+        if (!title) return;
+        titleToCard.set(title, card);
+        card.dataset.category = componentToCategory[title] || 'execution';
     });
+
+    function applyFilter(filter) {
+        currentFilter = filter;
+        filters.forEach((button) => {
+            button.classList.toggle('is-active', button.dataset.filter === filter);
+        });
+        cards.forEach((card) => {
+            const match = filter === 'all' || card.dataset.category === filter;
+            card.classList.toggle('is-hidden', !match);
+        });
+    }
 
     function resetState() {
         cards.forEach((card) => card.classList.remove('is-active', 'is-dimmed'));
@@ -92,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (isActive) return;
 
             cards.forEach((item) => {
-                if (item !== card) item.classList.add('is-dimmed');
+                if (item !== card && !item.classList.contains('is-hidden')) item.classList.add('is-dimmed');
             });
             highlightSystems(targets);
             if (archKey) highlightArchParts([archKey], archKey);
@@ -133,14 +172,23 @@ document.addEventListener('DOMContentLoaded', () => {
             highlightSystems(targets);
             const targetCard = titleToCard.get(title);
             cards.forEach((item) => {
-                if (item !== targetCard) item.classList.add('is-dimmed');
+                if (item !== targetCard && !item.classList.contains('is-hidden')) item.classList.add('is-dimmed');
             });
             if (targetCard) targetCard.classList.add('is-active');
         });
     });
 
+    filters.forEach((button) => {
+        button.addEventListener('click', () => {
+            resetState();
+            applyFilter(button.dataset.filter);
+        });
+    });
+
     document.addEventListener('click', (event) => {
-        const inside = event.target.closest('.component-card') || event.target.closest('.case-system-card') || event.target.closest('.arch-part');
+        const inside = event.target.closest('.component-card') || event.target.closest('.case-system-card') || event.target.closest('.arch-part') || event.target.closest('.component-filter');
         if (!inside) resetState();
     });
+
+    applyFilter('all');
 });
