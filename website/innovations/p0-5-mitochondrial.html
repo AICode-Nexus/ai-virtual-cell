@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P0-5: 线粒体动力学启发的计算资源自适应分配 - AI Virtual Cell</title>
+    <meta name="description" content="基于线粒体融合/分裂/自噬机制，实现AI系统的动态资源管理与故障自愈，预期资源利用率提升40%。">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='12' fill='%2335d67f'/></svg>">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="page">
+        <section class="page-hero compact">
+            <div class="stack reveal visible">
+                <div class="eyebrow">P0 Innovation</div>
+                <h1 class="page-title">线粒体动力学启发的计算资源自适应分配</h1>
+                <p class="page-subtitle">基于线粒体融合/分裂/自噬/重定位机制，实现AI系统的动态资源管理与故障自愈。</p>
+            </div>
+        </section>
+
+        <section class="section section-tight">
+            <div class="metric-grid reveal">
+                <div class="metric-card">
+                    <div class="metric-value glow-amber">P0</div>
+                    <div class="metric-label">优先级</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value glow-blue">+40%</div>
+                    <div class="metric-label">资源利用率提升</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value glow-purple">MLSys 2027</div>
+                    <div class="metric-label">发表目标</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-compact">
+            <div class="section-header reveal">
+                <div class="eyebrow">Biological Mechanism</div>
+                <h2>线粒体动力学的核心机制</h2>
+            </div>
+            <div class="matrix-grid reveal">
+                <article class="matrix-card">
+                    <h3>融合 (Fusion)</h3>
+                    <p class="body-copy"><strong>提升效率</strong></p>
+                    <ul class="mapping-list">
+                        <li>能量需求高时，线粒体融合成网络</li>
+                        <li>提升ATP产能效率30-50%</li>
+                        <li>共享基质、互补mtDNA</li>
+                    </ul>
+                </article>
+                <article class="matrix-card">
+                    <h3>分裂 (Fission)</h3>
+                    <p class="body-copy"><strong>隔离损伤</strong></p>
+                    <ul class="mapping-list">
+                        <li>应激时，线粒体分裂成小单元</li>
+                        <li>将损伤线粒体隔离</li>
+                        <li>防止损伤扩散</li>
+                    </ul>
+                </article>
+                <article class="matrix-card">
+                    <h3>自噬 (Mitophagy)</h3>
+                    <p class="body-copy"><strong>清除故障</strong></p>
+                    <ul class="mapping-list">
+                        <li>PINK1-Parkin通路标记损伤线粒体</li>
+                        <li>自噬体吞噬清除</li>
+                        <li>维持线粒体群体健康</li>
+                    </ul>
+                </article>
+                <article class="matrix-card">
+                    <h3>重定位 (Transport)</h3>
+                    <p class="body-copy"><strong>响应需求</strong></p>
+                    <ul class="mapping-list">
+                        <li>沿微管运输到高能量需求区域</li>
+                        <li>精准响应局部需求</li>
+                        <li>动态资源分配</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section class="section section-compact">
+            <div class="section-header reveal">
+                <div class="eyebrow">Innovation Design</div>
+                <h2>自适应计算单元 (ACU)</h2>
+            </div>
+            <article class="card reveal">
+                <h3>核心思想</h3>
+                <p class="body-copy">将计算资源组织成"计算单元"（类比线粒体），通过融合、分裂、自噬、重定位实现动态资源管理。</p>
+                
+                <h4 style="margin-top: 24px;">关键算法</h4>
+                <pre class="code-block"><span style="color:#8da2c0;"># 融合条件</span>
+should_fuse(ACU_i, ACU_j) = 
+    (load_i + load_j) / (capacity_i + capacity_j) > 0.8  <span style="color:#8da2c0;"># 高负载</span>
+    AND health_i > 0.7 AND health_j > 0.7                <span style="color:#8da2c0;"># 健康</span>
+
+<span style="color:#8da2c0;"># 分裂条件</span>
+should_split(ACU_i) = 
+    health_i < 0.5                    <span style="color:#8da2c0;"># 健康度低</span>
+    OR load_variance(ACU_i) > 0.3     <span style="color:#8da2c0;"># 负载不均</span>
+
+<span style="color:#8da2c0;"># 自噬条件</span>
+should_autophagy(ACU_i) = 
+    health_i < 0.3                    <span style="color:#8da2c0;"># 严重功能失调</span>
+    OR consecutive_failures > 10      <span style="color:#8da2c0;"># 连续失败</span></pre>
+            </article>
+        </section>
+
+        <section class="section section-compact">
+            <div class="section-header reveal">
+                <div class="eyebrow">Applications</div>
+                <h2>应用方向</h2>
+            </div>
+            <div class="table-wrapper reveal">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>应用场景</th>
+                            <th>当前方案</th>
+                            <th>ACU方案</th>
+                            <th>预期提升</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="table-strong">动态模型并行</td>
+                            <td>静态切分</td>
+                            <td>动态融合/分裂</td>
+                            <td style="color: var(--green);">利用率60%→85%</td>
+                        </tr>
+                        <tr>
+                            <td class="table-strong">MoE系统</td>
+                            <td>固定专家数</td>
+                            <td>专家动态扩展</td>
+                            <td style="color: var(--green);">资源利用率+40%</td>
+                        </tr>
+                        <tr>
+                            <td class="table-strong">边缘推理</td>
+                            <td>固定模型大小</td>
+                            <td>自适应调整</td>
+                            <td style="color: var(--green);">续航+2倍</td>
+                        </tr>
+                        <tr>
+                            <td class="table-strong">分布式训练</td>
+                            <td>节点故障→失败</td>
+                            <td>故障自愈</td>
+                            <td style="color: var(--green);">恢复时间：分钟→秒</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="section section-compact">
+            <div class="reveal" style="text-align: center;">
+                <a href="../innovations.html" class="story-link" style="font-size: 16px;">← 返回创新总览</a>
+            </div>
+        </section>
+    </div>
+
+    <script src="../js/components.js"></script>
+    <script src="../js/animations.js"></script>
+</body>
+</html>

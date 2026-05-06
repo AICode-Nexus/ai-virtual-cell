@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P1-7: 细胞凋亡启发的模型自我修剪与重生 - AI Virtual Cell</title>
+    <meta name="description" content="基于程序性细胞死亡机制，实现AI模型的动态优化与故障自愈，预期自动精简30%。">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='12' fill='%23b07bff'/></svg>">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="page">
+        <section class="page-hero compact">
+            <div class="stack reveal visible">
+                <div class="eyebrow">P1 Innovation</div>
+                <h1 class="page-title">细胞凋亡启发的模型自我修剪与重生</h1>
+                <p class="page-subtitle">基于程序性细胞死亡与神经发生机制，实现AI模型的动态优化与故障自愈。</p>
+            </div>
+        </section>
+
+        <section class="section section-tight">
+            <div class="metric-grid reveal">
+                <div class="metric-card">
+                    <div class="metric-value glow-purple">P1</div>
+                    <div class="metric-label">优先级</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value glow-green">30%</div>
+                    <div class="metric-label">自动精简</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value glow-blue">ICML 2027</div>
+                    <div class="metric-label">发表目标</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-compact">
+            <div class="section-header reveal">
+                <div class="eyebrow">Biological Mechanism</div>
+                <h2>程序性细胞死亡与神经发生</h2>
+            </div>
+            <div class="case-grid reveal">
+                <section class="case-block">
+                    <h4>细胞凋亡 (Apoptosis)</h4>
+                    <ul class="mapping-list" style="color: var(--purple);">
+                        <li><strong>选择性</strong>：只清除功能失调、损伤、冗余的细胞</li>
+                        <li><strong>有序性</strong>：按程序执行，不引发炎症</li>
+                        <li><strong>无害性</strong>：凋亡小体被吞噬，不释放有害物质</li>
+                        <li><strong>生理意义</strong>：发育、组织维护、清除损伤</li>
+                    </ul>
+                </section>
+                <section class="case-block">
+                    <h4>神经发生 (Neurogenesis)</h4>
+                    <ul class="mapping-list" style="color: var(--green);">
+                        <li><strong>持续产生</strong>：成年大脑仍能产生新神经元</li>
+                        <li><strong>海马齿状回</strong>：每天产生700个新神经元</li>
+                        <li><strong>功能意义</strong>：模式分离、遗忘、认知灵活性</li>
+                        <li><strong>调控因素</strong>：学习、运动、富集环境促进</li>
+                    </ul>
+                </section>
+            </div>
+        </section>
+
+        <section class="section section-compact">
+            <div class="section-header reveal">
+                <div class="eyebrow">Innovation Design</div>
+                <h2>自我凋亡式模型优化</h2>
+            </div>
+            <article class="card reveal">
+                <h3>核心思想</h3>
+                <p class="body-copy">模型持续监测神经元健康度，主动清除功能失调、冗余、损伤的神经元，同时动态补充新神经元。</p>
+                
+                <h4 style="margin-top: 24px;">健康度评估</h4>
+                <pre class="code-block">health(neuron_i) = α × activation_score(i) 
+                 + β × gradient_stability(i)
+                 + γ × contribution_score(i)
+                 - δ × redundancy_score(i)
+
+<span style="color:#8da2c0;"># 凋亡条件</span>
+should_apoptosis(neuron_i) = 
+    health(i) < threshold_critical           <span style="color:#8da2c0;"># 严重功能失调</span>
+    OR consecutive_failures(i) > 10          <span style="color:#8da2c0;"># 连续失败</span>
+    OR is_redundant(i, other_neurons)        <span style="color:#8da2c0;"># 冗余</span></pre>
+            </article>
+        </section>
+
+        <section class="section section-compact">
+            <div class="section-header reveal">
+                <div class="eyebrow">Applications</div>
+                <h2>应用方向</h2>
+            </div>
+            <div class="matrix-grid reveal">
+                <article class="matrix-card">
+                    <h3>持续模型优化</h3>
+                    <p class="body-copy">训练中持续检测和优化，避免过拟合。</p>
+                    <p style="color: var(--green); font-weight: 600; margin-top: 8px;">过拟合-40%，模型精简30%</p>
+                </article>
+                <article class="matrix-card">
+                    <h3>自适应模型容量</h3>
+                    <p class="body-copy">简单任务凋亡增加，复杂任务神经发生增加。</p>
+                    <p style="color: var(--green); font-weight: 600; margin-top: 8px;">自动适应任务复杂度</p>
+                </article>
+                <article class="matrix-card">
+                    <h3>故障自愈</h3>
+                    <p class="body-copy">检测梯度爆炸、死神经元等故障，自动隔离和修复。</p>
+                    <p style="color: var(--green); font-weight: 600; margin-top: 8px;">训练崩溃：100%→0%</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section section-compact">
+            <div class="reveal" style="text-align: center;">
+                <a href="../innovations.html" class="story-link" style="font-size: 16px;">← 返回创新总览</a>
+            </div>
+        </section>
+    </div>
+
+    <script src="../js/components.js"></script>
+    <script src="../js/animations.js"></script>
+</body>
+</html>
