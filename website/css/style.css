@@ -1572,6 +1572,70 @@ button { cursor: pointer; }
     }
 }
 
+/* Page navigation */
+.page-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(10, 10, 12, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    transform: translateY(-100%);
+    transition: transform 300ms ease;
+}
+
+.page-nav.is-visible {
+    transform: translateY(0);
+}
+
+.page-nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.page-nav-inner::-webkit-scrollbar {
+    display: none;
+}
+
+.page-nav-link {
+    padding: 14px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-decoration: none;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    transition: all 200ms ease;
+}
+
+.page-nav-link:hover {
+    color: var(--text-primary);
+}
+
+.page-nav-link.is-active {
+    color: var(--blue);
+    border-bottom-color: var(--blue);
+}
+
+@media (max-width: 760px) {
+    .page-nav-inner {
+        padding: 0 14px;
+        gap: 4px;
+    }
+
+    .page-nav-link {
+        padding: 12px 12px;
+        font-size: 12px;
+    }
+}
+
 .footer {
     margin-top: 36px;
     border-top: 1px solid rgba(255,255,255,0.06);

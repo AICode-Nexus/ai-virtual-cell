@@ -7,6 +7,18 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <nav class="page-nav" id="pageNav">
+        <div class="page-nav-inner">
+            <a href="#components" class="page-nav-link">组件映射</a>
+            <a href="#structure" class="page-nav-link">结构对照</a>
+            <a href="#processes" class="page-nav-link">过程映射</a>
+            <a href="#systems" class="page-nav-link">系统案例</a>
+            <a href="#principles" class="page-nav-link">设计原则</a>
+            <a href="#usage" class="page-nav-link">使用场景</a>
+            <a href="#antipatterns" class="page-nav-link">常见误区</a>
+        </div>
+    </nav>
+
     <div class="page">
         <header class="page-hero compact">
             <div class="eyebrow">Component-level mapping</div>
@@ -31,7 +43,7 @@
             </div>
         </section>
 
-        <section class="section section-compact">
+        <section class="section section-compact" id="components">
             <div class="section-header reveal">
                 <div class="eyebrow">Layer 1: Components</div>
                 <h2>细胞组件 → 软件组件</h2>
@@ -919,7 +931,7 @@ container.bind('writer', WriterService)</code></pre>
             </div>
         </section>
 
-        <section class="section section-compact">
+        <section class="section section-compact" id="structure">
             <div class="section-header reveal">
                 <div class="eyebrow">Visual comparison</div>
                 <h2>细胞结构 ↔ 软件架构对照图</h2>
@@ -1029,7 +1041,7 @@ container.bind('writer', WriterService)</code></pre>
             </div>
         </section>
 
-        <section class="section section-compact">
+        <section class="section section-compact" id="processes">
             <div class="section-header reveal">
                 <div class="eyebrow">Layer 2: Processes</div>
                 <h2>细胞过程 → 软件过程</h2>
@@ -1093,7 +1105,7 @@ container.bind('writer', WriterService)</code></pre>
             </div>
         </section>
 
-        <section class="section section-compact">
+        <section class="section section-compact" id="systems">
             <div class="section-header reveal">
                 <div class="eyebrow">System architecture cases</div>
                 <h2>实际系统架构案例</h2>
@@ -1203,7 +1215,7 @@ container.bind('writer', WriterService)</code></pre>
             </div>
         </section>
 
-        <section class="section section-compact">
+        <section class="section section-compact" id="principles">
             <div class="section-header reveal">
                 <div class="eyebrow">Design principles</div>
                 <h2>映射设计原则</h2>
@@ -1249,7 +1261,7 @@ container.bind('writer', WriterService)</code></pre>
             </div>
         </section>
 
-        <section class="section section-compact">
+        <section class="section section-compact" id="usage">
             <div class="section-header reveal">
                 <div class="eyebrow">When to use</div>
                 <h2>什么时候用生物映射</h2>
@@ -1274,7 +1286,7 @@ container.bind('writer', WriterService)</code></pre>
             </div>
         </section>
 
-        <section class="section section-compact">
+        <section class="section section-compact" id="antipatterns">
             <div class="section-header reveal">
                 <div class="eyebrow">Anti-patterns</div>
                 <h2>常见误区</h2>
@@ -1312,5 +1324,6 @@ container.bind('writer', WriterService)</code></pre>
     <script src="js/components.js"></script>
     <script src="js/animations.js"></script>
     <script src="js/component-mapping.js"></script>
+    <script src="js/page-nav.js"></script>
 </body>
 </html>
