@@ -13,6 +13,7 @@
 | **P0-1** 双重门控持续学习 | 突触标记与捕获 (STC) | 灾难性遗忘 | NeurIPS 2027 |
 | **P0-2** 免疫检查点式对齐 | PD-1/CTLA-4 检查点 | 过度拒绝 | ICLR 2028 |
 | **P0-3** 分层应激响应系统 | UPR 三臂机制 | 粗粒度容错 | 系统鲁棒性 |
+| **P0-4** 知识液滴系统 | 液-液相分离 (LLPS) | 静态扁平知识组织 | Nature MI |
 
 ---
 
@@ -175,6 +176,63 @@ response = responder.get_response(stress)
 
 ```bash
 python3 src/innovations/p0_layered_stress_response.py
+```
+
+---
+
+## 💧 P0-4: 知识液滴系统（LLPS）
+
+### 生物学原理
+
+**液-液相分离 (Liquid-Liquid Phase Separation, LLPS)**：
+- **无膜细胞器**：核仁、应激颗粒、P-body 通过蛋白-RNA 相分离自发形成
+- **功能浓缩**：液滴内相关分子浓度提升 100-1000 倍
+- **动态组装**：秒-分钟级形成、融合、分裂、消散
+- **相变阈值**：浓度达到临界值时突然发生相分离
+
+### AI映射
+
+```python
+# 传统注意力：所有 token 平等竞争，O(n²)
+attn = softmax(Q @ K.T / sqrt(d)) @ V
+
+# 液滴注意力：语义相关概念先聚集，仅液滴内计算 O(Σm²)
+droplets = detect_phase_separation(embeddings, density_threshold)
+for d in droplets:
+    out[d] = softmax(Q_d @ K_d.T / sqrt(d) * amplification) @ V_d
+```
+
+**关键优势**：
+- ✅ 动态自组织的知识聚类（无需预定义类别）
+- ✅ 复杂度从 O(n²) 降至 O(Σm²)，主题越多加速越显著
+- ✅ 液滴可融合/分裂，响应查询动态重组
+- ✅ 浓缩效应使液滴内交互更强、更聚焦
+
+### 使用示例
+
+```python
+from p0_llps_knowledge_organization import LLPSKnowledgeSystem
+
+system = LLPSKnowledgeSystem(
+    density_threshold=0.55,   # 相变阈值（临界浓度）
+    surface_tension=0.85,     # 液滴融合的能量屏障
+    min_droplet_size=2,
+)
+
+# 相分离：从概念嵌入组织出知识液滴
+droplets = system.organize(embeddings)
+
+# 查询激活：定位最相关的液滴
+activated = system.query(query_embedding, top_k=3)
+
+# 液滴内注意力：浓缩效应 + O(m²) 复杂度
+out = system.droplet_attention(Q, K, V, droplets[0], amplification=1.5)
+```
+
+### 运行演示
+
+```bash
+python3 src/innovations/demo_llps.py
 ```
 
 ---
