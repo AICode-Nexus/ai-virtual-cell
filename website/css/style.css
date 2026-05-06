@@ -1351,6 +1351,180 @@ button { cursor: pointer; }
     }
 }
 
+/* Component mapping styles */
+.component-mapping-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 24px;
+}
+
+.component-card {
+    background: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 24px;
+    transition: all 300ms ease;
+}
+
+.component-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.3);
+    border-color: rgba(84,169,255,0.4);
+}
+
+.component-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    gap: 16px;
+}
+
+.component-bio,
+.component-ai {
+    flex: 1;
+    text-align: center;
+}
+
+.component-icon {
+    font-size: 32px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.component-header h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.component-arrow {
+    font-size: 24px;
+    color: var(--blue);
+    font-weight: 700;
+}
+
+.component-body {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 16px;
+}
+
+.component-logic {
+    margin: 0 0 12px;
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.component-details {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 16px;
+}
+
+.component-details li {
+    padding: 6px 0;
+    font-size: 13px;
+    color: var(--text-muted);
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.component-details li:last-child {
+    border-bottom: none;
+}
+
+.component-example {
+    background: rgba(0,0,0,0.3);
+    border-radius: 8px;
+    padding: 12px;
+    margin-top: 12px;
+}
+
+.component-example strong {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 12px;
+    color: var(--blue);
+}
+
+.component-example pre {
+    margin: 0;
+    overflow-x: auto;
+}
+
+.component-example code {
+    font-family: 'Monaco', 'Menlo', monospace;
+    font-size: 11px;
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+/* Process mapping styles */
+.process-mapping-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 20px;
+}
+
+.process-card {
+    background: linear-gradient(135deg, rgba(84,169,255,0.08), rgba(84,169,255,0.02));
+    border: 1px solid rgba(84,169,255,0.2);
+    border-radius: 10px;
+    padding: 20px;
+    transition: all 250ms ease;
+}
+
+.process-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(84,169,255,0.2);
+}
+
+.process-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.process-header h3 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+    flex: 1;
+}
+
+.process-arrow {
+    font-size: 18px;
+    color: var(--blue);
+    font-weight: 700;
+}
+
+.process-card p {
+    margin: 0;
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+@media (max-width: 760px) {
+    .component-mapping-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .component-header {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .component-arrow {
+        transform: rotate(90deg);
+    }
+
+    .process-mapping-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 .footer {
     margin-top: 36px;
     border-top: 1px solid rgba(255,255,255,0.06);

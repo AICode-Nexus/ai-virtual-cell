@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>组件级知识映射 - AI Virtual Cell</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-brand">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="24" height="24">
+                    <circle cx="12" cy="12" r="3"></circle>
+                    <path d="M12 1v6m0 6v6m11-11h-6m-6 0H1"></path>
+                </svg>
+                <span>AI Virtual Cell</span>
+            </a>
+            <div class="nav-links">
+                <a href="mapping.html">映射案例</a>
+                <a href="component-mapping.html" class="active">组件映射</a>
+                <a href="all-mappings.html">全部映射</a>
+                <a href="roadmap.html">路线图</a>
+                <a href="about.html">关于</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page">
+        <header class="page-hero compact">
+            <div class="eyebrow">Component-level mapping</div>
+            <h1 class="page-title">细胞组件到软件组件的直接映射</h1>
+            <p class="page-subtitle">DNA → Agent skill，细胞膜 → API 边界，线粒体 → 计算资源池。具体的、可直接应用的组件级映射。</p>
+        </header>
+
+        <section class="section section-tight">
+            <div class="metric-grid reveal">
+                <div class="metric-card">
+                    <div class="metric-value glow-green" data-count="15">0</div>
+                    <div class="metric-label">细胞组件映射</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value glow-blue" data-count="12">0</div>
+                    <div class="metric-label">细胞过程映射</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value glow-purple" data-count="8">0</div>
+                    <div class="metric-label">系统级映射</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-compact">
+            <div class="section-header reveal">
+                <div class="eyebrow">Layer 1: Components</div>
+                <h2>细胞组件 → 软件组件</h2>
+                <p>从细胞的物理结构到软件的功能模块，一对一的直接映射。</p>
+            </div>
+
+            <div class="component-mapping-grid reveal">
+                <!-- DNA → Agent skill -->
+                <article class="component-card">
+                    <div class="component-header">
+                        <div class="component-bio">
+                            <span class="component-icon">🧬</span>
+                            <h3>DNA 片段</h3>
+                        </div>
+                        <div class="component-arrow">→</div>
+                        <div class="component-ai">
+                            <span class="component-icon">⚡</span>
+                            <h3>Agent Skill</h3>
+                        </div>
+                    </div>
+                    <div class="component-body">
+                        <p class="component-logic"><strong>映射逻辑：</strong>存储可复用的行为模式</p>
+                        <ul class="component-details">
+                            <li><strong>DNA：</strong>编码蛋白质的指令序列</li>
+                            <li><strong>Skill：</strong>定义 Agent 行为的函数</li>
+                            <li><strong>共同点：</strong>模板化、可复用、可组合</li>
+                        </ul>
+                        <div class="component-example">
+                            <strong>代码示例：</strong>
+                            <pre><code>// DNA 片段 = Skill 定义
+class SearchSkill:
+    def execute(self, query):
+        # 像 DNA 编码蛋白质一样
+        # Skill 编码 Agent 行为
+        return search_engine.query(query)</code></pre>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 细胞膜 → API 边界 -->
+                <article class="component-card">
+                    <div class="component-header">
+                        <div class="component-bio">
+                            <span class="component-icon">🔲</span>
+                            <h3>细胞膜</h3>
+                        </div>
+                        <div class="component-arrow">→</div>
+                        <div class="component-ai">
+                            <span class="component-icon">🔒</span>
+                            <h3>API 边界</h3>
+                        </div>
+                    </div>
+                    <div class="component-body">
+                        <p class="component-logic"><strong>映射逻辑：</strong>选择性控制输入输出</p>
+                        <ul class="component-details">
+                            <li><strong>细胞膜：</strong>通道蛋白控制物质进出</li>
+                            <li><strong>API：</strong>接口定义控制数据交换</li>
+                            <li><strong>共同点：</strong>选择性通透、身份验证、速率限制</li>
+                        </ul>
+                        <div class="component-example">
+                            <strong>代码示例：</strong>
+                            <pre><code>// 细胞膜 = API Gateway
+@app.route('/api/data')
+@rate_limit(100)  # 像离子通道限流
+@authenticate    # 像受体识别
+def get_data():
+    return process_request()</code></pre>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 线粒体 → 计算资源池 -->
+                <article class="component-card">
+                    <div class="component-header">
+                        <div class="component-bio">
+                            <span class="component-icon">⚡</span>
+                            <h3>线粒体</h3>
+                        </div>
+                        <div class="component-arrow">→</div>
+                        <div class="component-ai">
+                            <span class="component-icon">🖥️</span>
+                            <h3>GPU / 计算池</h3>
+                        </div>
+                    </div>
+                    <div class="component-body">
+                        <p class="component-logic"><strong>映射逻辑：</strong>提供能量/算力</p>
+                        <ul class="component-details">
+                            <li><strong>线粒体：</strong>ATP 生产工厂</li>
+                            <li><strong>GPU：</strong>并行计算资源</li>
+                            <li><strong>共同点：</strong>按需分配、效率优化、能量预算</li>
+                        </ul>
+                        <div class="component-example">
+                            <strong>代码示例：</strong>
+                            <pre><code>// 线粒体 = 计算资源池
+class ComputePool:
+    def allocate(self, task):
+        # 像线粒体感知 ATP 需求
+        if self.available_gpus > 0:
+            return self.gpus.pop()
+        return None  # 能量不足</code></pre>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 核糖体 → 代码生成器 -->
+                <article class="component-card">
+                    <div class="component-header">
+                        <div class="component-bio">
+                            <span class="component-icon">🏭</span>
+                            <h3>核糖体</h3>
+                        </div>
+                        <div class="component-arrow">→</div>
+                        <div class="component-ai">
+                            <span class="component-icon">🤖</span>
+                            <h3>代码生成器</h3>
+                        </div>
+                    </div>
+                    <div class="component-body">
+                        <p class="component-logic"><strong>映射逻辑：</strong>将指令转换为可执行代码</p>
+                        <ul class="component-details">
+                            <li><strong>核糖体：</strong>读取 mRNA 合成蛋白质</li>
+                            <li><strong>生成器：</strong>读取 Prompt 生成代码</li>
+                            <li><strong>共同点：</strong>模板驱动、序列化生成、质量控制</li>
+                        </ul>
+                        <div class="component-example">
+                            <strong>代码示例：</strong>
+                            <pre><code>// 核糖体 = LLM 代码生成
+class CodeGenerator:
+    def translate(self, prompt):
+                        # 像核糖体翻译 mRNA
+        return llm.generate(prompt)</code></pre>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 细胞核 → 控制中心 -->
+                <article class="component-card">
+                    <div class="component-header">
+                        <div class="component-bio">
+                            <span class="component-icon">🎯</span>
+                            <h3>细胞核</h3>
+                        </div>
+                        <div class="component-arrow">→</div>
+                        <div class="component-ai">
+                            <span class="component-icon">🎛️</span>
+                            <h3>控制中心 / 调度器</h3>
+                        </div>
+                    </div>
+                    <div class="component-body">
+                        <p class="component-logic"><strong>映射逻辑：</strong>中央决策和协调</p>
+                        <ul class="component-details">
+                            <li><strong>细胞核：</strong>存储 DNA，控制基因表达</li>
+                            <li><strong>调度器：</strong>管理任务，分配资源</li>
+                            <li><strong>共同点：</strong>中央控制、优先级管理、全局协调</li>
+                        </ul>
+                        <div class="component-example">
+                            <strong>代码示例：</strong>
+                            <pre><code>// 细胞核 = 任务调度器
+class Scheduler:
+    def dispatch(self, tasks):
+        # 像细胞核控制基因表达
+        for task in sorted(tasks, key=priority):
+            self.execute(task)</code></pre>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 内质网 → 数据管道 -->
+                <article class="component-card">
+                    <div class="component-header">
+                        <div class="component-bio">
+                            <span class="component-icon">🔗</span>
+                            <h3>内质网</h3>
+                        </div>
+                        <div class="component-arrow">→</div>
+                        <div class="component-ai">
+                            <span class="component-icon">📊</span>
+                            <h3>数据管道 / 消息队列</h3>
+                        </div>
+                    </div>
+                    <div class="component-body">
+                        <p class="component-logic"><strong>映射逻辑：</strong>传输和处理数据</p>
+                        <ul class="component-details">
+                            <li><strong>内质网：</strong>蛋白质合成和运输网络</li>
+                            <li><strong>管道：</strong>数据流转和处理链</li>
+                            <li><strong>共同点：</strong>流水线处理、质量检查、批量传输</li>
+                        </ul>
+                        <div class="component-example">
+                            <strong>代码示例：</strong>
+                            <pre><code>// 内质网 = 消息队列
+class MessageQueue:
+    def process(self, data):
+        # 像内质网处理蛋白质
+        validated = self.validate(data)
+        return self.transport(validated)</code></pre>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section section-compact">
+            <div class="section-header reveal">
+                <div class="eyebrow">Layer 2: Processes</div>
+                <h2>细胞过程 → 软件过程</h2>
+                <p>从细胞的动态过程到软件的执行流程。</p>
+            </div>
+
+            <div class="process-mapping-grid reveal">
+                <article class="process-card">
+                    <div class="process-header">
+                        <h3>转录：DNA → RNA</h3>
+                        <span class="process-arrow">→</span>
+                        <h3>代码生成：Prompt → Code</h3>
+                    </div>
+                    <p><strong>映射逻辑：</strong>从模板生成临时指令</p>
+                </article>
+
+                <article class="process-card">
+                    <div class="process-header">
+                        <h3>翻译：RNA → 蛋白质</h3>
+                        <span class="process-arrow">→</span>
+                        <h3>编译：Code → 可执行文件</h3>
+                    </div>
+                    <p><strong>映射逻辑：</strong>从指令生成可执行单元</p>
+                </article>
+
+                <article class="process-card">
+                    <div class="process-header">
+                        <h3>蛋白质折叠</h3>
+                        <span class="process-arrow">→</span>
+                        <h3>模型训练 / 优化</h3>
+                    </div>
+                    <p><strong>映射逻辑：</strong>找到最优结构/参数</p>
+                </article>
+
+                <article class="process-card">
+                    <div class="process-header">
+                        <h3>信号转导</h3>
+                        <span class="process-arrow">→</span>
+                        <h3>消息传递 / Event Bus</h3>
+                    </div>
+                    <p><strong>映射逻辑：</strong>跨组件通信和级联响应</p>
+                </article>
+
+                <article class="process-card">
+                    <div class="process-header">
+                        <h3>细胞分裂</h3>
+                        <span class="process-arrow">→</span>
+                        <h3>进程复制 / Fork</h3>
+                    </div>
+                    <p><strong>映射逻辑：</strong>创建新的独立实例</p>
+                </article>
+
+                <article class="process-card">
+                    <div class="process-header">
+                        <h3>细胞凋亡</h3>
+                        <span class="process-arrow">→</span>
+                        <h3>优雅关闭 / Graceful Shutdown</h3>
+                    </div>
+                    <p><strong>映射逻辑：</strong>程序性、有序的终止</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section section-compact">
+            <div class="section-header reveal">
+                <div class="eyebrow">Practical application</div>
+                <h2>如何应用这些映射</h2>
+                <p>从生物启发到实际系统设计的三个步骤。</p>
+            </div>
+
+            <div class="flow-grid reveal">
+                <article class="flow-card">
+                    <div class="flow-index">01</div>
+                    <h3 class="card-title">识别对应组件</h3>
+                    <p class="body-copy">在你的系统中找到对应的生物组件。例如：你的 API Gateway 就是细胞膜，你的数据库就是 DNA 存储。</p>
+                </article>
+                <article class="flow-card">
+                    <div class="flow-index">02</div>
+                    <h3 class="card-title">借鉴控制逻辑</h3>
+                    <p class="body-copy">学习生物组件的控制机制。例如：细胞膜的选择性通透 → API 的速率限制和身份验证。</p>
+                </article>
+                <article class="flow-card">
+                    <div class="flow-index">03</div>
+                    <h3 class="card-title">实现和验证</h3>
+                    <p class="body-copy">将生物机制转化为代码实现，用基准测试验证效果。例如：实现类似线粒体的动态资源分配。</p>
+                </article>
+            </div>
+        </section>
+    </div>
+
+    <script src="js/components.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+</html>
