@@ -2,6 +2,8 @@ const PAGES = [
     { href: 'index.html', label: '首页' },
     { href: 'innovations.html', label: '创新成果' },
     { href: 'mapping.html', label: '知识映射' },
+    { href: 'component-mapping.html', label: '组件映射' },
+    { href: 'all-mappings.html', label: '全部映射' },
     { href: 'roadmap.html', label: '路线图' },
     { href: 'docs.html', label: '文档' },
 ];
