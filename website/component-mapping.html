@@ -17,7 +17,7 @@
         <section class="section section-tight">
             <div class="metric-grid reveal">
                 <div class="metric-card">
-                    <div class="metric-value glow-green" data-count="12">0</div>
+                    <div class="metric-value glow-green" data-count="20">0</div>
                     <div class="metric-label">细胞组件映射</div>
                 </div>
                 <div class="metric-card">
@@ -25,7 +25,7 @@
                     <div class="metric-label">细胞过程映射</div>
                 </div>
                 <div class="metric-card">
-                    <div class="metric-value glow-purple" data-count="18">0</div>
+                    <div class="metric-value glow-purple" data-count="26">0</div>
                     <div class="metric-label">总映射数量</div>
                 </div>
             </div>
@@ -418,6 +418,254 @@ try:
 except Exception as e:
     logger.error(e)
     return safe_fallback()</code></pre>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 细胞骨架 → 工作流编排器 -->
+                <article class="component-card">
+                    <div class="component-header">
+                        <div class="component-bio">
+                            <span class="component-icon">🕸️</span>
+                            <h3>细胞骨架</h3>
+                        </div>
+                        <div class="component-arrow">→</div>
+                        <div class="component-ai">
+                            <span class="component-icon">🧭</span>
+                            <h3>工作流编排器</h3>
+                        </div>
+                    </div>
+                    <div class="component-body">
+                        <p class="component-logic"><strong>映射逻辑：</strong>提供整体结构和任务运输路径</p>
+                        <ul class="component-details">
+                            <li><strong>细胞骨架：</strong>维持形态并引导细胞内运输</li>
+                            <li><strong>编排器：</strong>决定任务如何在系统中流动</li>
+                            <li><strong>共同点：</strong>结构支撑、路径规划、全局约束</li>
+                        </ul>
+                        <div class="component-example">
+                            <strong>代码示例：</strong>
+                            <pre><code>// 细胞骨架 = workflow orchestrator
+class WorkflowOrchestrator:
+    def route(self, task):
+        path = self.plan_path(task)
+        return self.dispatch(path)</code></pre>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 受体 → 事件监听器 -->
+                <article class="component-card">
+                    <div class="component-header">
+                        <div class="component-bio">
+                            <span class="component-icon">📡</span>
+                            <h3>受体</h3>
+                        </div>
+                        <div class="component-arrow">→</div>
+                        <div class="component-ai">
+                            <span class="component-icon">👂</span>
+                            <h3>事件监听器</h3>
+                        </div>
+                    </div>
+                    <div class="component-body">
+                        <p class="component-logic"><strong>映射逻辑：</strong>识别外部信号并触发内部响应</p>
+                        <ul class="component-details">
+                            <li><strong>受体：</strong>识别特定配体并启动信号通路</li>
+                            <li><strong>监听器：</strong>捕获特定事件并触发回调</li>
+                            <li><strong>共同点：</strong>选择性识别、事件驱动、低耦合触发</li>
+                        </ul>
+                        <div class="component-example">
+                            <strong>代码示例：</strong>
+                            <pre><code>// 受体 = event listener
+bus.on('user_query', (event) => {
+    if (matches(event.type)) {
+        activate_pathway(event)
+    }
+})</code></pre>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 离子通道 → 限流器 -->
+                <article class="component-card">
+                    <div class="component-header">
+                        <div class="component-bio">
+                            <span class="component-icon">🚪</span>
+                            <h3>离子通道</h3>
+                        </div>
+                        <div class="component-arrow">→</div>
+                        <div class="component-ai">
+                            <span class="component-icon">🚦</span>
+                            <h3>限流器</h3>
+                        </div>
+                    </div>
+                    <div class="component-body">
+                        <p class="component-logic"><strong>映射逻辑：</strong>控制通过速率与触发阈值</p>
+                        <ul class="component-details">
+                            <li><strong>离子通道：</strong>按电位或配体状态开放/关闭</li>
+                            <li><strong>限流器：</strong>按配额和阈值控制请求通过</li>
+                            <li><strong>共同点：</strong>门控、阈值触发、过载保护</li>
+                        </ul>
+                        <div class="component-example">
+                            <strong>代码示例：</strong>
+                            <pre><code>// 离子通道 = rate limiter
+if limiter.allow(key):
+    pass_request()
+else:
+    reject_overload()</code></pre>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 转录因子 → 策略规则引擎 -->
+                <article class="component-card">
+                    <div class="component-header">
+                        <div class="component-bio">
+                            <span class="component-icon">🧾</span>
+                            <h3>转录因子</h3>
+                        </div>
+                        <div class="component-arrow">→</div>
+                        <div class="component-ai">
+                            <span class="component-icon">📐</span>
+                            <h3>策略规则引擎</h3>
+                        </div>
+                    </div>
+                    <div class="component-body">
+                        <p class="component-logic"><strong>映射逻辑：</strong>根据上下文组合激活不同规则</p>
+                        <ul class="component-details">
+                            <li><strong>转录因子：</strong>组合式控制不同基因是否表达</li>
+                            <li><strong>规则引擎：</strong>组合条件决定系统走哪条策略</li>
+                            <li><strong>共同点：</strong>条件组合、上下文敏感、层级调控</li>
+                        </ul>
+                        <div class="component-example">
+                            <strong>代码示例：</strong>
+                            <pre><code>// 转录因子 = policy engine
+if context.high_risk and user.untrusted:
+    activate('strict_policy')
+else:
+    activate('normal_policy')</code></pre>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 分子伴侣 → 优化辅助器 -->
+                <article class="component-card">
+                    <div class="component-header">
+                        <div class="component-bio">
+                            <span class="component-icon">🤝</span>
+                            <h3>分子伴侣</h3>
+                        </div>
+                        <div class="component-arrow">→</div>
+                        <div class="component-ai">
+                            <span class="component-icon">🛠️</span>
+                            <h3>优化辅助器</h3>
+                        </div>
+                    </div>
+                    <div class="component-body">
+                        <p class="component-logic"><strong>映射逻辑：</strong>帮助模块进入稳定可用状态</p>
+                        <ul class="component-details">
+                            <li><strong>分子伴侣：</strong>辅助蛋白正确折叠，避免聚集</li>
+                            <li><strong>辅助器：</strong>帮助训练稳定、避免梯度爆炸</li>
+                            <li><strong>共同点：</strong>稳定化、纠错、降低失败率</li>
+                        </ul>
+                        <div class="component-example">
+                            <strong>代码示例：</strong>
+                            <pre><code>// 分子伴侣 = optimizer helper
+class Stabilizer:
+    def assist(self, gradients):
+        return clip_and_normalize(gradients)</code></pre>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 检查点蛋白 → 审批门禁 -->
+                <article class="component-card">
+                    <div class="component-header">
+                        <div class="component-bio">
+                            <span class="component-icon">⛔</span>
+                            <h3>检查点蛋白</h3>
+                        </div>
+                        <div class="component-arrow">→</div>
+                        <div class="component-ai">
+                            <span class="component-icon">✅</span>
+                            <h3>审批门禁</h3>
+                        </div>
+                    </div>
+                    <div class="component-body">
+                        <p class="component-logic"><strong>映射逻辑：</strong>在进入下一阶段前做强制校验</p>
+                        <ul class="component-details">
+                            <li><strong>检查点蛋白：</strong>阻止细胞在条件不满足时继续分裂</li>
+                            <li><strong>门禁：</strong>验证任务是否满足进入下一阶段的条件</li>
+                            <li><strong>共同点：</strong>强制校验、阻断错误扩散、状态控制</li>
+                        </ul>
+                        <div class="component-example">
+                            <strong>代码示例：</strong>
+                            <pre><code>// 检查点蛋白 = approval gate
+if not validator.ready(task):
+    halt_pipeline(task)
+else:
+    continue_pipeline(task)</code></pre>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 记忆小体/囊泡 → 缓存层 -->
+                <article class="component-card">
+                    <div class="component-header">
+                        <div class="component-bio">
+                            <span class="component-icon">💾</span>
+                            <h3>囊泡 / 记忆载体</h3>
+                        </div>
+                        <div class="component-arrow">→</div>
+                        <div class="component-ai">
+                            <span class="component-icon">🗂️</span>
+                            <h3>缓存层</h3>
+                        </div>
+                    </div>
+                    <div class="component-body">
+                        <p class="component-logic"><strong>映射逻辑：</strong>临时存储并按需运输高频信息</p>
+                        <ul class="component-details">
+                            <li><strong>囊泡：</strong>封装、运输特定分子到目标位置</li>
+                            <li><strong>缓存：</strong>暂存热点数据以降低重复计算</li>
+                            <li><strong>共同点：</strong>局部存储、按需调用、减少主系统压力</li>
+                        </ul>
+                        <div class="component-example">
+                            <strong>代码示例：</strong>
+                            <pre><code>// 囊泡 = cache layer
+cache_key = build_key(query)
+if cache.has(cache_key):
+    return cache.get(cache_key)
+return compute_and_store(cache_key)</code></pre>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 配体 → 外部触发事件 -->
+                <article class="component-card">
+                    <div class="component-header">
+                        <div class="component-bio">
+                            <span class="component-icon">🧪</span>
+                            <h3>配体</h3>
+                        </div>
+                        <div class="component-arrow">→</div>
+                        <div class="component-ai">
+                            <span class="component-icon">📨</span>
+                            <h3>外部触发事件</h3>
+                        </div>
+                    </div>
+                    <div class="component-body">
+                        <p class="component-logic"><strong>映射逻辑：</strong>外部输入决定内部模块是否被唤醒</p>
+                        <ul class="component-details">
+                            <li><strong>配体：</strong>与受体结合后激活通路</li>
+                            <li><strong>触发事件：</strong>进入系统后激活对应工作流</li>
+                            <li><strong>共同点：</strong>外部信号、选择性激活、条件触发</li>
+                        </ul>
+                        <div class="component-example">
+                            <strong>代码示例：</strong>
+                            <pre><code>// 配体 = external trigger
+on_event('user_request', payload => {
+    receptor.match(payload)
+    pathway.activate(payload)
+})</code></pre>
                         </div>
                     </div>
                 </article>
