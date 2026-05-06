@@ -36,16 +36,16 @@
         <section class="section section-tight">
             <div class="metric-grid reveal">
                 <div class="metric-card">
-                    <div class="metric-value glow-green" data-count="15">0</div>
+                    <div class="metric-value glow-green" data-count="12">0</div>
                     <div class="metric-label">细胞组件映射</div>
                 </div>
                 <div class="metric-card">
-                    <div class="metric-value glow-blue" data-count="12">0</div>
+                    <div class="metric-value glow-blue" data-count="6">0</div>
                     <div class="metric-label">细胞过程映射</div>
                 </div>
                 <div class="metric-card">
-                    <div class="metric-value glow-purple" data-count="8">0</div>
-                    <div class="metric-label">系统级映射</div>
+                    <div class="metric-value glow-purple" data-count="18">0</div>
+                    <div class="metric-label">总映射数量</div>
                 </div>
             </div>
         </section>
@@ -246,6 +246,197 @@ class MessageQueue:
         # 像内质网处理蛋白质
         validated = self.validate(data)
         return self.transport(validated)</code></pre>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 高尔基体 → 输出处理器 -->
+                <article class="component-card">
+                    <div class="component-header">
+                        <div class="component-bio">
+                            <span class="component-icon">📦</span>
+                            <h3>高尔基体</h3>
+                        </div>
+                        <div class="component-arrow">→</div>
+                        <div class="component-ai">
+                            <span class="component-icon">🎁</span>
+                            <h3>输出处理器</h3>
+                        </div>
+                    </div>
+                    <div class="component-body">
+                        <p class="component-logic"><strong>映射逻辑：</strong>打包和格式化输出</p>
+                        <ul class="component-details">
+                            <li><strong>高尔基体：</strong>修饰和包装蛋白质</li>
+                            <li><strong>处理器：</strong>格式化和序列化输出</li>
+                            <li><strong>共同点：</strong>后处理、质量检查、标准化输出</li>
+                        </ul>
+                        <div class="component-example">
+                            <strong>代码示例：</strong>
+                            <pre><code>// 高尔基体 = 输出格式化
+class OutputFormatter:
+    def package(self, data):
+        validated = self.validate(data)
+        formatted = self.format(validated)
+        return self.serialize(formatted)</code></pre>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 溶酶体 → 垃圾回收器 -->
+                <article class="component-card">
+                    <div class="component-header">
+                        <div class="component-bio">
+                            <span class="component-icon">🗑️</span>
+                            <h3>溶酶体</h3>
+                        </div>
+                        <div class="component-arrow">→</div>
+                        <div class="component-ai">
+                            <span class="component-icon">♻️</span>
+                            <h3>垃圾回收器</h3>
+                        </div>
+                    </div>
+                    <div class="component-body">
+                        <p class="component-logic"><strong>映射逻辑：</strong>清理无用资源</p>
+                        <ul class="component-details">
+                            <li><strong>溶酶体：</strong>降解废弃物和受损细胞器</li>
+                            <li><strong>GC：</strong>回收不再使用的内存</li>
+                            <li><strong>共同点：</strong>自动清理、资源回收、防止泄漏</li>
+                        </ul>
+                        <div class="component-example">
+                            <strong>代码示例：</strong>
+                            <pre><code>// 溶酶体 = 垃圾回收
+class GarbageCollector:
+    def collect(self):
+        unused = self.find_unused()
+        for obj in unused:
+            self.recycle(obj)</code></pre>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 突触 → API 接口 -->
+                <article class="component-card">
+                    <div class="component-header">
+                        <div class="component-bio">
+                            <span class="component-icon">🔌</span>
+                            <h3>突触</h3>
+                        </div>
+                        <div class="component-arrow">→</div>
+                        <div class="component-ai">
+                            <span class="component-icon">🔗</span>
+                            <h3>API 接口</h3>
+                        </div>
+                    </div>
+                    <div class="component-body">
+                        <p class="component-logic"><strong>映射逻辑：</strong>组件间通信</p>
+                        <ul class="component-details">
+                            <li><strong>突触：</strong>神经元之间的信号传递点</li>
+                            <li><strong>接口：</strong>模块之间的通信协议</li>
+                            <li><strong>共同点：</strong>标准化通信、可调节强度、双向反馈</li>
+                        </ul>
+                        <div class="component-example">
+                            <strong>代码示例：</strong>
+                            <pre><code>// 突触 = API 接口
+class APIInterface:
+    def transmit(self, signal):
+        if self.strength > threshold:
+            return self.send(signal)
+        return None</code></pre>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- RNA → 配置文件 -->
+                <article class="component-card">
+                    <div class="component-header">
+                        <div class="component-bio">
+                            <span class="component-icon">📜</span>
+                            <h3>RNA</h3>
+                        </div>
+                        <div class="component-arrow">→</div>
+                        <div class="component-ai">
+                            <span class="component-icon">⚙️</span>
+                            <h3>配置文件</h3>
+                        </div>
+                    </div>
+                    <div class="component-body">
+                        <p class="component-logic"><strong>映射逻辑：</strong>临时的、可变的执行指令</p>
+                        <ul class="component-details">
+                            <li><strong>RNA：</strong>从 DNA 转录的临时指令</li>
+                            <li><strong>配置：</strong>运行时的参数和设置</li>
+                            <li><strong>共同点：</strong>临时性、可修改、环境特定</li>
+                        </ul>
+                        <div class="component-example">
+                            <strong>代码示例：</strong>
+                            <pre><code>// RNA = 配置文件
+config = {
+    "model": "gpt-4",
+    "temperature": 0.7,
+    # 可动态修改，不改源代码
+}</code></pre>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 蛋白质 → 微服务 -->
+                <article class="component-card">
+                    <div class="component-header">
+                        <div class="component-bio">
+                            <span class="component-icon">🧩</span>
+                            <h3>蛋白质</h3>
+                        </div>
+                        <div class="component-arrow">→</div>
+                        <div class="component-ai">
+                            <span class="component-icon">📦</span>
+                            <h3>微服务</h3>
+                        </div>
+                    </div>
+                    <div class="component-body">
+                        <p class="component-logic"><strong>映射逻辑：</strong>实际执行功能的单元</p>
+                        <ul class="component-details">
+                            <li><strong>蛋白质：</strong>执行细胞功能的工作分子</li>
+                            <li><strong>微服务：</strong>执行特定任务的代码单元</li>
+                            <li><strong>共同点：</strong>功能专一、可组合、可复用</li>
+                        </ul>
+                        <div class="component-example">
+                            <strong>代码示例：</strong>
+                            <pre><code>// 蛋白质 = 微服务
+class SearchService:
+    def execute(self, query):
+        results = self.search(query)
+        return self.rank(results)</code></pre>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 过氧化物酶体 → 错误处理器 -->
+                <article class="component-card">
+                    <div class="component-header">
+                        <div class="component-bio">
+                            <span class="component-icon">🛡️</span>
+                            <h3>过氧化物酶体</h3>
+                        </div>
+                        <div class="component-arrow">→</div>
+                        <div class="component-ai">
+                            <span class="component-icon">⚠️</span>
+                            <h3>错误处理器</h3>
+                        </div>
+                    </div>
+                    <div class="component-body">
+                        <p class="component-logic"><strong>映射逻辑：</strong>处理有害物质和异常</p>
+                        <ul class="component-details">
+                            <li><strong>过氧化物酶体：</strong>分解有毒的过氧化物</li>
+                            <li><strong>处理器：</strong>捕获和处理异常</li>
+                            <li><strong>共同点：</strong>防御性处理、隔离危险、恢复正常</li>
+                        </ul>
+                        <div class="component-example">
+                            <strong>代码示例：</strong>
+                            <pre><code>// 过氧化物酶体 = 异常处理
+try:
+    risky_operation()
+except Exception as e:
+    logger.error(e)
+    return safe_fallback()</code></pre>
                         </div>
                     </div>
                 </article>
