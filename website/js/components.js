@@ -113,6 +113,27 @@ function renderFooter() {
                     <li><a href="https://github.com/AICode-Nexus/ai-virtual-cell/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">贡献指南</a></li>
                 </ul>
             </div>
+            <div class="footer-links footer-contact">
+                <h4>联系我们</h4>
+                <div class="contact-info">
+                    <img src="${prefix}assets/wechat-qr.jpg" alt="微信二维码" class="wechat-qr">
+                    <ul>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 6px;">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                            </svg>
+                            微信：trsoliu
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 6px;">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            <a href="mailto:trsoliu@gmail.com">trsoliu@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
         <div class="footer-bottom">
             <span>MIT License © 2026 AI Virtual Cell Team</span>
